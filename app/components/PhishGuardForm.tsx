@@ -2,17 +2,49 @@
 
 import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Label } from '@/components/ui/label'
-import { AlertCircle, CheckCircle, Loader2, Shield } from 'lucide-react'
+import { AlertCircle, CheckCircle, Loader2, Shield, Sparkles } from 'lucide-react'
 
 interface PhishingResult {
   classification: string
   confidence: number
   is_phishing: boolean
   model_mode: string
+}
+
+const EXAMPLE_EMAILS = {
+  phishing: `Subject: URGENT: Your Account Has Been Suspended!
+
+Dear Valued Customer,
+
+We have detected unusual activity on your account. Your account has been temporarily suspended due to security concerns.
+
+To restore access immediately, click the link below and verify your identity:
+http://secure-bank-verify.suspicious-domain.com/restore
+
+If you do not verify within 24 hours, your account will be permanently closed.
+
+Regards,
+Security Team`,
+  legitimate: `Subject: Your Order #12345 Has Shipped
+
+Hi there,
+
+Great news! Your order has been shipped and is on its way.
+
+Order Details:
+- Order Number: 12345
+- Estimated Delivery: December 2-4, 2025
+- Carrier: UPS
+
+You can track your package using the tracking number in your account.
+
+Thank you for shopping with us!
+
+Best regards,
+Customer Service Team`
 }
 
 export function PhishGuardForm() {
@@ -60,13 +92,43 @@ export function PhishGuardForm() {
           Email Security Check
         </CardTitle>
         <CardDescription>
-          Paste suspicious email content below to check if it's a phishing attempt
+          Paste suspicious email content below to check if it&apos;s a phishing attempt
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email-text">Email Content</Label>
+            <div className="flex items-center justify-between">
+              <Label htmlFor="email-text">Email Content</Label>
+              <div className="flex gap-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setEmailText(EXAMPLE_EMAILS.phishing)
+                    setResult(null)
+                    setError(null)
+                  }}
+                >
+                  <Sparkles className="h-3 w-3 mr-1" />
+                  Try Phishing Example
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setEmailText(EXAMPLE_EMAILS.legitimate)
+                    setResult(null)
+                    setError(null)
+                  }}
+                >
+                  <Sparkles className="h-3 w-3 mr-1" />
+                  Try Safe Example
+                </Button>
+              </div>
+            </div>
             <textarea
               id="email-text"
               value={emailText}
