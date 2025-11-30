@@ -14,6 +14,36 @@ interface PhishingResult {
   model_mode: string
 }
 
+// Real-time threat detection keywords
+const THREAT_KEYWORDS = {
+  high: ['urgent', 'suspended', 'verify your', 'click here', 'immediately', 'act now', 'limited time', 'account closed'],
+  medium: ['password', 'confirm', 'update your', 'security alert', 'unusual activity', 'verify identity', 'prize', 'winner'],
+  low: ['invoice', 'payment', 'wire transfer', 'bitcoin', 'gift card']
+}
+
+function getThreatLevel(text: string): { level: 'none' | 'low' | 'medium' | 'high'; matches: string[] } {
+  const lowerText = text.toLowerCase()
+  const matches: string[] = []
+
+  for (const keyword of THREAT_KEYWORDS.high) {
+    if (lowerText.includes(keyword)) matches.push(keyword)
+  }
+  if (matches.length >= 2) return { level: 'high', matches }
+
+  for (const keyword of THREAT_KEYWORDS.medium) {
+    if (lowerText.includes(keyword)) matches.push(keyword)
+  }
+  if (matches.length >= 2) return { level: 'high', matches }
+  if (matches.length === 1) return { level: 'medium', matches }
+
+  for (const keyword of THREAT_KEYWORDS.low) {
+    if (lowerText.includes(keyword)) matches.push(keyword)
+  }
+  if (matches.length > 0) return { level: 'low', matches }
+
+  return { level: 'none', matches: [] }
+}
+
 const EXAMPLE_EMAILS = {
   phishing: `Subject: URGENT: Your Account Has Been Suspended!
 
@@ -138,6 +168,25 @@ export function PhishGuardForm() {
               required
               aria-label="Email content to analyze"
             />
+            {/* Real-time threat indicator */}
+            {emailText.trim() && (() => {
+              const threat = getThreatLevel(emailText)
+              if (threat.level === 'none') return null
+              return (
+                <div className={`flex items-center gap-2 mt-2 p-2 rounded text-sm ${
+                  threat.level === 'high' ? 'bg-red-500/10 text-red-600' :
+                  threat.level === 'medium' ? 'bg-yellow-500/10 text-yellow-600' :
+                  'bg-blue-500/10 text-blue-600'
+                }`}>
+                  <AlertCircle className="h-4 w-4" />
+                  <span>
+                    {threat.level === 'high' ? 'High risk' :
+                     threat.level === 'medium' ? 'Suspicious' : 'Caution'}
+                    {' '}&bull; Found: {threat.matches.slice(0, 3).join(', ')}
+                  </span>
+                </div>
+              )
+            })()}
           </div>
 
           <Button
