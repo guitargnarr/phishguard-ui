@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const PRODUCTION_URL = 'https://phishguard-ui.vercel.app'; // Will verify actual URL
+// Production URL: https://phishguard-ui.vercel.app
 const API_ENDPOINT_1 = 'https://phishguard-api-production-88df.up.railway.app';
 const API_ENDPOINT_2 = 'https://phishguard-api-production.up.railway.app';
 
@@ -216,7 +216,7 @@ test.describe('PhishGuard UI Tests', () => {
           console.log(`Found Production URL: ${url}`);
           break;
         }
-      } catch (e) {
+      } catch {
         // Continue to next URL
       }
     }

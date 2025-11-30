@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { server } from '../mocks/server'
-import { errorHandlers, mockPhishingResponse, mockLegitimateResponse } from '../mocks/handlers'
+import { errorHandlers } from '../mocks/handlers'
 
 const API_URL = 'https://phishguard-api-production-88df.up.railway.app'
 
