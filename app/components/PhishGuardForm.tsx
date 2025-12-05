@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Label } from '@/components/ui/label'
-import { AlertCircle, CheckCircle, Loader2, Shield, Sparkles, Flag } from 'lucide-react'
+import { AlertCircle, CheckCircle, Loader2, Shield, Sparkles, Flag, Brain } from 'lucide-react'
+import { AttentionVisualization } from './AttentionVisualization'
 
 interface PhishingResult {
   classification: string
@@ -83,6 +84,7 @@ export function PhishGuardForm() {
   const [result, setResult] = useState<PhishingResult | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [feedbackSent, setFeedbackSent] = useState(false)
+  const [showAttention, setShowAttention] = useState(false)
 
   const handleFeedback = async (reportType: 'false_positive' | 'false_negative') => {
     if (!result || feedbackSent) return
@@ -112,6 +114,7 @@ export function PhishGuardForm() {
     setError(null)
     setResult(null)
     setFeedbackSent(false)
+    setShowAttention(false)
 
     try {
       const response = await fetch('https://phishguard-api-production-88df.up.railway.app/classify', {
@@ -284,6 +287,20 @@ export function PhishGuardForm() {
               </div>
             )}
 
+            {/* Explain Decision Button */}
+            {!showAttention && (
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => setShowAttention(true)}
+                className="w-full mt-2"
+              >
+                <Brain className="h-4 w-4 mr-2" />
+                Explain Decision (Transformer AI)
+              </Button>
+            )}
+
             {/* Feedback buttons */}
             <div className="flex items-center justify-between pt-2 border-t border-border">
               <span className="text-xs text-muted-foreground">
@@ -305,6 +322,14 @@ export function PhishGuardForm() {
               )}
             </div>
           </div>
+        )}
+
+        {/* Attention Visualization */}
+        {result && showAttention && (
+          <AttentionVisualization
+            emailText={emailText}
+            onClose={() => setShowAttention(false)}
+          />
         )}
       </CardContent>
     </Card>
