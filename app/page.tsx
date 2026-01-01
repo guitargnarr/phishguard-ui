@@ -62,12 +62,12 @@ export default function Home() {
             <ApiStatus />
           </div>
         </div>
-      </div>
+      </main>
 
       {/* Value Proposition */}
-      <div className="bg-slate-800/50 py-16 px-4">
+      <section aria-labelledby="value-proposition-heading" className="bg-slate-800/50 py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          <h2 id="value-proposition-heading" className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
             Why Enterprise Teams Choose PhishGuard
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -85,12 +85,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Contact Form */}
-      <div className="py-16 px-4" id="contact">
+      <section aria-labelledby="contact-heading" className="py-16 px-4" id="contact">
         <div className="max-w-xl mx-auto text-center space-y-8">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          <h2 id="contact-heading" className="text-3xl font-bold bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
             Request Enterprise Demo
           </h2>
           <p className="text-slate-300">
@@ -98,7 +98,7 @@ export default function Home() {
           </p>
           <ContactForm />
         </div>
-      </div>
+      </section>
 
       {/* Footer - mobile optimized with proper touch targets */}
       <footer className="border-t border-slate-700 py-8 px-4">
