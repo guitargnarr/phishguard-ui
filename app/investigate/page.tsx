@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { Shield, AlertTriangle, MapPin, ChevronDown, ChevronUp } from "lucide-react";
+import { useState, useMemo, useRef } from "react";
+import { Shield, AlertTriangle, Map as MapIcon, GitFork } from "lucide-react";
 import type { GraphResponse, GraphNode, NodeType } from "@/lib/graph-types";
 import { buildGraph } from "@/lib/phishguard-api";
 import { enrichPhone, getStateStats } from "@/lib/geo-utils";
@@ -9,7 +9,9 @@ import ForceGraph from "./components/ForceGraph";
 import NodeDetail from "./components/NodeDetail";
 import MessageInput from "./components/MessageInput";
 import GraphControls from "./components/GraphControls";
-import GeoMap from "./components/GeoMap";
+import InteractiveMap from "./components/InteractiveMap";
+import MapControls from "./components/MapControls";
+import type { InteractiveMapHandle } from "./components/InteractiveMap";
 
 export default function InvestigatePage() {
   const [graphData, setGraphData] = useState<GraphResponse | null>(null);
@@ -17,12 +19,17 @@ export default function InvestigatePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Viz mode: map (primary) or graph (secondary)
+  const [vizMode, setVizMode] = useState<"map" | "graph">("map");
+  const [selectedState, setSelectedState] = useState<string | null>(null);
+  const [isTilted, setIsTilted] = useState(false);
+
+  const mapRef = useRef<InteractiveMapHandle>(null);
+
   const selectedNode = useMemo(() => {
     if (!graphData || !selectedNodeId) return null;
     return graphData.nodes.find((n) => n.id === selectedNodeId) || null;
   }, [graphData, selectedNodeId]);
-
-  const [geoExpanded, setGeoExpanded] = useState(false);
 
   const activeTypes = useMemo(() => {
     if (!graphData) return new Set<NodeType>();
@@ -74,6 +81,14 @@ export default function InvestigatePage() {
     setSelectedNodeId(nodeId === selectedNodeId ? null : nodeId);
   }
 
+  function handleStateClick(stateAbbr: string) {
+    if (!stateAbbr) {
+      setSelectedState(null);
+      return;
+    }
+    setSelectedState(stateAbbr === selectedState ? null : stateAbbr);
+  }
+
   return (
     <div className="h-screen flex flex-col bg-[#050505]">
       {/* Top bar */}
@@ -119,10 +134,41 @@ export default function InvestigatePage() {
           <MessageInput onSubmit={handleSubmit} loading={loading} />
         </aside>
 
-        {/* Center - Graph */}
+        {/* Center - Visualization */}
         <main className="flex-1 flex flex-col min-w-0">
-          {/* Graph area */}
-          <div className="flex-1 relative min-h-0">
+          {/* Tab bar */}
+          <div className="flex items-center gap-1 px-3 py-1.5 border-b border-[#1a1a1a] bg-[#050505]">
+            <TabButton
+              active={vizMode === "map"}
+              onClick={() => setVizMode("map")}
+              icon={<MapIcon className="w-3 h-3" />}
+              label="Map"
+            />
+            <TabButton
+              active={vizMode === "graph"}
+              onClick={() => setVizMode("graph")}
+              icon={<GitFork className="w-3 h-3" />}
+              label="Graph"
+            />
+            {vizMode === "map" && stateStats.size > 0 && (
+              <span className="ml-auto text-[10px] text-[#4a4540]">
+                <span className="text-[#e67e22]">{stateStats.size}</span> states
+              </span>
+            )}
+          </div>
+
+          {/* Viz area */}
+          <div
+            className="flex-1 relative min-h-0"
+            style={
+              vizMode === "map" && isTilted
+                ? {
+                    transform: "perspective(1200px) rotateX(20deg)",
+                    transformOrigin: "center center",
+                  }
+                : undefined
+            }
+          >
             {error && (
               <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-xs">
                 <AlertTriangle className="w-3.5 h-3.5" />
@@ -130,7 +176,15 @@ export default function InvestigatePage() {
               </div>
             )}
 
-            {graphData ? (
+            {vizMode === "map" ? (
+              <InteractiveMap
+                ref={mapRef}
+                stateStats={stateStats}
+                graphData={graphData}
+                onStateClick={handleStateClick}
+                selectedState={selectedState}
+              />
+            ) : graphData ? (
               <ForceGraph
                 data={graphData}
                 onNodeClick={handleNodeClick}
@@ -141,44 +195,36 @@ export default function InvestigatePage() {
             )}
           </div>
 
-          {/* Geographic Intelligence */}
-          {graphData && stateStats.size > 0 && (
-            <div className="shrink-0">
-              <button
-                onClick={() => setGeoExpanded((v) => !v)}
-                className="w-full flex items-center gap-2 px-3 py-1.5 bg-[#0a0a0a] border-t border-[#1a1a1a] text-[10px] uppercase tracking-[0.15em] text-[#4a4540] hover:text-[#8a8580] transition-colors"
-              >
-                <MapPin className="w-3 h-3 text-[#e67e22]" />
-                <span>Geographic Intelligence</span>
-                <span className="text-[#e67e22] ml-1">
-                  {stateStats.size} state{stateStats.size !== 1 ? "s" : ""}
-                </span>
-                <span className="ml-auto">
-                  {geoExpanded ? (
-                    <ChevronDown className="w-3 h-3" />
-                  ) : (
-                    <ChevronUp className="w-3 h-3" />
-                  )}
-                </span>
-              </button>
-              {geoExpanded && (
-                <div className="h-[200px] bg-[#050505] border-t border-[#1a1a1a]">
-                  <GeoMap stateStats={stateStats} />
-                </div>
-              )}
-            </div>
-          )}
-
           {/* Bottom controls */}
-          {graphData && (
-            <div className="shrink-0">
+          <div className="shrink-0">
+            {vizMode === "map" ? (
+              <MapControls
+                stats={graphData?.stats || null}
+                pivotPoints={graphData?.pivot_points || []}
+                activeTypes={activeTypes}
+                stateStats={stateStats}
+                onZoomIn={() => mapRef.current?.zoomIn()}
+                onZoomOut={() => mapRef.current?.zoomOut()}
+                onReset={() => {
+                  mapRef.current?.resetZoom();
+                  setSelectedState(null);
+                }}
+                onToggleTilt={() => setIsTilted((v) => !v)}
+                isTilted={isTilted}
+                selectedState={selectedState}
+                onClearState={() => {
+                  setSelectedState(null);
+                  mapRef.current?.resetZoom();
+                }}
+              />
+            ) : graphData ? (
               <GraphControls
                 stats={graphData.stats}
                 pivotPoints={graphData.pivot_points}
                 activeTypes={activeTypes}
               />
-            </div>
-          )}
+            ) : null}
+          </div>
         </main>
 
         {/* Right panel - Node Detail */}
@@ -196,6 +242,36 @@ export default function InvestigatePage() {
     </div>
   );
 }
+
+// ── Tab Button ──────────────────────────────────────────────────────────
+
+function TabButton({
+  active,
+  onClick,
+  icon,
+  label,
+}: {
+  active: boolean;
+  onClick: () => void;
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`flex items-center gap-1.5 px-3 py-1 rounded text-[11px] font-medium transition-colors ${
+        active
+          ? "bg-[#14b8a6]/10 text-[#14b8a6] border border-[#14b8a6]/20"
+          : "text-[#4a4540] hover:text-[#8a8580] border border-transparent"
+      }`}
+    >
+      {icon}
+      {label}
+    </button>
+  );
+}
+
+// ── Empty State ─────────────────────────────────────────────────────────
 
 function EmptyState({ loading }: { loading: boolean }) {
   return (
@@ -231,6 +307,8 @@ function EmptyState({ loading }: { loading: boolean }) {
     </div>
   );
 }
+
+// ── Demo Data ───────────────────────────────────────────────────────────
 
 /** Demo data for when backend is unavailable */
 function getDemoData(
