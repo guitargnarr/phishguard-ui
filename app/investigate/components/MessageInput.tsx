@@ -31,42 +31,57 @@ export default function MessageInput({ onSubmit, loading }: MessageInputProps) {
   const [phones, setPhones] = useState("");
   const [emails, setEmails] = useState("");
   const [enrich, setEnrich] = useState(true);
+  const [extractionError, setExtractionError] = useState<string | null>(null);
+
+  function extractArtifactsFromText(text: string) {
+    const urlRegex = /https?:\/\/[^\s<>"{}|\\^`\[\]]+/gi;
+    const domainRegex = /[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.(?:com|net|org|xyz|io|co|info|biz|me|us|uk|de|fr|ru|cn|app|dev|tech|online|site|store|shop|cloud|pro|tv|cc|gg|tk|ml|ga|cf|gq|pw|top|win|bid|loan|work|click|link|review|stream|download|racing|trade|date|party|science|cricket|faith|accountant|webcam)\b/gi;
+    const phoneRegex = /(?:\+?1[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}/g;
+    const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+
+    const urls = text.match(urlRegex) || [];
+    const extractedDomains = [
+      ...new Set([
+        ...urls.map((u) => {
+          try {
+            return new URL(u).hostname;
+          } catch {
+            return "";
+          }
+        }).filter(Boolean),
+        ...(text.match(domainRegex) || []).map((d) => d.trim()),
+      ]),
+    ];
+
+    const extractedPhones = [...new Set(
+      (text.match(phoneRegex) || []).map((p) => p.replace(/[^+\d]/g, ""))
+    )];
+    const extractedEmails = [...new Set(text.match(emailRegex) || [])];
+
+    return { domains: extractedDomains, phones: extractedPhones, emails: extractedEmails };
+  }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setExtractionError(null);
 
     if (mode === "message") {
-      // Extract artifacts from message text on the client side
-      // Backend will do proper extraction, but we need domains/phones/emails for the graph endpoint
-      const urlRegex = /https?:\/\/[^\s<>"{}|\\^`\[\]]+/gi;
-      const domainRegex = /(?:^|\s)([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.(?:[a-zA-Z]{2,}))/g;
-      const phoneRegex = /(?:\+?1[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}/g;
-      const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+      if (!message.trim()) {
+        setExtractionError("Paste a message to analyze.");
+        return;
+      }
 
-      const urls = message.match(urlRegex) || [];
-      const extractedDomains = [
-        ...new Set([
-          ...urls.map((u) => {
-            try {
-              return new URL(u).hostname;
-            } catch {
-              return "";
-            }
-          }).filter(Boolean),
-          ...(message.match(domainRegex) || []).map((d) => d.trim()),
-        ]),
-      ];
-
-      const extractedPhones = (message.match(phoneRegex) || []).map((p) =>
-        p.replace(/[^+\d]/g, "")
-      );
-      const extractedEmails = message.match(emailRegex) || [];
+      const { domains: extractedDomains, phones: extractedPhones, emails: extractedEmails } =
+        extractArtifactsFromText(message);
 
       if (
         extractedDomains.length === 0 &&
         extractedPhones.length === 0 &&
         extractedEmails.length === 0
       ) {
+        setExtractionError(
+          "No domains, phone numbers, or emails found in the text. Try pasting a scam message with URLs or contact info."
+        );
         return;
       }
 
@@ -154,12 +169,35 @@ Reply to support@att-verify-secure.com`;
           />
           <button
             type="button"
-            onClick={() => setMessage(sampleMessage)}
+            onClick={() => {
+              setMessage(sampleMessage);
+              setExtractionError(null);
+            }}
             className="self-start flex items-center gap-1.5 px-2 py-1 text-[10px] text-[#4a4540] hover:text-[#8a8580] transition-colors"
           >
             <AlertTriangle className="w-3 h-3" />
             Load sample scam
           </button>
+
+          {/* Extraction preview */}
+          {message.trim() && (() => {
+            const { domains: d, phones: p, emails: em } = extractArtifactsFromText(message);
+            const total = d.length + p.length + em.length;
+            if (total === 0) return null;
+            return (
+              <div className="text-[10px] text-[#4a4540] space-y-0.5 px-1">
+                {d.length > 0 && (
+                  <p><span className="text-[#3498db]">{d.length} domain{d.length > 1 ? "s" : ""}</span>: {d.join(", ")}</p>
+                )}
+                {p.length > 0 && (
+                  <p><span className="text-[#2ecc71]">{p.length} phone{p.length > 1 ? "s" : ""}</span>: {p.join(", ")}</p>
+                )}
+                {em.length > 0 && (
+                  <p><span className="text-[#9b59b6]">{em.length} email{em.length > 1 ? "s" : ""}</span>: {em.join(", ")}</p>
+                )}
+              </div>
+            );
+          })()}
         </div>
       ) : (
         <div className="flex-1 space-y-2">
@@ -220,6 +258,14 @@ Reply to support@att-verify-secure.com`;
           Deep enrichment (DNS + WHOIS + SSL)
         </span>
       </label>
+
+      {/* Extraction error */}
+      {extractionError && (
+        <div className="flex items-start gap-2 px-3 py-2 rounded-lg bg-[#e74c3c]/10 border border-[#e74c3c]/20 text-[#e74c3c] text-[11px] leading-relaxed">
+          <AlertTriangle className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+          {extractionError}
+        </div>
+      )}
 
       {/* Submit */}
       <button
