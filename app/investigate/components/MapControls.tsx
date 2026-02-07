@@ -48,14 +48,14 @@ export default function MapControls({
   onToggleOverlay,
 }: MapControlsProps) {
   return (
-    <div className="flex items-center justify-between px-4 py-2 border-t border-[#1a1a1a] bg-[#050505]/80 backdrop-blur-sm">
+    <div className="flex items-center justify-between px-4 py-2.5 border-t border-[#1a1a1a] bg-[#050505]/80 backdrop-blur-sm">
       {/* Left: Stats */}
       <div className="flex items-center gap-4">
         {stats ? (
           <>
             <div className="flex items-center gap-1.5">
               <Network className="w-3.5 h-3.5 text-[#4a4540]" />
-              <span className="text-[10px] text-[#8a8580]">
+              <span className="text-xs text-[#8a8580]">
                 <span className="text-[#f5f0eb] font-medium">
                   {stats.node_count}
                 </span>{" "}
@@ -63,7 +63,7 @@ export default function MapControls({
               </span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="text-[10px] text-[#8a8580]">
+              <span className="text-xs text-[#8a8580]">
                 <span className="text-[#f5f0eb] font-medium">
                   {stats.edge_count}
                 </span>{" "}
@@ -72,7 +72,7 @@ export default function MapControls({
             </div>
             <div className="flex items-center gap-1.5">
               <Layers className="w-3.5 h-3.5 text-[#4a4540]" />
-              <span className="text-[10px] text-[#8a8580]">
+              <span className="text-xs text-[#8a8580]">
                 <span className="text-[#f5f0eb] font-medium">
                   {stats.clusters}
                 </span>{" "}
@@ -82,7 +82,7 @@ export default function MapControls({
             {pivotPoints.length > 0 && (
               <div className="flex items-center gap-1.5">
                 <Target className="w-3.5 h-3.5 text-[#f39c12]" />
-                <span className="text-[10px] text-[#8a8580]">
+                <span className="text-xs text-[#8a8580]">
                   <span className="text-[#f5f0eb] font-medium">
                     {pivotPoints.length}
                   </span>{" "}
@@ -92,7 +92,7 @@ export default function MapControls({
             )}
           </>
         ) : (
-          <span className="text-[10px] text-[#4a4540]">No data loaded</span>
+          <span className="text-xs text-[#4a4540]">No data loaded</span>
         )}
       </div>
 
@@ -101,7 +101,7 @@ export default function MapControls({
         {stateStats.size > 0 && (
           <div className="flex items-center gap-1.5">
             <MapPin className="w-3 h-3 text-[#e67e22]" />
-            <span className="text-[10px] text-[#8a8580]">
+            <span className="text-xs text-[#8a8580]">
               <span className="text-[#e67e22] font-medium">
                 {stateStats.size}
               </span>{" "}
@@ -112,7 +112,7 @@ export default function MapControls({
         {selectedState && (
           <button
             onClick={onClearState}
-            className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#14b8a6]/10 border border-[#14b8a6]/20 text-[9px] text-[#14b8a6] hover:bg-[#14b8a6]/20 transition-colors"
+            className="flex items-center gap-1 px-2 py-0.5 rounded bg-[#14b8a6]/10 border border-[#14b8a6]/20 text-xs text-[#14b8a6] hover:bg-[#14b8a6]/20 transition-colors"
           >
             {selectedState}
             <X className="w-2.5 h-2.5" />
@@ -128,7 +128,7 @@ export default function MapControls({
             <button
               key={config.id}
               onClick={() => onToggleOverlay(config.id)}
-              className={`flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] font-medium border transition-colors ${
+              className={`flex items-center gap-1.5 px-2 py-1 rounded text-xs font-medium border transition-colors ${
                 active
                   ? "border-current/30 bg-current/10"
                   : "text-[#4a4540] border-transparent hover:text-[#8a8580] hover:bg-[#1a1a1a]"
@@ -137,7 +137,7 @@ export default function MapControls({
               title={config.description}
             >
               <span
-                className="w-1.5 h-1.5 rounded-full shrink-0"
+                className="w-2 h-2 rounded-full shrink-0"
                 style={{ backgroundColor: active ? config.color : "#4a4540" }}
               />
               {config.label}
@@ -156,7 +156,7 @@ export default function MapControls({
                 className="w-2 h-2 rounded-full"
                 style={{ backgroundColor: NODE_COLORS[type] }}
               />
-              <span className="text-[8px] text-[#4a4540]">
+              <span className="text-[10px] text-[#4a4540]">
                 {NODE_LABELS[type]}
               </span>
             </div>

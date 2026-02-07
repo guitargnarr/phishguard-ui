@@ -113,29 +113,29 @@ export default function InvestigatePage() {
             className="flex items-center gap-2 text-[#f5f0eb] hover:text-[#14b8a6] transition-colors"
           >
             <Shield className="w-5 h-5 text-[#14b8a6]" />
-            <span className="text-sm font-semibold tracking-tight">
+            <span className="text-base font-semibold tracking-tight">
               PhishGuard
             </span>
           </a>
           <div className="h-4 w-px bg-[#1a1a1a]" />
-          <span className="text-xs text-[#4a4540] uppercase tracking-[0.15em]">
+          <span className="text-xs text-[#4a4540] uppercase tracking-[0.15em] font-medium">
             Infrastructure Graph
           </span>
         </div>
         <nav className="flex items-center gap-4">
           <a
             href="/"
-            className="text-xs text-[#8a8580] hover:text-[#f5f0eb] transition-colors"
+            className="text-[13px] text-[#8a8580] hover:text-[#f5f0eb] transition-colors"
           >
             Home
           </a>
           <a
             href="/investigate"
-            className="text-xs text-[#14b8a6]"
+            className="text-[13px] text-[#14b8a6]"
           >
             Investigate
           </a>
-          <span className="text-xs text-[#4a4540] cursor-default" title="Coming soon">
+          <span className="text-[13px] text-[#4a4540] cursor-default" title="Coming soon">
             Intel
           </span>
         </nav>
@@ -165,8 +165,8 @@ export default function InvestigatePage() {
               label="Graph"
             />
             {vizMode === "map" && stateStats.size > 0 && (
-              <span className="ml-auto text-[10px] text-[#4a4540]">
-                <span className="text-[#e67e22]">{stateStats.size}</span> states
+              <span className="ml-auto text-xs text-[#4a4540]">
+                <span className="text-[#e67e22] font-medium">{stateStats.size}</span> states
               </span>
             )}
           </div>
@@ -276,7 +276,7 @@ function TabButton({
   return (
     <button
       onClick={onClick}
-      className={`flex items-center gap-1.5 px-3 py-1 rounded text-[11px] font-medium transition-colors ${
+      className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-[13px] font-medium transition-colors ${
         active
           ? "bg-[#14b8a6]/10 text-[#14b8a6] border border-[#14b8a6]/20"
           : "text-[#4a4540] hover:text-[#8a8580] border border-transparent"

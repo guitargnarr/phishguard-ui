@@ -131,14 +131,14 @@ Reply to support@att-verify-secure.com`;
   return (
     <form onSubmit={handleSubmit} className="h-full flex flex-col p-4 space-y-3">
       <div className="flex items-center justify-between">
-        <h2 className="text-xs uppercase tracking-[0.15em] text-[#8a8580] font-medium">
+        <h2 className="text-sm uppercase tracking-[0.15em] text-[#8a8580] font-medium">
           Investigate
         </h2>
         <div className="flex rounded-lg border border-[#2a2a2a] overflow-hidden">
           <button
             type="button"
             onClick={() => setMode("message")}
-            className={`px-3 py-1 text-[10px] uppercase tracking-wider transition-colors ${
+            className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-colors ${
               mode === "message"
                 ? "bg-[#14b8a6]/15 text-[#14b8a6]"
                 : "text-[#4a4540] hover:text-[#8a8580]"
@@ -149,7 +149,7 @@ Reply to support@att-verify-secure.com`;
           <button
             type="button"
             onClick={() => setMode("artifacts")}
-            className={`px-3 py-1 text-[10px] uppercase tracking-wider transition-colors ${
+            className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-colors ${
               mode === "artifacts"
                 ? "bg-[#14b8a6]/15 text-[#14b8a6]"
                 : "text-[#4a4540] hover:text-[#8a8580]"
@@ -174,7 +174,7 @@ Reply to support@att-verify-secure.com`;
               setMessage(sampleMessage);
               setExtractionError(null);
             }}
-            className="self-start flex items-center gap-1.5 px-2 py-1 text-[10px] text-[#4a4540] hover:text-[#8a8580] transition-colors"
+            className="self-start flex items-center gap-1.5 px-2 py-1 text-xs text-[#4a4540] hover:text-[#8a8580] transition-colors"
           >
             <AlertTriangle className="w-3 h-3" />
             Load sample scam
@@ -186,7 +186,7 @@ Reply to support@att-verify-secure.com`;
             const total = d.length + p.length + em.length;
             if (total === 0) return null;
             return (
-              <div className="text-[10px] text-[#4a4540] space-y-0.5 px-1">
+              <div className="text-xs text-[#4a4540] space-y-0.5 px-1">
                 {d.length > 0 && (
                   <p><span className="text-[#3498db]">{d.length} domain{d.length > 1 ? "s" : ""}</span>: {d.join(", ")}</p>
                 )}
@@ -203,7 +203,7 @@ Reply to support@att-verify-secure.com`;
       ) : (
         <div className="flex-1 space-y-2">
           <div>
-            <label className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.15em] text-[#4a4540] mb-1">
+            <label className="flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] text-[#4a4540] mb-1">
               <Globe className="w-3 h-3" />
               Domains
             </label>
@@ -215,7 +215,7 @@ Reply to support@att-verify-secure.com`;
             />
           </div>
           <div>
-            <label className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.15em] text-[#4a4540] mb-1">
+            <label className="flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] text-[#4a4540] mb-1">
               <Phone className="w-3 h-3" />
               Phone Numbers
             </label>
@@ -227,7 +227,7 @@ Reply to support@att-verify-secure.com`;
             />
           </div>
           <div>
-            <label className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.15em] text-[#4a4540] mb-1">
+            <label className="flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] text-[#4a4540] mb-1">
               <Mail className="w-3 h-3" />
               Email Addresses
             </label>
@@ -255,14 +255,14 @@ Reply to support@att-verify-secure.com`;
             }`}
           />
         </div>
-        <span className="text-[10px] text-[#8a8580] group-hover:text-[#f5f0eb] transition-colors">
+        <span className="text-xs text-[#8a8580] group-hover:text-[#f5f0eb] transition-colors">
           Deep enrichment (DNS + WHOIS + SSL)
         </span>
       </label>
 
       {/* Extraction error */}
       {extractionError && (
-        <div className="flex items-start gap-2 px-3 py-2 rounded-lg bg-[#e74c3c]/10 border border-[#e74c3c]/20 text-[#e74c3c] text-[11px] leading-relaxed">
+        <div className="flex items-start gap-2 px-3 py-2 rounded-lg bg-[#e74c3c]/10 border border-[#e74c3c]/20 text-[#e74c3c] text-xs leading-relaxed">
           <AlertTriangle className="w-3.5 h-3.5 mt-0.5 shrink-0" />
           {extractionError}
         </div>
