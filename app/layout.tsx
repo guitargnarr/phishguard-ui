@@ -1,30 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-// Next.js 15+ requires viewport as separate export
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#0f172a",
+  themeColor: "#050505",
 };
 
 export const metadata: Metadata = {
-  title: "PhishGuard - ML-Powered Email Security | 87% Accuracy",
-  description: "Production ML phishing detector: 2,039 features, <15ms response, 87% accuracy. Local-first architecture for privacy-sensitive organizations.",
+  title: "PhishGuard - Threat Intelligence & Infrastructure Mapping",
+  description:
+    "Map scam infrastructure graphs. Reveal connections between domains, IPs, registrants, and SSL certificates that expose coordinated phishing operations.",
   metadataBase: new URL("https://phishguard.projectlavos.com"),
   alternates: {
     canonical: "/",
@@ -34,8 +23,9 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "PhishGuard - ML-Powered Email Security | 87% Detection Accuracy",
-    description: "Production ML phishing detector: 2,039 features, <15ms response, 87% accuracy. Local-first architecture for privacy-sensitive organizations.",
+    title: "PhishGuard - Threat Intelligence & Infrastructure Mapping",
+    description:
+      "Map scam infrastructure graphs. Reveal connections between domains, IPs, registrants, and SSL certificates that expose coordinated phishing operations.",
     url: "https://phishguard.projectlavos.com",
     siteName: "PhishGuard",
     images: [
@@ -43,7 +33,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "PhishGuard - ML-Powered Email Security",
+        alt: "PhishGuard - Threat Intelligence Graph",
       },
     ],
     type: "website",
@@ -51,8 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PhishGuard - ML-Powered Email Security | 87% Accuracy",
-    description: "Production ML phishing detector: 2,039 features, <15ms response, 87% accuracy.",
+    title: "PhishGuard - Threat Intelligence & Infrastructure Mapping",
+    description:
+      "Map scam infrastructure graphs. Reveal connections between phishing domains, IPs, and certificates.",
     images: ["/og-image.png"],
   },
 };
@@ -60,35 +51,31 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "PhishGuard",
-  "applicationCategory": "SecurityApplication",
-  "operatingSystem": "Web",
-  "offers": {
+  name: "PhishGuard",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Web",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "description": "ML-powered phishing detection with 87% accuracy, analyzing 2,039 features in under 15ms",
-  "url": "https://phishguard.projectlavos.com",
-  "image": "https://phishguard.projectlavos.com/og-image.png",
-  "author": {
+  description:
+    "Threat intelligence platform that maps scam infrastructure graphs, revealing phishing campaign connections through DNS, WHOIS, and SSL analysis.",
+  url: "https://phishguard.projectlavos.com",
+  image: "https://phishguard.projectlavos.com/og-image.png",
+  author: {
     "@type": "Person",
-    "name": "Matthew Scott",
-    "url": "https://projectlavos.com"
+    name: "Matthew Scott",
+    url: "https://projectlavos.com",
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.5",
-    "ratingCount": "1",
-    "bestRating": "5"
-  },
-  "featureList": [
-    "87% detection accuracy",
-    "2,039 ML features analyzed",
-    "Sub-15ms response time",
-    "Local-first architecture",
-    "Pattern analysis for sender, urgency, and links"
-  ]
+  featureList: [
+    "Infrastructure graph mapping",
+    "DNS, WHOIS, SSL enrichment",
+    "Campaign clustering",
+    "Pivot point detection",
+    "ML-powered email classification",
+    "Risk scoring (0-100)",
+  ],
 };
 
 export default function RootLayout({
@@ -99,15 +86,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased bg-[#050505] text-[#f5f0eb]">
         {children}
+        <div className="noise-overlay" aria-hidden="true" />
         <Analytics />
         <SpeedInsights />
       </body>

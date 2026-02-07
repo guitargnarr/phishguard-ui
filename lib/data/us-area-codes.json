@@ -1,0 +1,6113 @@
+{
+  "metadata": {
+    "description": "US area codes mapped by state with city/region coverage",
+    "source": "bennetyee.org/ucsd-pages/area.html + supplemental sources",
+    "generated": "2026-02-07",
+    "total_area_codes": 336,
+    "total_states": 56,
+    "us_states_count": 50,
+    "territories_count": 5
+  },
+  "by_state": {
+    "AL": {
+      "name": "Alabama",
+      "area_codes": [
+        {
+          "code": "205",
+          "region": "Central Alabama",
+          "major_cities": [
+            "Birmingham"
+          ]
+        },
+        {
+          "code": "251",
+          "region": "Southern Alabama",
+          "major_cities": [
+            "Mobile"
+          ]
+        },
+        {
+          "code": "256",
+          "region": "Eastern and Northern Alabama",
+          "major_cities": [
+            "Huntsville",
+            "Decatur"
+          ]
+        },
+        {
+          "code": "334",
+          "region": "Southern Alabama",
+          "major_cities": [
+            "Montgomery",
+            "Auburn",
+            "Dothan"
+          ]
+        },
+        {
+          "code": "938",
+          "region": "Northern Alabama",
+          "major_cities": [
+            "Huntsville"
+          ]
+        }
+      ]
+    },
+    "AK": {
+      "name": "Alaska",
+      "area_codes": [
+        {
+          "code": "907",
+          "region": "All of Alaska",
+          "major_cities": [
+            "Anchorage",
+            "Fairbanks",
+            "Juneau"
+          ]
+        }
+      ]
+    },
+    "AZ": {
+      "name": "Arizona",
+      "area_codes": [
+        {
+          "code": "480",
+          "region": "East Phoenix Metro",
+          "major_cities": [
+            "Scottsdale",
+            "Mesa",
+            "Tempe",
+            "Chandler"
+          ]
+        },
+        {
+          "code": "520",
+          "region": "Southeastern Arizona",
+          "major_cities": [
+            "Tucson",
+            "Sierra Vista"
+          ]
+        },
+        {
+          "code": "602",
+          "region": "Central Phoenix",
+          "major_cities": [
+            "Phoenix"
+          ]
+        },
+        {
+          "code": "623",
+          "region": "West Phoenix Metro",
+          "major_cities": [
+            "Glendale",
+            "Peoria",
+            "Surprise"
+          ]
+        },
+        {
+          "code": "928",
+          "region": "Central and Northern Arizona",
+          "major_cities": [
+            "Flagstaff",
+            "Prescott",
+            "Yuma"
+          ]
+        }
+      ]
+    },
+    "AR": {
+      "name": "Arkansas",
+      "area_codes": [
+        {
+          "code": "479",
+          "region": "Northwestern Arkansas",
+          "major_cities": [
+            "Fayetteville",
+            "Fort Smith",
+            "Bentonville"
+          ]
+        },
+        {
+          "code": "501",
+          "region": "Central Arkansas",
+          "major_cities": [
+            "Little Rock",
+            "North Little Rock",
+            "Conway"
+          ]
+        },
+        {
+          "code": "870",
+          "region": "Eastern and Southern Arkansas",
+          "major_cities": [
+            "Jonesboro",
+            "Pine Bluff",
+            "Texarkana"
+          ]
+        }
+      ]
+    },
+    "CA": {
+      "name": "California",
+      "area_codes": [
+        {
+          "code": "209",
+          "region": "Central California",
+          "major_cities": [
+            "Stockton",
+            "Modesto",
+            "Tracy"
+          ]
+        },
+        {
+          "code": "213",
+          "region": "Downtown Los Angeles",
+          "major_cities": [
+            "Los Angeles"
+          ]
+        },
+        {
+          "code": "310",
+          "region": "West Los Angeles",
+          "major_cities": [
+            "Beverly Hills",
+            "Santa Monica",
+            "Malibu"
+          ]
+        },
+        {
+          "code": "323",
+          "region": "Central Los Angeles",
+          "major_cities": [
+            "Los Angeles",
+            "Hollywood"
+          ]
+        },
+        {
+          "code": "369",
+          "region": "Solano County",
+          "major_cities": [
+            "Vallejo",
+            "Fairfield"
+          ]
+        },
+        {
+          "code": "408",
+          "region": "Central Coastal California",
+          "major_cities": [
+            "San Jose",
+            "Sunnyvale",
+            "Santa Clara"
+          ]
+        },
+        {
+          "code": "415",
+          "region": "San Francisco",
+          "major_cities": [
+            "San Francisco",
+            "Marin County"
+          ]
+        },
+        {
+          "code": "424",
+          "region": "West Los Angeles overlay",
+          "major_cities": [
+            "Los Angeles"
+          ]
+        },
+        {
+          "code": "442",
+          "region": "San Diego North County",
+          "major_cities": [
+            "Oceanside",
+            "Escondido",
+            "Carlsbad"
+          ]
+        },
+        {
+          "code": "510",
+          "region": "East Bay",
+          "major_cities": [
+            "Oakland",
+            "Berkeley",
+            "Fremont"
+          ]
+        },
+        {
+          "code": "530",
+          "region": "Northeastern California",
+          "major_cities": [
+            "Chico",
+            "Redding",
+            "Davis"
+          ]
+        },
+        {
+          "code": "559",
+          "region": "Central Valley",
+          "major_cities": [
+            "Fresno",
+            "Visalia",
+            "Clovis"
+          ]
+        },
+        {
+          "code": "562",
+          "region": "Southeast Los Angeles County",
+          "major_cities": [
+            "Long Beach",
+            "Downey",
+            "Lakewood"
+          ]
+        },
+        {
+          "code": "619",
+          "region": "San Diego Central",
+          "major_cities": [
+            "San Diego",
+            "Chula Vista",
+            "El Cajon"
+          ]
+        },
+        {
+          "code": "626",
+          "region": "San Gabriel Valley",
+          "major_cities": [
+            "Pasadena",
+            "Arcadia",
+            "Alhambra"
+          ]
+        },
+        {
+          "code": "628",
+          "region": "San Francisco overlay",
+          "major_cities": [
+            "San Francisco"
+          ]
+        },
+        {
+          "code": "650",
+          "region": "Peninsula",
+          "major_cities": [
+            "San Mateo",
+            "Palo Alto",
+            "Redwood City"
+          ]
+        },
+        {
+          "code": "657",
+          "region": "Northern Orange County",
+          "major_cities": [
+            "Anaheim",
+            "Fullerton"
+          ]
+        },
+        {
+          "code": "661",
+          "region": "North Los Angeles / Kern County",
+          "major_cities": [
+            "Bakersfield",
+            "Lancaster",
+            "Palmdale"
+          ]
+        },
+        {
+          "code": "669",
+          "region": "Central Coastal California overlay",
+          "major_cities": [
+            "San Jose"
+          ]
+        },
+        {
+          "code": "707",
+          "region": "Northwestern California",
+          "major_cities": [
+            "Santa Rosa",
+            "Napa",
+            "Eureka"
+          ]
+        },
+        {
+          "code": "714",
+          "region": "Northern Orange County",
+          "major_cities": [
+            "Anaheim",
+            "Santa Ana",
+            "Huntington Beach"
+          ]
+        },
+        {
+          "code": "747",
+          "region": "San Fernando Valley overlay",
+          "major_cities": [
+            "Burbank",
+            "Glendale"
+          ]
+        },
+        {
+          "code": "760",
+          "region": "Inland Empire / North San Diego",
+          "major_cities": [
+            "Palm Springs",
+            "Oceanside",
+            "Victorville"
+          ]
+        },
+        {
+          "code": "805",
+          "region": "South Central Coast",
+          "major_cities": [
+            "Ventura",
+            "Santa Barbara",
+            "San Luis Obispo"
+          ]
+        },
+        {
+          "code": "818",
+          "region": "San Fernando Valley",
+          "major_cities": [
+            "Burbank",
+            "Glendale",
+            "Van Nuys"
+          ]
+        },
+        {
+          "code": "831",
+          "region": "Central Coast",
+          "major_cities": [
+            "Salinas",
+            "Monterey",
+            "Santa Cruz"
+          ]
+        },
+        {
+          "code": "858",
+          "region": "North San Diego",
+          "major_cities": [
+            "San Diego",
+            "La Jolla",
+            "Poway"
+          ]
+        },
+        {
+          "code": "909",
+          "region": "Inland Empire West",
+          "major_cities": [
+            "San Bernardino",
+            "Ontario",
+            "Rancho Cucamonga"
+          ]
+        },
+        {
+          "code": "916",
+          "region": "Sacramento",
+          "major_cities": [
+            "Sacramento",
+            "Elk Grove",
+            "Roseville"
+          ]
+        },
+        {
+          "code": "925",
+          "region": "Contra Costa County",
+          "major_cities": [
+            "Concord",
+            "Walnut Creek",
+            "Antioch"
+          ]
+        },
+        {
+          "code": "949",
+          "region": "Southern Orange County",
+          "major_cities": [
+            "Irvine",
+            "Newport Beach",
+            "Mission Viejo"
+          ]
+        },
+        {
+          "code": "951",
+          "region": "Western Riverside County",
+          "major_cities": [
+            "Riverside",
+            "Corona",
+            "Temecula"
+          ]
+        }
+      ]
+    },
+    "CO": {
+      "name": "Colorado",
+      "area_codes": [
+        {
+          "code": "303",
+          "region": "Central Colorado",
+          "major_cities": [
+            "Denver",
+            "Boulder",
+            "Lakewood"
+          ]
+        },
+        {
+          "code": "719",
+          "region": "Southeastern Colorado",
+          "major_cities": [
+            "Colorado Springs",
+            "Pueblo"
+          ]
+        },
+        {
+          "code": "720",
+          "region": "Central Colorado overlay",
+          "major_cities": [
+            "Denver",
+            "Aurora"
+          ]
+        },
+        {
+          "code": "748",
+          "region": "Northern and Western Colorado",
+          "major_cities": [
+            "Fort Collins",
+            "Grand Junction"
+          ]
+        },
+        {
+          "code": "970",
+          "region": "Northern and Western Colorado",
+          "major_cities": [
+            "Fort Collins",
+            "Grand Junction",
+            "Steamboat Springs"
+          ]
+        },
+        {
+          "code": "983",
+          "region": "Central Colorado overlay",
+          "major_cities": [
+            "Denver"
+          ]
+        }
+      ]
+    },
+    "CT": {
+      "name": "Connecticut",
+      "area_codes": [
+        {
+          "code": "203",
+          "region": "Southwestern Connecticut",
+          "major_cities": [
+            "New Haven",
+            "Bridgeport",
+            "Stamford"
+          ]
+        },
+        {
+          "code": "475",
+          "region": "Southwestern Connecticut overlay",
+          "major_cities": [
+            "New Haven",
+            "Greenwich"
+          ]
+        },
+        {
+          "code": "860",
+          "region": "Eastern Connecticut",
+          "major_cities": [
+            "Hartford",
+            "New London",
+            "Norwich"
+          ]
+        },
+        {
+          "code": "959",
+          "region": "Eastern Connecticut overlay",
+          "major_cities": [
+            "Hartford",
+            "New London"
+          ]
+        }
+      ]
+    },
+    "DE": {
+      "name": "Delaware",
+      "area_codes": [
+        {
+          "code": "302",
+          "region": "All of Delaware",
+          "major_cities": [
+            "Wilmington",
+            "Dover",
+            "Newark"
+          ]
+        }
+      ]
+    },
+    "DC": {
+      "name": "District of Columbia",
+      "area_codes": [
+        {
+          "code": "202",
+          "region": "Washington, D.C.",
+          "major_cities": [
+            "Washington"
+          ]
+        },
+        {
+          "code": "771",
+          "region": "Washington, D.C. overlay",
+          "major_cities": [
+            "Washington"
+          ]
+        }
+      ]
+    },
+    "FL": {
+      "name": "Florida",
+      "area_codes": [
+        {
+          "code": "239",
+          "region": "Southwest Florida",
+          "major_cities": [
+            "Fort Myers",
+            "Naples",
+            "Cape Coral"
+          ]
+        },
+        {
+          "code": "305",
+          "region": "Southeast Florida",
+          "major_cities": [
+            "Miami",
+            "Key West",
+            "Homestead"
+          ]
+        },
+        {
+          "code": "321",
+          "region": "Central East Florida",
+          "major_cities": [
+            "Melbourne",
+            "Cape Canaveral",
+            "Titusville"
+          ]
+        },
+        {
+          "code": "352",
+          "region": "North Central Florida",
+          "major_cities": [
+            "Gainesville",
+            "Ocala"
+          ]
+        },
+        {
+          "code": "386",
+          "region": "North Central Florida",
+          "major_cities": [
+            "Daytona Beach",
+            "Lake City"
+          ]
+        },
+        {
+          "code": "407",
+          "region": "Central Florida",
+          "major_cities": [
+            "Orlando",
+            "Kissimmee",
+            "Winter Park"
+          ]
+        },
+        {
+          "code": "561",
+          "region": "Southeast Florida",
+          "major_cities": [
+            "West Palm Beach",
+            "Boca Raton",
+            "Boynton Beach"
+          ]
+        },
+        {
+          "code": "689",
+          "region": "Central Florida overlay",
+          "major_cities": [
+            "Orlando"
+          ]
+        },
+        {
+          "code": "727",
+          "region": "Tampa Bay West",
+          "major_cities": [
+            "St. Petersburg",
+            "Clearwater"
+          ]
+        },
+        {
+          "code": "754",
+          "region": "Broward County overlay",
+          "major_cities": [
+            "Fort Lauderdale"
+          ]
+        },
+        {
+          "code": "772",
+          "region": "Treasure Coast",
+          "major_cities": [
+            "Port St. Lucie",
+            "Vero Beach"
+          ]
+        },
+        {
+          "code": "786",
+          "region": "Southeast Florida overlay",
+          "major_cities": [
+            "Miami"
+          ]
+        },
+        {
+          "code": "813",
+          "region": "Tampa Metro",
+          "major_cities": [
+            "Tampa",
+            "Brandon"
+          ]
+        },
+        {
+          "code": "850",
+          "region": "Florida Panhandle",
+          "major_cities": [
+            "Tallahassee",
+            "Pensacola",
+            "Panama City"
+          ]
+        },
+        {
+          "code": "863",
+          "region": "Central Florida",
+          "major_cities": [
+            "Lakeland",
+            "Winter Haven",
+            "Sebring"
+          ]
+        },
+        {
+          "code": "904",
+          "region": "Northeast Florida",
+          "major_cities": [
+            "Jacksonville",
+            "St. Augustine"
+          ]
+        },
+        {
+          "code": "941",
+          "region": "Southwest Florida",
+          "major_cities": [
+            "Sarasota",
+            "Bradenton",
+            "Port Charlotte"
+          ]
+        },
+        {
+          "code": "954",
+          "region": "Broward County",
+          "major_cities": [
+            "Fort Lauderdale",
+            "Hollywood",
+            "Pembroke Pines"
+          ]
+        }
+      ]
+    },
+    "GA": {
+      "name": "Georgia",
+      "area_codes": [
+        {
+          "code": "229",
+          "region": "Southwestern Georgia",
+          "major_cities": [
+            "Albany",
+            "Valdosta"
+          ]
+        },
+        {
+          "code": "404",
+          "region": "Atlanta Metro",
+          "major_cities": [
+            "Atlanta"
+          ]
+        },
+        {
+          "code": "470",
+          "region": "Greater Atlanta overlay",
+          "major_cities": [
+            "Atlanta"
+          ]
+        },
+        {
+          "code": "478",
+          "region": "Central Georgia",
+          "major_cities": [
+            "Macon",
+            "Warner Robins"
+          ]
+        },
+        {
+          "code": "678",
+          "region": "Atlanta Metro overlay",
+          "major_cities": [
+            "Atlanta",
+            "Marietta"
+          ]
+        },
+        {
+          "code": "706",
+          "region": "Northern Georgia",
+          "major_cities": [
+            "Augusta",
+            "Columbus",
+            "Athens"
+          ]
+        },
+        {
+          "code": "762",
+          "region": "Northern Georgia overlay",
+          "major_cities": [
+            "Columbus",
+            "Augusta"
+          ]
+        },
+        {
+          "code": "770",
+          "region": "Atlanta Suburbs",
+          "major_cities": [
+            "Roswell",
+            "Alpharetta",
+            "Lawrenceville"
+          ]
+        },
+        {
+          "code": "912",
+          "region": "Southeastern Georgia",
+          "major_cities": [
+            "Savannah",
+            "Brunswick"
+          ]
+        }
+      ]
+    },
+    "HI": {
+      "name": "Hawaii",
+      "area_codes": [
+        {
+          "code": "808",
+          "region": "All of Hawaii",
+          "major_cities": [
+            "Honolulu",
+            "Hilo",
+            "Kailua"
+          ]
+        }
+      ]
+    },
+    "ID": {
+      "name": "Idaho",
+      "area_codes": [
+        {
+          "code": "208",
+          "region": "All of Idaho",
+          "major_cities": [
+            "Boise",
+            "Idaho Falls",
+            "Nampa"
+          ]
+        },
+        {
+          "code": "986",
+          "region": "Idaho overlay",
+          "major_cities": [
+            "Boise"
+          ]
+        }
+      ]
+    },
+    "IL": {
+      "name": "Illinois",
+      "area_codes": [
+        {
+          "code": "217",
+          "region": "Central Illinois",
+          "major_cities": [
+            "Springfield",
+            "Champaign",
+            "Decatur"
+          ]
+        },
+        {
+          "code": "224",
+          "region": "Northern Illinois overlay",
+          "major_cities": [
+            "Evanston",
+            "Waukegan",
+            "Arlington Heights"
+          ]
+        },
+        {
+          "code": "309",
+          "region": "West Central Illinois",
+          "major_cities": [
+            "Peoria",
+            "Bloomington"
+          ]
+        },
+        {
+          "code": "312",
+          "region": "Chicago Downtown (The Loop)",
+          "major_cities": [
+            "Chicago"
+          ]
+        },
+        {
+          "code": "331",
+          "region": "Western Chicago suburbs overlay",
+          "major_cities": [
+            "Aurora",
+            "Naperville"
+          ]
+        },
+        {
+          "code": "464",
+          "region": "Chicago south suburbs overlay",
+          "major_cities": [
+            "Chicago"
+          ]
+        },
+        {
+          "code": "618",
+          "region": "Southern Illinois",
+          "major_cities": [
+            "Belleville",
+            "Carbondale",
+            "East St. Louis"
+          ]
+        },
+        {
+          "code": "630",
+          "region": "Western Chicago Suburbs",
+          "major_cities": [
+            "Aurora",
+            "Naperville",
+            "Wheaton"
+          ]
+        },
+        {
+          "code": "708",
+          "region": "Chicago Suburbs",
+          "major_cities": [
+            "Cicero",
+            "Oak Lawn",
+            "Oak Park"
+          ]
+        },
+        {
+          "code": "773",
+          "region": "Chicago (outside Loop)",
+          "major_cities": [
+            "Chicago"
+          ]
+        },
+        {
+          "code": "779",
+          "region": "Northwestern Illinois overlay",
+          "major_cities": [
+            "Rockford"
+          ]
+        },
+        {
+          "code": "815",
+          "region": "Northwestern Illinois",
+          "major_cities": [
+            "Rockford",
+            "Joliet",
+            "DeKalb"
+          ]
+        },
+        {
+          "code": "847",
+          "region": "Northern Chicago Suburbs",
+          "major_cities": [
+            "Schaumburg",
+            "Evanston",
+            "Arlington Heights"
+          ]
+        },
+        {
+          "code": "872",
+          "region": "Chicago overlay",
+          "major_cities": [
+            "Chicago"
+          ]
+        }
+      ]
+    },
+    "IN": {
+      "name": "Indiana",
+      "area_codes": [
+        {
+          "code": "219",
+          "region": "Northwestern Indiana",
+          "major_cities": [
+            "Gary",
+            "Hammond",
+            "Michigan City"
+          ]
+        },
+        {
+          "code": "260",
+          "region": "Northeastern Indiana",
+          "major_cities": [
+            "Fort Wayne"
+          ]
+        },
+        {
+          "code": "317",
+          "region": "Central Indiana",
+          "major_cities": [
+            "Indianapolis",
+            "Carmel",
+            "Fishers"
+          ]
+        },
+        {
+          "code": "463",
+          "region": "Central Indiana overlay",
+          "major_cities": [
+            "Indianapolis"
+          ]
+        },
+        {
+          "code": "574",
+          "region": "Northern Indiana",
+          "major_cities": [
+            "South Bend",
+            "Elkhart",
+            "Mishawaka"
+          ]
+        },
+        {
+          "code": "765",
+          "region": "East Central Indiana",
+          "major_cities": [
+            "Muncie",
+            "Lafayette",
+            "Anderson"
+          ]
+        },
+        {
+          "code": "812",
+          "region": "Southern Indiana",
+          "major_cities": [
+            "Evansville",
+            "Bloomington",
+            "Terre Haute"
+          ]
+        },
+        {
+          "code": "930",
+          "region": "Southern Indiana overlay",
+          "major_cities": [
+            "Evansville"
+          ]
+        }
+      ]
+    },
+    "IA": {
+      "name": "Iowa",
+      "area_codes": [
+        {
+          "code": "319",
+          "region": "Eastern Iowa",
+          "major_cities": [
+            "Cedar Rapids",
+            "Iowa City",
+            "Waterloo"
+          ]
+        },
+        {
+          "code": "515",
+          "region": "Central Iowa",
+          "major_cities": [
+            "Des Moines",
+            "Ames"
+          ]
+        },
+        {
+          "code": "563",
+          "region": "Eastern Iowa",
+          "major_cities": [
+            "Davenport",
+            "Dubuque",
+            "Clinton"
+          ]
+        },
+        {
+          "code": "641",
+          "region": "Central Iowa",
+          "major_cities": [
+            "Mason City",
+            "Marshalltown"
+          ]
+        },
+        {
+          "code": "712",
+          "region": "Western Iowa",
+          "major_cities": [
+            "Council Bluffs",
+            "Sioux City"
+          ]
+        }
+      ]
+    },
+    "KS": {
+      "name": "Kansas",
+      "area_codes": [
+        {
+          "code": "316",
+          "region": "South Central Kansas",
+          "major_cities": [
+            "Wichita"
+          ]
+        },
+        {
+          "code": "620",
+          "region": "Southern Kansas",
+          "major_cities": [
+            "Hutchinson",
+            "Dodge City"
+          ]
+        },
+        {
+          "code": "785",
+          "region": "Northern and Western Kansas",
+          "major_cities": [
+            "Topeka",
+            "Lawrence",
+            "Manhattan"
+          ]
+        },
+        {
+          "code": "913",
+          "region": "Northeastern Kansas",
+          "major_cities": [
+            "Kansas City",
+            "Overland Park",
+            "Olathe"
+          ]
+        }
+      ]
+    },
+    "KY": {
+      "name": "Kentucky",
+      "area_codes": [
+        {
+          "code": "270",
+          "region": "Western Kentucky",
+          "major_cities": [
+            "Bowling Green",
+            "Paducah",
+            "Owensboro"
+          ]
+        },
+        {
+          "code": "364",
+          "region": "Western Kentucky overlay",
+          "major_cities": [
+            "Bowling Green"
+          ]
+        },
+        {
+          "code": "502",
+          "region": "North Central Kentucky",
+          "major_cities": [
+            "Louisville",
+            "Frankfort",
+            "Shelbyville"
+          ]
+        },
+        {
+          "code": "606",
+          "region": "Eastern Kentucky",
+          "major_cities": [
+            "Ashland",
+            "Pikeville",
+            "Somerset"
+          ]
+        },
+        {
+          "code": "859",
+          "region": "Northern and Central Kentucky",
+          "major_cities": [
+            "Lexington",
+            "Covington",
+            "Richmond"
+          ]
+        }
+      ]
+    },
+    "LA": {
+      "name": "Louisiana",
+      "area_codes": [
+        {
+          "code": "225",
+          "region": "South Central Louisiana",
+          "major_cities": [
+            "Baton Rouge"
+          ]
+        },
+        {
+          "code": "318",
+          "region": "Northern Louisiana",
+          "major_cities": [
+            "Shreveport",
+            "Monroe"
+          ]
+        },
+        {
+          "code": "337",
+          "region": "Southwestern Louisiana",
+          "major_cities": [
+            "Lake Charles",
+            "Lafayette"
+          ]
+        },
+        {
+          "code": "504",
+          "region": "Greater New Orleans",
+          "major_cities": [
+            "New Orleans",
+            "Metairie"
+          ]
+        },
+        {
+          "code": "985",
+          "region": "Southeastern Louisiana",
+          "major_cities": [
+            "Houma",
+            "Slidell",
+            "Hammond"
+          ]
+        }
+      ]
+    },
+    "ME": {
+      "name": "Maine",
+      "area_codes": [
+        {
+          "code": "207",
+          "region": "All of Maine",
+          "major_cities": [
+            "Portland",
+            "Bangor",
+            "Lewiston"
+          ]
+        }
+      ]
+    },
+    "MD": {
+      "name": "Maryland",
+      "area_codes": [
+        {
+          "code": "240",
+          "region": "Western Maryland",
+          "major_cities": [
+            "Silver Spring",
+            "Frederick",
+            "Rockville"
+          ]
+        },
+        {
+          "code": "301",
+          "region": "Western Maryland",
+          "major_cities": [
+            "Silver Spring",
+            "Bethesda",
+            "Frederick"
+          ]
+        },
+        {
+          "code": "410",
+          "region": "Eastern Maryland",
+          "major_cities": [
+            "Baltimore",
+            "Annapolis"
+          ]
+        },
+        {
+          "code": "443",
+          "region": "Eastern Maryland overlay",
+          "major_cities": [
+            "Baltimore"
+          ]
+        },
+        {
+          "code": "667",
+          "region": "Eastern Maryland overlay",
+          "major_cities": [
+            "Baltimore"
+          ]
+        }
+      ]
+    },
+    "MA": {
+      "name": "Massachusetts",
+      "area_codes": [
+        {
+          "code": "339",
+          "region": "Boston suburbs overlay",
+          "major_cities": [
+            "Braintree",
+            "Natick"
+          ]
+        },
+        {
+          "code": "351",
+          "region": "North of Boston overlay",
+          "major_cities": [
+            "Lowell",
+            "Salem"
+          ]
+        },
+        {
+          "code": "413",
+          "region": "Western Massachusetts",
+          "major_cities": [
+            "Springfield",
+            "Pittsfield",
+            "Northampton"
+          ]
+        },
+        {
+          "code": "508",
+          "region": "Central Massachusetts",
+          "major_cities": [
+            "Worcester",
+            "Framingham",
+            "Cape Cod"
+          ]
+        },
+        {
+          "code": "617",
+          "region": "Greater Boston",
+          "major_cities": [
+            "Boston",
+            "Cambridge",
+            "Brookline"
+          ]
+        },
+        {
+          "code": "774",
+          "region": "Central Massachusetts overlay",
+          "major_cities": [
+            "Worcester",
+            "Framingham"
+          ]
+        },
+        {
+          "code": "781",
+          "region": "Boston Suburbs",
+          "major_cities": [
+            "Quincy",
+            "Weymouth",
+            "Lynn"
+          ]
+        },
+        {
+          "code": "857",
+          "region": "Greater Boston overlay",
+          "major_cities": [
+            "Boston"
+          ]
+        },
+        {
+          "code": "978",
+          "region": "North of Boston",
+          "major_cities": [
+            "Lowell",
+            "Haverhill",
+            "Gloucester"
+          ]
+        }
+      ]
+    },
+    "MI": {
+      "name": "Michigan",
+      "area_codes": [
+        {
+          "code": "231",
+          "region": "Western Michigan",
+          "major_cities": [
+            "Traverse City",
+            "Muskegon",
+            "Manistee"
+          ]
+        },
+        {
+          "code": "248",
+          "region": "Oakland County",
+          "major_cities": [
+            "Pontiac",
+            "Troy",
+            "Farmington Hills"
+          ]
+        },
+        {
+          "code": "269",
+          "region": "Southwestern Michigan",
+          "major_cities": [
+            "Kalamazoo",
+            "Battle Creek"
+          ]
+        },
+        {
+          "code": "313",
+          "region": "Detroit Metro",
+          "major_cities": [
+            "Detroit",
+            "Dearborn"
+          ]
+        },
+        {
+          "code": "517",
+          "region": "Central Michigan",
+          "major_cities": [
+            "Lansing",
+            "Jackson"
+          ]
+        },
+        {
+          "code": "586",
+          "region": "Macomb County",
+          "major_cities": [
+            "Warren",
+            "Sterling Heights",
+            "Clinton Township"
+          ]
+        },
+        {
+          "code": "616",
+          "region": "Western Michigan",
+          "major_cities": [
+            "Grand Rapids",
+            "Holland"
+          ]
+        },
+        {
+          "code": "679",
+          "region": "Southeast Michigan overlay",
+          "major_cities": [
+            "Dearborn"
+          ]
+        },
+        {
+          "code": "734",
+          "region": "Southeast Michigan",
+          "major_cities": [
+            "Ann Arbor",
+            "Livonia",
+            "Westland"
+          ]
+        },
+        {
+          "code": "810",
+          "region": "Eastern Michigan",
+          "major_cities": [
+            "Flint",
+            "Port Huron"
+          ]
+        },
+        {
+          "code": "906",
+          "region": "Upper Peninsula",
+          "major_cities": [
+            "Marquette",
+            "Sault Ste. Marie"
+          ]
+        },
+        {
+          "code": "947",
+          "region": "Oakland County overlay",
+          "major_cities": [
+            "Pontiac",
+            "Troy"
+          ]
+        },
+        {
+          "code": "989",
+          "region": "Upper Central Michigan",
+          "major_cities": [
+            "Saginaw",
+            "Midland",
+            "Bay City"
+          ]
+        }
+      ]
+    },
+    "MN": {
+      "name": "Minnesota",
+      "area_codes": [
+        {
+          "code": "218",
+          "region": "Northern Minnesota",
+          "major_cities": [
+            "Duluth",
+            "Moorhead"
+          ]
+        },
+        {
+          "code": "320",
+          "region": "Central Minnesota",
+          "major_cities": [
+            "St. Cloud"
+          ]
+        },
+        {
+          "code": "507",
+          "region": "Southern Minnesota",
+          "major_cities": [
+            "Rochester",
+            "Mankato"
+          ]
+        },
+        {
+          "code": "612",
+          "region": "Minneapolis",
+          "major_cities": [
+            "Minneapolis"
+          ]
+        },
+        {
+          "code": "651",
+          "region": "St. Paul",
+          "major_cities": [
+            "St. Paul"
+          ]
+        },
+        {
+          "code": "763",
+          "region": "Northwest Minneapolis suburbs",
+          "major_cities": [
+            "Brooklyn Park",
+            "Maple Grove"
+          ]
+        },
+        {
+          "code": "952",
+          "region": "Southwest Minneapolis suburbs",
+          "major_cities": [
+            "Bloomington",
+            "Eden Prairie",
+            "Minnetonka"
+          ]
+        }
+      ]
+    },
+    "MS": {
+      "name": "Mississippi",
+      "area_codes": [
+        {
+          "code": "228",
+          "region": "Southern Mississippi",
+          "major_cities": [
+            "Gulfport",
+            "Biloxi"
+          ]
+        },
+        {
+          "code": "601",
+          "region": "Central Mississippi",
+          "major_cities": [
+            "Jackson",
+            "Meridian",
+            "Hattiesburg"
+          ]
+        },
+        {
+          "code": "662",
+          "region": "Northern Mississippi",
+          "major_cities": [
+            "Tupelo",
+            "Oxford",
+            "Southaven"
+          ]
+        },
+        {
+          "code": "769",
+          "region": "Central Mississippi overlay",
+          "major_cities": [
+            "Jackson"
+          ]
+        }
+      ]
+    },
+    "MO": {
+      "name": "Missouri",
+      "area_codes": [
+        {
+          "code": "314",
+          "region": "St. Louis City",
+          "major_cities": [
+            "St. Louis"
+          ]
+        },
+        {
+          "code": "417",
+          "region": "Southwestern Missouri",
+          "major_cities": [
+            "Springfield",
+            "Joplin",
+            "Branson"
+          ]
+        },
+        {
+          "code": "573",
+          "region": "Central and Southeastern Missouri",
+          "major_cities": [
+            "Columbia",
+            "Jefferson City"
+          ]
+        },
+        {
+          "code": "636",
+          "region": "West St. Louis Metro",
+          "major_cities": [
+            "Chesterfield",
+            "St. Charles"
+          ]
+        },
+        {
+          "code": "660",
+          "region": "Northern Missouri",
+          "major_cities": [
+            "Sedalia",
+            "Kirksville"
+          ]
+        },
+        {
+          "code": "816",
+          "region": "Kansas City",
+          "major_cities": [
+            "Kansas City",
+            "Independence"
+          ]
+        },
+        {
+          "code": "975",
+          "region": "Kansas City overlay",
+          "major_cities": [
+            "Kansas City"
+          ]
+        }
+      ]
+    },
+    "MT": {
+      "name": "Montana",
+      "area_codes": [
+        {
+          "code": "406",
+          "region": "All of Montana",
+          "major_cities": [
+            "Billings",
+            "Missoula",
+            "Great Falls"
+          ]
+        }
+      ]
+    },
+    "NE": {
+      "name": "Nebraska",
+      "area_codes": [
+        {
+          "code": "308",
+          "region": "Western Nebraska",
+          "major_cities": [
+            "North Platte",
+            "Kearney",
+            "Scottsbluff"
+          ]
+        },
+        {
+          "code": "402",
+          "region": "Eastern Nebraska",
+          "major_cities": [
+            "Omaha",
+            "Lincoln"
+          ]
+        },
+        {
+          "code": "531",
+          "region": "Eastern Nebraska overlay",
+          "major_cities": [
+            "Omaha"
+          ]
+        }
+      ]
+    },
+    "NV": {
+      "name": "Nevada",
+      "area_codes": [
+        {
+          "code": "702",
+          "region": "Southern Nevada",
+          "major_cities": [
+            "Las Vegas",
+            "Henderson"
+          ]
+        },
+        {
+          "code": "725",
+          "region": "Southern Nevada overlay",
+          "major_cities": [
+            "Las Vegas"
+          ]
+        },
+        {
+          "code": "775",
+          "region": "Northern Nevada",
+          "major_cities": [
+            "Reno",
+            "Carson City",
+            "Sparks"
+          ]
+        }
+      ]
+    },
+    "NH": {
+      "name": "New Hampshire",
+      "area_codes": [
+        {
+          "code": "603",
+          "region": "All of New Hampshire",
+          "major_cities": [
+            "Manchester",
+            "Concord",
+            "Nashua"
+          ]
+        }
+      ]
+    },
+    "NJ": {
+      "name": "New Jersey",
+      "area_codes": [
+        {
+          "code": "201",
+          "region": "Northeastern New Jersey",
+          "major_cities": [
+            "Jersey City",
+            "Hackensack",
+            "Fort Lee"
+          ]
+        },
+        {
+          "code": "551",
+          "region": "Northeastern New Jersey overlay",
+          "major_cities": [
+            "Jersey City"
+          ]
+        },
+        {
+          "code": "609",
+          "region": "Southern New Jersey",
+          "major_cities": [
+            "Trenton",
+            "Atlantic City",
+            "Princeton"
+          ]
+        },
+        {
+          "code": "732",
+          "region": "Central New Jersey",
+          "major_cities": [
+            "New Brunswick",
+            "Toms River",
+            "Edison"
+          ]
+        },
+        {
+          "code": "848",
+          "region": "Central New Jersey overlay",
+          "major_cities": [
+            "Toms River"
+          ]
+        },
+        {
+          "code": "856",
+          "region": "Southwestern New Jersey",
+          "major_cities": [
+            "Camden",
+            "Cherry Hill",
+            "Vineland"
+          ]
+        },
+        {
+          "code": "862",
+          "region": "Northern New Jersey overlay",
+          "major_cities": [
+            "Newark",
+            "Paterson"
+          ]
+        },
+        {
+          "code": "908",
+          "region": "Central New Jersey",
+          "major_cities": [
+            "Elizabeth",
+            "Plainfield",
+            "Somerville"
+          ]
+        },
+        {
+          "code": "973",
+          "region": "Northern New Jersey",
+          "major_cities": [
+            "Newark",
+            "Paterson",
+            "Morristown"
+          ]
+        }
+      ]
+    },
+    "NM": {
+      "name": "New Mexico",
+      "area_codes": [
+        {
+          "code": "505",
+          "region": "North Central New Mexico",
+          "major_cities": [
+            "Albuquerque",
+            "Santa Fe"
+          ]
+        },
+        {
+          "code": "575",
+          "region": "Southern New Mexico",
+          "major_cities": [
+            "Las Cruces",
+            "Roswell",
+            "Carlsbad"
+          ]
+        },
+        {
+          "code": "957",
+          "region": "New Mexico overlay",
+          "major_cities": [
+            "Albuquerque"
+          ]
+        }
+      ]
+    },
+    "NY": {
+      "name": "New York",
+      "area_codes": [
+        {
+          "code": "212",
+          "region": "Manhattan",
+          "major_cities": [
+            "New York City"
+          ]
+        },
+        {
+          "code": "315",
+          "region": "North Central New York",
+          "major_cities": [
+            "Syracuse",
+            "Utica"
+          ]
+        },
+        {
+          "code": "332",
+          "region": "Manhattan overlay",
+          "major_cities": [
+            "New York City"
+          ]
+        },
+        {
+          "code": "347",
+          "region": "NYC Outer Boroughs",
+          "major_cities": [
+            "Brooklyn",
+            "Queens",
+            "Bronx",
+            "Staten Island"
+          ]
+        },
+        {
+          "code": "516",
+          "region": "Nassau County",
+          "major_cities": [
+            "Hempstead",
+            "Garden City"
+          ]
+        },
+        {
+          "code": "518",
+          "region": "Northeastern New York",
+          "major_cities": [
+            "Albany",
+            "Schenectady",
+            "Saratoga Springs"
+          ]
+        },
+        {
+          "code": "585",
+          "region": "Northwestern New York",
+          "major_cities": [
+            "Rochester"
+          ]
+        },
+        {
+          "code": "607",
+          "region": "South Central New York",
+          "major_cities": [
+            "Ithaca",
+            "Binghamton",
+            "Elmira"
+          ]
+        },
+        {
+          "code": "631",
+          "region": "Suffolk County",
+          "major_cities": [
+            "Huntington",
+            "Islip",
+            "Brookhaven"
+          ]
+        },
+        {
+          "code": "646",
+          "region": "NYC area overlay",
+          "major_cities": [
+            "New York City"
+          ]
+        },
+        {
+          "code": "680",
+          "region": "Upstate New York overlay",
+          "major_cities": [
+            "Syracuse"
+          ]
+        },
+        {
+          "code": "716",
+          "region": "Western New York",
+          "major_cities": [
+            "Buffalo",
+            "Niagara Falls"
+          ]
+        },
+        {
+          "code": "718",
+          "region": "NYC Outer Boroughs",
+          "major_cities": [
+            "Brooklyn",
+            "Queens",
+            "Bronx",
+            "Staten Island"
+          ]
+        },
+        {
+          "code": "838",
+          "region": "Upstate New York overlay",
+          "major_cities": [
+            "Albany"
+          ]
+        },
+        {
+          "code": "845",
+          "region": "Hudson Valley",
+          "major_cities": [
+            "Poughkeepsie",
+            "New Rochelle",
+            "Middletown"
+          ]
+        },
+        {
+          "code": "914",
+          "region": "Westchester County",
+          "major_cities": [
+            "Yonkers",
+            "White Plains",
+            "New Rochelle"
+          ]
+        },
+        {
+          "code": "917",
+          "region": "NYC cellular",
+          "major_cities": [
+            "New York City"
+          ]
+        },
+        {
+          "code": "929",
+          "region": "NYC Outer Boroughs overlay",
+          "major_cities": [
+            "Brooklyn",
+            "Queens",
+            "Bronx",
+            "Staten Island"
+          ]
+        },
+        {
+          "code": "934",
+          "region": "Long Island overlay",
+          "major_cities": [
+            "Huntington"
+          ]
+        }
+      ]
+    },
+    "NC": {
+      "name": "North Carolina",
+      "area_codes": [
+        {
+          "code": "252",
+          "region": "Eastern North Carolina",
+          "major_cities": [
+            "Rocky Mount",
+            "Greenville",
+            "New Bern"
+          ]
+        },
+        {
+          "code": "336",
+          "region": "Central North Carolina",
+          "major_cities": [
+            "Greensboro",
+            "Winston-Salem",
+            "High Point"
+          ]
+        },
+        {
+          "code": "704",
+          "region": "Western North Carolina",
+          "major_cities": [
+            "Charlotte",
+            "Gastonia"
+          ]
+        },
+        {
+          "code": "743",
+          "region": "Central North Carolina overlay",
+          "major_cities": [
+            "Greensboro"
+          ]
+        },
+        {
+          "code": "828",
+          "region": "Western North Carolina",
+          "major_cities": [
+            "Asheville",
+            "Hickory"
+          ]
+        },
+        {
+          "code": "910",
+          "region": "South Central North Carolina",
+          "major_cities": [
+            "Fayetteville",
+            "Wilmington"
+          ]
+        },
+        {
+          "code": "919",
+          "region": "Eastern North Carolina",
+          "major_cities": [
+            "Raleigh",
+            "Durham",
+            "Chapel Hill"
+          ]
+        },
+        {
+          "code": "980",
+          "region": "Charlotte area overlay",
+          "major_cities": [
+            "Charlotte"
+          ]
+        },
+        {
+          "code": "984",
+          "region": "Eastern North Carolina overlay",
+          "major_cities": [
+            "Raleigh"
+          ]
+        }
+      ]
+    },
+    "ND": {
+      "name": "North Dakota",
+      "area_codes": [
+        {
+          "code": "701",
+          "region": "All of North Dakota",
+          "major_cities": [
+            "Fargo",
+            "Bismarck",
+            "Grand Forks"
+          ]
+        }
+      ]
+    },
+    "OH": {
+      "name": "Ohio",
+      "area_codes": [
+        {
+          "code": "216",
+          "region": "Cleveland",
+          "major_cities": [
+            "Cleveland"
+          ]
+        },
+        {
+          "code": "220",
+          "region": "Southeast and Central Ohio",
+          "major_cities": [
+            "Newark",
+            "Zanesville"
+          ]
+        },
+        {
+          "code": "234",
+          "region": "Northeastern Ohio overlay",
+          "major_cities": [
+            "Canton",
+            "Akron"
+          ]
+        },
+        {
+          "code": "283",
+          "region": "Southwestern Ohio overlay",
+          "major_cities": [
+            "Cincinnati"
+          ]
+        },
+        {
+          "code": "326",
+          "region": "Southwestern Ohio overlay",
+          "major_cities": [
+            "Dayton"
+          ]
+        },
+        {
+          "code": "330",
+          "region": "Northeastern Ohio",
+          "major_cities": [
+            "Akron",
+            "Canton",
+            "Youngstown"
+          ]
+        },
+        {
+          "code": "380",
+          "region": "Columbus overlay",
+          "major_cities": [
+            "Columbus"
+          ]
+        },
+        {
+          "code": "419",
+          "region": "Northwestern Ohio",
+          "major_cities": [
+            "Toledo",
+            "Findlay"
+          ]
+        },
+        {
+          "code": "440",
+          "region": "Cleveland suburbs",
+          "major_cities": [
+            "Lorain",
+            "Elyria",
+            "Mentor"
+          ]
+        },
+        {
+          "code": "513",
+          "region": "Southwestern Ohio",
+          "major_cities": [
+            "Cincinnati",
+            "Hamilton"
+          ]
+        },
+        {
+          "code": "567",
+          "region": "Northwestern Ohio overlay",
+          "major_cities": [
+            "Toledo"
+          ]
+        },
+        {
+          "code": "614",
+          "region": "Central Ohio",
+          "major_cities": [
+            "Columbus"
+          ]
+        },
+        {
+          "code": "740",
+          "region": "Southeast and Central Ohio",
+          "major_cities": [
+            "Athens",
+            "Chillicothe",
+            "Lancaster"
+          ]
+        },
+        {
+          "code": "937",
+          "region": "Southwestern Ohio",
+          "major_cities": [
+            "Dayton",
+            "Springfield"
+          ]
+        }
+      ]
+    },
+    "OK": {
+      "name": "Oklahoma",
+      "area_codes": [
+        {
+          "code": "405",
+          "region": "Central Oklahoma",
+          "major_cities": [
+            "Oklahoma City",
+            "Norman",
+            "Edmond"
+          ]
+        },
+        {
+          "code": "539",
+          "region": "Eastern Oklahoma overlay",
+          "major_cities": [
+            "Tulsa"
+          ]
+        },
+        {
+          "code": "572",
+          "region": "Oklahoma overlay",
+          "major_cities": [
+            "Oklahoma City"
+          ]
+        },
+        {
+          "code": "580",
+          "region": "Western and Southern Oklahoma",
+          "major_cities": [
+            "Lawton",
+            "Enid"
+          ]
+        },
+        {
+          "code": "918",
+          "region": "Eastern Oklahoma",
+          "major_cities": [
+            "Tulsa",
+            "Broken Arrow",
+            "Muskogee"
+          ]
+        }
+      ]
+    },
+    "OR": {
+      "name": "Oregon",
+      "area_codes": [
+        {
+          "code": "458",
+          "region": "Oregon overlay",
+          "major_cities": [
+            "Eugene",
+            "Medford"
+          ]
+        },
+        {
+          "code": "503",
+          "region": "Northwestern Oregon",
+          "major_cities": [
+            "Portland",
+            "Salem"
+          ]
+        },
+        {
+          "code": "541",
+          "region": "Oregon outside Portland/Salem",
+          "major_cities": [
+            "Eugene",
+            "Medford",
+            "Bend"
+          ]
+        },
+        {
+          "code": "971",
+          "region": "Northwestern Oregon overlay",
+          "major_cities": [
+            "Portland",
+            "Salem"
+          ]
+        }
+      ]
+    },
+    "PA": {
+      "name": "Pennsylvania",
+      "area_codes": [
+        {
+          "code": "215",
+          "region": "Southeastern Pennsylvania",
+          "major_cities": [
+            "Philadelphia"
+          ]
+        },
+        {
+          "code": "223",
+          "region": "Eastern Pennsylvania overlay",
+          "major_cities": [
+            "Harrisburg",
+            "Gettysburg"
+          ]
+        },
+        {
+          "code": "267",
+          "region": "Southeastern Pennsylvania overlay",
+          "major_cities": [
+            "Philadelphia"
+          ]
+        },
+        {
+          "code": "272",
+          "region": "Northeastern Pennsylvania overlay",
+          "major_cities": [
+            "Scranton",
+            "Wilkes-Barre"
+          ]
+        },
+        {
+          "code": "412",
+          "region": "Western Pennsylvania",
+          "major_cities": [
+            "Pittsburgh"
+          ]
+        },
+        {
+          "code": "484",
+          "region": "Southeastern Pennsylvania overlay",
+          "major_cities": [
+            "Allentown",
+            "Reading"
+          ]
+        },
+        {
+          "code": "570",
+          "region": "Northeastern Pennsylvania",
+          "major_cities": [
+            "Scranton",
+            "Wilkes-Barre"
+          ]
+        },
+        {
+          "code": "610",
+          "region": "Southeastern Pennsylvania",
+          "major_cities": [
+            "Allentown",
+            "Bethlehem",
+            "Reading"
+          ]
+        },
+        {
+          "code": "717",
+          "region": "South Central Pennsylvania",
+          "major_cities": [
+            "Harrisburg",
+            "Lancaster",
+            "York"
+          ]
+        },
+        {
+          "code": "724",
+          "region": "Southwestern Pennsylvania",
+          "major_cities": [
+            "Washington",
+            "New Castle"
+          ]
+        },
+        {
+          "code": "814",
+          "region": "Central Pennsylvania",
+          "major_cities": [
+            "Erie",
+            "State College",
+            "Altoona"
+          ]
+        },
+        {
+          "code": "835",
+          "region": "Southeastern Pennsylvania overlay",
+          "major_cities": [
+            "Allentown"
+          ]
+        },
+        {
+          "code": "878",
+          "region": "Western Pennsylvania overlay",
+          "major_cities": [
+            "Pittsburgh"
+          ]
+        }
+      ]
+    },
+    "RI": {
+      "name": "Rhode Island",
+      "area_codes": [
+        {
+          "code": "401",
+          "region": "All of Rhode Island",
+          "major_cities": [
+            "Providence",
+            "Warwick",
+            "Cranston"
+          ]
+        }
+      ]
+    },
+    "SC": {
+      "name": "South Carolina",
+      "area_codes": [
+        {
+          "code": "803",
+          "region": "Central South Carolina",
+          "major_cities": [
+            "Columbia",
+            "Rock Hill"
+          ]
+        },
+        {
+          "code": "839",
+          "region": "Central South Carolina overlay",
+          "major_cities": [
+            "Columbia"
+          ]
+        },
+        {
+          "code": "843",
+          "region": "Eastern South Carolina",
+          "major_cities": [
+            "Charleston",
+            "Myrtle Beach"
+          ]
+        },
+        {
+          "code": "854",
+          "region": "Eastern South Carolina overlay",
+          "major_cities": [
+            "Charleston"
+          ]
+        },
+        {
+          "code": "864",
+          "region": "Western South Carolina",
+          "major_cities": [
+            "Greenville",
+            "Spartanburg"
+          ]
+        }
+      ]
+    },
+    "SD": {
+      "name": "South Dakota",
+      "area_codes": [
+        {
+          "code": "605",
+          "region": "All of South Dakota",
+          "major_cities": [
+            "Sioux Falls",
+            "Rapid City",
+            "Aberdeen"
+          ]
+        }
+      ]
+    },
+    "TN": {
+      "name": "Tennessee",
+      "area_codes": [
+        {
+          "code": "423",
+          "region": "Eastern Tennessee",
+          "major_cities": [
+            "Chattanooga",
+            "Johnson City",
+            "Kingsport"
+          ]
+        },
+        {
+          "code": "615",
+          "region": "Northern Middle Tennessee",
+          "major_cities": [
+            "Nashville",
+            "Murfreesboro"
+          ]
+        },
+        {
+          "code": "629",
+          "region": "Nashville area overlay",
+          "major_cities": [
+            "Nashville"
+          ]
+        },
+        {
+          "code": "731",
+          "region": "Western Tennessee",
+          "major_cities": [
+            "Jackson",
+            "Dyersburg"
+          ]
+        },
+        {
+          "code": "865",
+          "region": "Eastern Tennessee",
+          "major_cities": [
+            "Knoxville",
+            "Oak Ridge"
+          ]
+        },
+        {
+          "code": "901",
+          "region": "Western Tennessee",
+          "major_cities": [
+            "Memphis"
+          ]
+        },
+        {
+          "code": "931",
+          "region": "Middle Tennessee",
+          "major_cities": [
+            "Clarksville",
+            "Cookeville"
+          ]
+        }
+      ]
+    },
+    "TX": {
+      "name": "Texas",
+      "area_codes": [
+        {
+          "code": "210",
+          "region": "San Antonio",
+          "major_cities": [
+            "San Antonio"
+          ]
+        },
+        {
+          "code": "214",
+          "region": "Dallas Metro",
+          "major_cities": [
+            "Dallas"
+          ]
+        },
+        {
+          "code": "254",
+          "region": "Central Texas",
+          "major_cities": [
+            "Waco",
+            "Killeen",
+            "Temple"
+          ]
+        },
+        {
+          "code": "281",
+          "region": "Houston Metro",
+          "major_cities": [
+            "Houston"
+          ]
+        },
+        {
+          "code": "325",
+          "region": "West Central Texas",
+          "major_cities": [
+            "Abilene",
+            "San Angelo"
+          ]
+        },
+        {
+          "code": "346",
+          "region": "Houston area overlay",
+          "major_cities": [
+            "Houston"
+          ]
+        },
+        {
+          "code": "361",
+          "region": "South Texas Coast",
+          "major_cities": [
+            "Corpus Christi",
+            "Victoria"
+          ]
+        },
+        {
+          "code": "409",
+          "region": "Southeast Texas",
+          "major_cities": [
+            "Galveston",
+            "Beaumont"
+          ]
+        },
+        {
+          "code": "430",
+          "region": "Northeast Texas overlay",
+          "major_cities": [
+            "Tyler"
+          ]
+        },
+        {
+          "code": "432",
+          "region": "West Texas",
+          "major_cities": [
+            "Midland",
+            "Odessa"
+          ]
+        },
+        {
+          "code": "469",
+          "region": "Dallas Metro overlay",
+          "major_cities": [
+            "Dallas"
+          ]
+        },
+        {
+          "code": "512",
+          "region": "Central Texas",
+          "major_cities": [
+            "Austin"
+          ]
+        },
+        {
+          "code": "682",
+          "region": "Fort Worth area overlay",
+          "major_cities": [
+            "Fort Worth"
+          ]
+        },
+        {
+          "code": "713",
+          "region": "Houston Central",
+          "major_cities": [
+            "Houston"
+          ]
+        },
+        {
+          "code": "726",
+          "region": "San Antonio overlay",
+          "major_cities": [
+            "San Antonio"
+          ]
+        },
+        {
+          "code": "737",
+          "region": "Austin area overlay",
+          "major_cities": [
+            "Austin"
+          ]
+        },
+        {
+          "code": "806",
+          "region": "Texas Panhandle",
+          "major_cities": [
+            "Amarillo",
+            "Lubbock"
+          ]
+        },
+        {
+          "code": "817",
+          "region": "North Central Texas",
+          "major_cities": [
+            "Fort Worth",
+            "Arlington"
+          ]
+        },
+        {
+          "code": "830",
+          "region": "South Central Texas",
+          "major_cities": [
+            "New Braunfels",
+            "Del Rio"
+          ]
+        },
+        {
+          "code": "832",
+          "region": "Houston area overlay",
+          "major_cities": [
+            "Houston"
+          ]
+        },
+        {
+          "code": "903",
+          "region": "Northeast Texas",
+          "major_cities": [
+            "Tyler",
+            "Texarkana"
+          ]
+        },
+        {
+          "code": "915",
+          "region": "Far West Texas",
+          "major_cities": [
+            "El Paso"
+          ]
+        },
+        {
+          "code": "936",
+          "region": "Southeast Texas",
+          "major_cities": [
+            "Conroe",
+            "Lufkin"
+          ]
+        },
+        {
+          "code": "940",
+          "region": "North Central Texas",
+          "major_cities": [
+            "Denton",
+            "Wichita Falls"
+          ]
+        },
+        {
+          "code": "956",
+          "region": "South Texas Valley",
+          "major_cities": [
+            "Laredo",
+            "McAllen",
+            "Brownsville"
+          ]
+        },
+        {
+          "code": "972",
+          "region": "Dallas Metro overlay",
+          "major_cities": [
+            "Dallas",
+            "Plano",
+            "Richardson"
+          ]
+        },
+        {
+          "code": "979",
+          "region": "Southeast Texas",
+          "major_cities": [
+            "Bryan",
+            "College Station"
+          ]
+        }
+      ]
+    },
+    "UT": {
+      "name": "Utah",
+      "area_codes": [
+        {
+          "code": "385",
+          "region": "Salt Lake City Metro overlay",
+          "major_cities": [
+            "Salt Lake City"
+          ]
+        },
+        {
+          "code": "435",
+          "region": "Rural Utah",
+          "major_cities": [
+            "St. George",
+            "Logan",
+            "Provo"
+          ]
+        },
+        {
+          "code": "801",
+          "region": "Salt Lake City Metro",
+          "major_cities": [
+            "Salt Lake City",
+            "Provo",
+            "Ogden"
+          ]
+        }
+      ]
+    },
+    "VT": {
+      "name": "Vermont",
+      "area_codes": [
+        {
+          "code": "802",
+          "region": "All of Vermont",
+          "major_cities": [
+            "Burlington",
+            "Montpelier",
+            "Rutland"
+          ]
+        }
+      ]
+    },
+    "VA": {
+      "name": "Virginia",
+      "area_codes": [
+        {
+          "code": "276",
+          "region": "Southern and Southwestern Virginia",
+          "major_cities": [
+            "Bristol",
+            "Martinsville"
+          ]
+        },
+        {
+          "code": "434",
+          "region": "Central Virginia",
+          "major_cities": [
+            "Charlottesville",
+            "Lynchburg",
+            "Danville"
+          ]
+        },
+        {
+          "code": "540",
+          "region": "Western Virginia",
+          "major_cities": [
+            "Roanoke",
+            "Harrisonburg",
+            "Fredericksburg"
+          ]
+        },
+        {
+          "code": "571",
+          "region": "Northern Virginia overlay",
+          "major_cities": [
+            "Arlington",
+            "Alexandria",
+            "Fairfax"
+          ]
+        },
+        {
+          "code": "703",
+          "region": "Northern Virginia",
+          "major_cities": [
+            "Arlington",
+            "Alexandria",
+            "Fairfax"
+          ]
+        },
+        {
+          "code": "757",
+          "region": "Eastern Virginia",
+          "major_cities": [
+            "Norfolk",
+            "Virginia Beach",
+            "Hampton"
+          ]
+        },
+        {
+          "code": "804",
+          "region": "Central Eastern Virginia",
+          "major_cities": [
+            "Richmond",
+            "Petersburg"
+          ]
+        }
+      ]
+    },
+    "WA": {
+      "name": "Washington",
+      "area_codes": [
+        {
+          "code": "206",
+          "region": "Seattle",
+          "major_cities": [
+            "Seattle",
+            "Bainbridge Island"
+          ]
+        },
+        {
+          "code": "253",
+          "region": "South Puget Sound",
+          "major_cities": [
+            "Tacoma",
+            "Federal Way"
+          ]
+        },
+        {
+          "code": "360",
+          "region": "Western Washington",
+          "major_cities": [
+            "Olympia",
+            "Bellingham",
+            "Vancouver"
+          ]
+        },
+        {
+          "code": "425",
+          "region": "North Puget Sound",
+          "major_cities": [
+            "Bellevue",
+            "Everett",
+            "Kirkland"
+          ]
+        },
+        {
+          "code": "509",
+          "region": "Eastern Washington",
+          "major_cities": [
+            "Spokane",
+            "Yakima",
+            "Tri-Cities"
+          ]
+        },
+        {
+          "code": "564",
+          "region": "Western Washington overlay",
+          "major_cities": [
+            "Olympia"
+          ]
+        }
+      ]
+    },
+    "WV": {
+      "name": "West Virginia",
+      "area_codes": [
+        {
+          "code": "304",
+          "region": "All of West Virginia",
+          "major_cities": [
+            "Charleston",
+            "Huntington",
+            "Morgantown"
+          ]
+        },
+        {
+          "code": "681",
+          "region": "West Virginia overlay",
+          "major_cities": [
+            "Charleston"
+          ]
+        }
+      ]
+    },
+    "WI": {
+      "name": "Wisconsin",
+      "area_codes": [
+        {
+          "code": "262",
+          "region": "Southeastern Wisconsin",
+          "major_cities": [
+            "Kenosha",
+            "Racine",
+            "Waukesha"
+          ]
+        },
+        {
+          "code": "274",
+          "region": "Southeastern Wisconsin overlay",
+          "major_cities": [
+            "Kenosha"
+          ]
+        },
+        {
+          "code": "414",
+          "region": "Milwaukee County",
+          "major_cities": [
+            "Milwaukee"
+          ]
+        },
+        {
+          "code": "534",
+          "region": "Southeastern Wisconsin overlay",
+          "major_cities": [
+            "Milwaukee"
+          ]
+        },
+        {
+          "code": "608",
+          "region": "Southwestern Wisconsin",
+          "major_cities": [
+            "Madison",
+            "La Crosse"
+          ]
+        },
+        {
+          "code": "715",
+          "region": "Northern Wisconsin",
+          "major_cities": [
+            "Eau Claire",
+            "Wausau"
+          ]
+        },
+        {
+          "code": "920",
+          "region": "Northeastern Wisconsin",
+          "major_cities": [
+            "Green Bay",
+            "Appleton",
+            "Oshkosh"
+          ]
+        }
+      ]
+    },
+    "WY": {
+      "name": "Wyoming",
+      "area_codes": [
+        {
+          "code": "307",
+          "region": "All of Wyoming",
+          "major_cities": [
+            "Cheyenne",
+            "Casper",
+            "Laramie"
+          ]
+        }
+      ]
+    },
+    "AS": {
+      "name": "American Samoa",
+      "area_codes": [
+        {
+          "code": "684",
+          "region": "American Samoa",
+          "major_cities": [
+            "Pago Pago"
+          ]
+        }
+      ]
+    },
+    "GU": {
+      "name": "Guam",
+      "area_codes": [
+        {
+          "code": "671",
+          "region": "Guam",
+          "major_cities": [
+            "Hagatna",
+            "Dededo"
+          ]
+        }
+      ]
+    },
+    "MP": {
+      "name": "Northern Mariana Islands",
+      "area_codes": [
+        {
+          "code": "670",
+          "region": "Northern Mariana Islands",
+          "major_cities": [
+            "Saipan"
+          ]
+        }
+      ]
+    },
+    "PR": {
+      "name": "Puerto Rico",
+      "area_codes": [
+        {
+          "code": "787",
+          "region": "Puerto Rico",
+          "major_cities": [
+            "San Juan",
+            "Bayamon",
+            "Ponce"
+          ]
+        },
+        {
+          "code": "939",
+          "region": "Puerto Rico overlay",
+          "major_cities": [
+            "San Juan"
+          ]
+        }
+      ]
+    },
+    "VI": {
+      "name": "US Virgin Islands",
+      "area_codes": [
+        {
+          "code": "340",
+          "region": "US Virgin Islands",
+          "major_cities": [
+            "Charlotte Amalie",
+            "Christiansted"
+          ]
+        }
+      ]
+    }
+  },
+  "by_area_code": {
+    "201": {
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "Northeastern New Jersey",
+      "major_cities": [
+        "Jersey City",
+        "Hackensack",
+        "Fort Lee"
+      ]
+    },
+    "202": {
+      "state": "DC",
+      "state_name": "District of Columbia",
+      "region": "Washington, D.C.",
+      "major_cities": [
+        "Washington"
+      ]
+    },
+    "203": {
+      "state": "CT",
+      "state_name": "Connecticut",
+      "region": "Southwestern Connecticut",
+      "major_cities": [
+        "New Haven",
+        "Bridgeport",
+        "Stamford"
+      ]
+    },
+    "205": {
+      "state": "AL",
+      "state_name": "Alabama",
+      "region": "Central Alabama",
+      "major_cities": [
+        "Birmingham"
+      ]
+    },
+    "206": {
+      "state": "WA",
+      "state_name": "Washington",
+      "region": "Seattle",
+      "major_cities": [
+        "Seattle",
+        "Bainbridge Island"
+      ]
+    },
+    "207": {
+      "state": "ME",
+      "state_name": "Maine",
+      "region": "All of Maine",
+      "major_cities": [
+        "Portland",
+        "Bangor",
+        "Lewiston"
+      ]
+    },
+    "208": {
+      "state": "ID",
+      "state_name": "Idaho",
+      "region": "All of Idaho",
+      "major_cities": [
+        "Boise",
+        "Idaho Falls",
+        "Nampa"
+      ]
+    },
+    "209": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Central California",
+      "major_cities": [
+        "Stockton",
+        "Modesto",
+        "Tracy"
+      ]
+    },
+    "210": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "San Antonio",
+      "major_cities": [
+        "San Antonio"
+      ]
+    },
+    "212": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Manhattan",
+      "major_cities": [
+        "New York City"
+      ]
+    },
+    "213": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Downtown Los Angeles",
+      "major_cities": [
+        "Los Angeles"
+      ]
+    },
+    "214": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Dallas Metro",
+      "major_cities": [
+        "Dallas"
+      ]
+    },
+    "215": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Southeastern Pennsylvania",
+      "major_cities": [
+        "Philadelphia"
+      ]
+    },
+    "216": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Cleveland",
+      "major_cities": [
+        "Cleveland"
+      ]
+    },
+    "217": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Central Illinois",
+      "major_cities": [
+        "Springfield",
+        "Champaign",
+        "Decatur"
+      ]
+    },
+    "218": {
+      "state": "MN",
+      "state_name": "Minnesota",
+      "region": "Northern Minnesota",
+      "major_cities": [
+        "Duluth",
+        "Moorhead"
+      ]
+    },
+    "219": {
+      "state": "IN",
+      "state_name": "Indiana",
+      "region": "Northwestern Indiana",
+      "major_cities": [
+        "Gary",
+        "Hammond",
+        "Michigan City"
+      ]
+    },
+    "220": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Southeast and Central Ohio",
+      "major_cities": [
+        "Newark",
+        "Zanesville"
+      ]
+    },
+    "223": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Eastern Pennsylvania overlay",
+      "major_cities": [
+        "Harrisburg",
+        "Gettysburg"
+      ]
+    },
+    "224": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Northern Illinois overlay",
+      "major_cities": [
+        "Evanston",
+        "Waukegan",
+        "Arlington Heights"
+      ]
+    },
+    "225": {
+      "state": "LA",
+      "state_name": "Louisiana",
+      "region": "South Central Louisiana",
+      "major_cities": [
+        "Baton Rouge"
+      ]
+    },
+    "228": {
+      "state": "MS",
+      "state_name": "Mississippi",
+      "region": "Southern Mississippi",
+      "major_cities": [
+        "Gulfport",
+        "Biloxi"
+      ]
+    },
+    "229": {
+      "state": "GA",
+      "state_name": "Georgia",
+      "region": "Southwestern Georgia",
+      "major_cities": [
+        "Albany",
+        "Valdosta"
+      ]
+    },
+    "231": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Western Michigan",
+      "major_cities": [
+        "Traverse City",
+        "Muskegon",
+        "Manistee"
+      ]
+    },
+    "234": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Northeastern Ohio overlay",
+      "major_cities": [
+        "Canton",
+        "Akron"
+      ]
+    },
+    "239": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Southwest Florida",
+      "major_cities": [
+        "Fort Myers",
+        "Naples",
+        "Cape Coral"
+      ]
+    },
+    "240": {
+      "state": "MD",
+      "state_name": "Maryland",
+      "region": "Western Maryland",
+      "major_cities": [
+        "Silver Spring",
+        "Frederick",
+        "Rockville"
+      ]
+    },
+    "248": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Oakland County",
+      "major_cities": [
+        "Pontiac",
+        "Troy",
+        "Farmington Hills"
+      ]
+    },
+    "251": {
+      "state": "AL",
+      "state_name": "Alabama",
+      "region": "Southern Alabama",
+      "major_cities": [
+        "Mobile"
+      ]
+    },
+    "252": {
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "Eastern North Carolina",
+      "major_cities": [
+        "Rocky Mount",
+        "Greenville",
+        "New Bern"
+      ]
+    },
+    "253": {
+      "state": "WA",
+      "state_name": "Washington",
+      "region": "South Puget Sound",
+      "major_cities": [
+        "Tacoma",
+        "Federal Way"
+      ]
+    },
+    "254": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Central Texas",
+      "major_cities": [
+        "Waco",
+        "Killeen",
+        "Temple"
+      ]
+    },
+    "256": {
+      "state": "AL",
+      "state_name": "Alabama",
+      "region": "Eastern and Northern Alabama",
+      "major_cities": [
+        "Huntsville",
+        "Decatur"
+      ]
+    },
+    "260": {
+      "state": "IN",
+      "state_name": "Indiana",
+      "region": "Northeastern Indiana",
+      "major_cities": [
+        "Fort Wayne"
+      ]
+    },
+    "262": {
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "region": "Southeastern Wisconsin",
+      "major_cities": [
+        "Kenosha",
+        "Racine",
+        "Waukesha"
+      ]
+    },
+    "267": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Southeastern Pennsylvania overlay",
+      "major_cities": [
+        "Philadelphia"
+      ]
+    },
+    "269": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Southwestern Michigan",
+      "major_cities": [
+        "Kalamazoo",
+        "Battle Creek"
+      ]
+    },
+    "270": {
+      "state": "KY",
+      "state_name": "Kentucky",
+      "region": "Western Kentucky",
+      "major_cities": [
+        "Bowling Green",
+        "Paducah",
+        "Owensboro"
+      ]
+    },
+    "272": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Northeastern Pennsylvania overlay",
+      "major_cities": [
+        "Scranton",
+        "Wilkes-Barre"
+      ]
+    },
+    "274": {
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "region": "Southeastern Wisconsin overlay",
+      "major_cities": [
+        "Kenosha"
+      ]
+    },
+    "276": {
+      "state": "VA",
+      "state_name": "Virginia",
+      "region": "Southern and Southwestern Virginia",
+      "major_cities": [
+        "Bristol",
+        "Martinsville"
+      ]
+    },
+    "281": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Houston Metro",
+      "major_cities": [
+        "Houston"
+      ]
+    },
+    "283": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Southwestern Ohio overlay",
+      "major_cities": [
+        "Cincinnati"
+      ]
+    },
+    "301": {
+      "state": "MD",
+      "state_name": "Maryland",
+      "region": "Western Maryland",
+      "major_cities": [
+        "Silver Spring",
+        "Bethesda",
+        "Frederick"
+      ]
+    },
+    "302": {
+      "state": "DE",
+      "state_name": "Delaware",
+      "region": "All of Delaware",
+      "major_cities": [
+        "Wilmington",
+        "Dover",
+        "Newark"
+      ]
+    },
+    "303": {
+      "state": "CO",
+      "state_name": "Colorado",
+      "region": "Central Colorado",
+      "major_cities": [
+        "Denver",
+        "Boulder",
+        "Lakewood"
+      ]
+    },
+    "304": {
+      "state": "WV",
+      "state_name": "West Virginia",
+      "region": "All of West Virginia",
+      "major_cities": [
+        "Charleston",
+        "Huntington",
+        "Morgantown"
+      ]
+    },
+    "305": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Southeast Florida",
+      "major_cities": [
+        "Miami",
+        "Key West",
+        "Homestead"
+      ]
+    },
+    "307": {
+      "state": "WY",
+      "state_name": "Wyoming",
+      "region": "All of Wyoming",
+      "major_cities": [
+        "Cheyenne",
+        "Casper",
+        "Laramie"
+      ]
+    },
+    "308": {
+      "state": "NE",
+      "state_name": "Nebraska",
+      "region": "Western Nebraska",
+      "major_cities": [
+        "North Platte",
+        "Kearney",
+        "Scottsbluff"
+      ]
+    },
+    "309": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "West Central Illinois",
+      "major_cities": [
+        "Peoria",
+        "Bloomington"
+      ]
+    },
+    "310": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "West Los Angeles",
+      "major_cities": [
+        "Beverly Hills",
+        "Santa Monica",
+        "Malibu"
+      ]
+    },
+    "312": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Chicago Downtown (The Loop)",
+      "major_cities": [
+        "Chicago"
+      ]
+    },
+    "313": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Detroit Metro",
+      "major_cities": [
+        "Detroit",
+        "Dearborn"
+      ]
+    },
+    "314": {
+      "state": "MO",
+      "state_name": "Missouri",
+      "region": "St. Louis City",
+      "major_cities": [
+        "St. Louis"
+      ]
+    },
+    "315": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "North Central New York",
+      "major_cities": [
+        "Syracuse",
+        "Utica"
+      ]
+    },
+    "316": {
+      "state": "KS",
+      "state_name": "Kansas",
+      "region": "South Central Kansas",
+      "major_cities": [
+        "Wichita"
+      ]
+    },
+    "317": {
+      "state": "IN",
+      "state_name": "Indiana",
+      "region": "Central Indiana",
+      "major_cities": [
+        "Indianapolis",
+        "Carmel",
+        "Fishers"
+      ]
+    },
+    "318": {
+      "state": "LA",
+      "state_name": "Louisiana",
+      "region": "Northern Louisiana",
+      "major_cities": [
+        "Shreveport",
+        "Monroe"
+      ]
+    },
+    "319": {
+      "state": "IA",
+      "state_name": "Iowa",
+      "region": "Eastern Iowa",
+      "major_cities": [
+        "Cedar Rapids",
+        "Iowa City",
+        "Waterloo"
+      ]
+    },
+    "320": {
+      "state": "MN",
+      "state_name": "Minnesota",
+      "region": "Central Minnesota",
+      "major_cities": [
+        "St. Cloud"
+      ]
+    },
+    "321": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Central East Florida",
+      "major_cities": [
+        "Melbourne",
+        "Cape Canaveral",
+        "Titusville"
+      ]
+    },
+    "323": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Central Los Angeles",
+      "major_cities": [
+        "Los Angeles",
+        "Hollywood"
+      ]
+    },
+    "325": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "West Central Texas",
+      "major_cities": [
+        "Abilene",
+        "San Angelo"
+      ]
+    },
+    "326": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Southwestern Ohio overlay",
+      "major_cities": [
+        "Dayton"
+      ]
+    },
+    "330": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Northeastern Ohio",
+      "major_cities": [
+        "Akron",
+        "Canton",
+        "Youngstown"
+      ]
+    },
+    "331": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Western Chicago suburbs overlay",
+      "major_cities": [
+        "Aurora",
+        "Naperville"
+      ]
+    },
+    "332": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Manhattan overlay",
+      "major_cities": [
+        "New York City"
+      ]
+    },
+    "334": {
+      "state": "AL",
+      "state_name": "Alabama",
+      "region": "Southern Alabama",
+      "major_cities": [
+        "Montgomery",
+        "Auburn",
+        "Dothan"
+      ]
+    },
+    "336": {
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "Central North Carolina",
+      "major_cities": [
+        "Greensboro",
+        "Winston-Salem",
+        "High Point"
+      ]
+    },
+    "337": {
+      "state": "LA",
+      "state_name": "Louisiana",
+      "region": "Southwestern Louisiana",
+      "major_cities": [
+        "Lake Charles",
+        "Lafayette"
+      ]
+    },
+    "339": {
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "Boston suburbs overlay",
+      "major_cities": [
+        "Braintree",
+        "Natick"
+      ]
+    },
+    "340": {
+      "state": "VI",
+      "state_name": "US Virgin Islands",
+      "region": "US Virgin Islands",
+      "major_cities": [
+        "Charlotte Amalie",
+        "Christiansted"
+      ]
+    },
+    "346": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Houston area overlay",
+      "major_cities": [
+        "Houston"
+      ]
+    },
+    "347": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "NYC Outer Boroughs",
+      "major_cities": [
+        "Brooklyn",
+        "Queens",
+        "Bronx",
+        "Staten Island"
+      ]
+    },
+    "351": {
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "North of Boston overlay",
+      "major_cities": [
+        "Lowell",
+        "Salem"
+      ]
+    },
+    "352": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "North Central Florida",
+      "major_cities": [
+        "Gainesville",
+        "Ocala"
+      ]
+    },
+    "360": {
+      "state": "WA",
+      "state_name": "Washington",
+      "region": "Western Washington",
+      "major_cities": [
+        "Olympia",
+        "Bellingham",
+        "Vancouver"
+      ]
+    },
+    "361": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "South Texas Coast",
+      "major_cities": [
+        "Corpus Christi",
+        "Victoria"
+      ]
+    },
+    "364": {
+      "state": "KY",
+      "state_name": "Kentucky",
+      "region": "Western Kentucky overlay",
+      "major_cities": [
+        "Bowling Green"
+      ]
+    },
+    "369": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Solano County",
+      "major_cities": [
+        "Vallejo",
+        "Fairfield"
+      ]
+    },
+    "380": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Columbus overlay",
+      "major_cities": [
+        "Columbus"
+      ]
+    },
+    "385": {
+      "state": "UT",
+      "state_name": "Utah",
+      "region": "Salt Lake City Metro overlay",
+      "major_cities": [
+        "Salt Lake City"
+      ]
+    },
+    "386": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "North Central Florida",
+      "major_cities": [
+        "Daytona Beach",
+        "Lake City"
+      ]
+    },
+    "401": {
+      "state": "RI",
+      "state_name": "Rhode Island",
+      "region": "All of Rhode Island",
+      "major_cities": [
+        "Providence",
+        "Warwick",
+        "Cranston"
+      ]
+    },
+    "402": {
+      "state": "NE",
+      "state_name": "Nebraska",
+      "region": "Eastern Nebraska",
+      "major_cities": [
+        "Omaha",
+        "Lincoln"
+      ]
+    },
+    "404": {
+      "state": "GA",
+      "state_name": "Georgia",
+      "region": "Atlanta Metro",
+      "major_cities": [
+        "Atlanta"
+      ]
+    },
+    "405": {
+      "state": "OK",
+      "state_name": "Oklahoma",
+      "region": "Central Oklahoma",
+      "major_cities": [
+        "Oklahoma City",
+        "Norman",
+        "Edmond"
+      ]
+    },
+    "406": {
+      "state": "MT",
+      "state_name": "Montana",
+      "region": "All of Montana",
+      "major_cities": [
+        "Billings",
+        "Missoula",
+        "Great Falls"
+      ]
+    },
+    "407": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Central Florida",
+      "major_cities": [
+        "Orlando",
+        "Kissimmee",
+        "Winter Park"
+      ]
+    },
+    "408": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Central Coastal California",
+      "major_cities": [
+        "San Jose",
+        "Sunnyvale",
+        "Santa Clara"
+      ]
+    },
+    "409": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Southeast Texas",
+      "major_cities": [
+        "Galveston",
+        "Beaumont"
+      ]
+    },
+    "410": {
+      "state": "MD",
+      "state_name": "Maryland",
+      "region": "Eastern Maryland",
+      "major_cities": [
+        "Baltimore",
+        "Annapolis"
+      ]
+    },
+    "412": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Western Pennsylvania",
+      "major_cities": [
+        "Pittsburgh"
+      ]
+    },
+    "413": {
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "Western Massachusetts",
+      "major_cities": [
+        "Springfield",
+        "Pittsfield",
+        "Northampton"
+      ]
+    },
+    "414": {
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "region": "Milwaukee County",
+      "major_cities": [
+        "Milwaukee"
+      ]
+    },
+    "415": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "San Francisco",
+      "major_cities": [
+        "San Francisco",
+        "Marin County"
+      ]
+    },
+    "417": {
+      "state": "MO",
+      "state_name": "Missouri",
+      "region": "Southwestern Missouri",
+      "major_cities": [
+        "Springfield",
+        "Joplin",
+        "Branson"
+      ]
+    },
+    "419": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Northwestern Ohio",
+      "major_cities": [
+        "Toledo",
+        "Findlay"
+      ]
+    },
+    "423": {
+      "state": "TN",
+      "state_name": "Tennessee",
+      "region": "Eastern Tennessee",
+      "major_cities": [
+        "Chattanooga",
+        "Johnson City",
+        "Kingsport"
+      ]
+    },
+    "424": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "West Los Angeles overlay",
+      "major_cities": [
+        "Los Angeles"
+      ]
+    },
+    "425": {
+      "state": "WA",
+      "state_name": "Washington",
+      "region": "North Puget Sound",
+      "major_cities": [
+        "Bellevue",
+        "Everett",
+        "Kirkland"
+      ]
+    },
+    "430": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Northeast Texas overlay",
+      "major_cities": [
+        "Tyler"
+      ]
+    },
+    "432": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "West Texas",
+      "major_cities": [
+        "Midland",
+        "Odessa"
+      ]
+    },
+    "434": {
+      "state": "VA",
+      "state_name": "Virginia",
+      "region": "Central Virginia",
+      "major_cities": [
+        "Charlottesville",
+        "Lynchburg",
+        "Danville"
+      ]
+    },
+    "435": {
+      "state": "UT",
+      "state_name": "Utah",
+      "region": "Rural Utah",
+      "major_cities": [
+        "St. George",
+        "Logan",
+        "Provo"
+      ]
+    },
+    "440": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Cleveland suburbs",
+      "major_cities": [
+        "Lorain",
+        "Elyria",
+        "Mentor"
+      ]
+    },
+    "442": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "San Diego North County",
+      "major_cities": [
+        "Oceanside",
+        "Escondido",
+        "Carlsbad"
+      ]
+    },
+    "443": {
+      "state": "MD",
+      "state_name": "Maryland",
+      "region": "Eastern Maryland overlay",
+      "major_cities": [
+        "Baltimore"
+      ]
+    },
+    "458": {
+      "state": "OR",
+      "state_name": "Oregon",
+      "region": "Oregon overlay",
+      "major_cities": [
+        "Eugene",
+        "Medford"
+      ]
+    },
+    "463": {
+      "state": "IN",
+      "state_name": "Indiana",
+      "region": "Central Indiana overlay",
+      "major_cities": [
+        "Indianapolis"
+      ]
+    },
+    "464": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Chicago south suburbs overlay",
+      "major_cities": [
+        "Chicago"
+      ]
+    },
+    "469": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Dallas Metro overlay",
+      "major_cities": [
+        "Dallas"
+      ]
+    },
+    "470": {
+      "state": "GA",
+      "state_name": "Georgia",
+      "region": "Greater Atlanta overlay",
+      "major_cities": [
+        "Atlanta"
+      ]
+    },
+    "475": {
+      "state": "CT",
+      "state_name": "Connecticut",
+      "region": "Southwestern Connecticut overlay",
+      "major_cities": [
+        "New Haven",
+        "Greenwich"
+      ]
+    },
+    "478": {
+      "state": "GA",
+      "state_name": "Georgia",
+      "region": "Central Georgia",
+      "major_cities": [
+        "Macon",
+        "Warner Robins"
+      ]
+    },
+    "479": {
+      "state": "AR",
+      "state_name": "Arkansas",
+      "region": "Northwestern Arkansas",
+      "major_cities": [
+        "Fayetteville",
+        "Fort Smith",
+        "Bentonville"
+      ]
+    },
+    "480": {
+      "state": "AZ",
+      "state_name": "Arizona",
+      "region": "East Phoenix Metro",
+      "major_cities": [
+        "Scottsdale",
+        "Mesa",
+        "Tempe",
+        "Chandler"
+      ]
+    },
+    "484": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Southeastern Pennsylvania overlay",
+      "major_cities": [
+        "Allentown",
+        "Reading"
+      ]
+    },
+    "501": {
+      "state": "AR",
+      "state_name": "Arkansas",
+      "region": "Central Arkansas",
+      "major_cities": [
+        "Little Rock",
+        "North Little Rock",
+        "Conway"
+      ]
+    },
+    "502": {
+      "state": "KY",
+      "state_name": "Kentucky",
+      "region": "North Central Kentucky",
+      "major_cities": [
+        "Louisville",
+        "Frankfort",
+        "Shelbyville"
+      ]
+    },
+    "503": {
+      "state": "OR",
+      "state_name": "Oregon",
+      "region": "Northwestern Oregon",
+      "major_cities": [
+        "Portland",
+        "Salem"
+      ]
+    },
+    "504": {
+      "state": "LA",
+      "state_name": "Louisiana",
+      "region": "Greater New Orleans",
+      "major_cities": [
+        "New Orleans",
+        "Metairie"
+      ]
+    },
+    "505": {
+      "state": "NM",
+      "state_name": "New Mexico",
+      "region": "North Central New Mexico",
+      "major_cities": [
+        "Albuquerque",
+        "Santa Fe"
+      ]
+    },
+    "507": {
+      "state": "MN",
+      "state_name": "Minnesota",
+      "region": "Southern Minnesota",
+      "major_cities": [
+        "Rochester",
+        "Mankato"
+      ]
+    },
+    "508": {
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "Central Massachusetts",
+      "major_cities": [
+        "Worcester",
+        "Framingham",
+        "Cape Cod"
+      ]
+    },
+    "509": {
+      "state": "WA",
+      "state_name": "Washington",
+      "region": "Eastern Washington",
+      "major_cities": [
+        "Spokane",
+        "Yakima",
+        "Tri-Cities"
+      ]
+    },
+    "510": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "East Bay",
+      "major_cities": [
+        "Oakland",
+        "Berkeley",
+        "Fremont"
+      ]
+    },
+    "512": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Central Texas",
+      "major_cities": [
+        "Austin"
+      ]
+    },
+    "513": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Southwestern Ohio",
+      "major_cities": [
+        "Cincinnati",
+        "Hamilton"
+      ]
+    },
+    "515": {
+      "state": "IA",
+      "state_name": "Iowa",
+      "region": "Central Iowa",
+      "major_cities": [
+        "Des Moines",
+        "Ames"
+      ]
+    },
+    "516": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Nassau County",
+      "major_cities": [
+        "Hempstead",
+        "Garden City"
+      ]
+    },
+    "517": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Central Michigan",
+      "major_cities": [
+        "Lansing",
+        "Jackson"
+      ]
+    },
+    "518": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Northeastern New York",
+      "major_cities": [
+        "Albany",
+        "Schenectady",
+        "Saratoga Springs"
+      ]
+    },
+    "520": {
+      "state": "AZ",
+      "state_name": "Arizona",
+      "region": "Southeastern Arizona",
+      "major_cities": [
+        "Tucson",
+        "Sierra Vista"
+      ]
+    },
+    "530": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Northeastern California",
+      "major_cities": [
+        "Chico",
+        "Redding",
+        "Davis"
+      ]
+    },
+    "531": {
+      "state": "NE",
+      "state_name": "Nebraska",
+      "region": "Eastern Nebraska overlay",
+      "major_cities": [
+        "Omaha"
+      ]
+    },
+    "534": {
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "region": "Southeastern Wisconsin overlay",
+      "major_cities": [
+        "Milwaukee"
+      ]
+    },
+    "539": {
+      "state": "OK",
+      "state_name": "Oklahoma",
+      "region": "Eastern Oklahoma overlay",
+      "major_cities": [
+        "Tulsa"
+      ]
+    },
+    "540": {
+      "state": "VA",
+      "state_name": "Virginia",
+      "region": "Western Virginia",
+      "major_cities": [
+        "Roanoke",
+        "Harrisonburg",
+        "Fredericksburg"
+      ]
+    },
+    "541": {
+      "state": "OR",
+      "state_name": "Oregon",
+      "region": "Oregon outside Portland/Salem",
+      "major_cities": [
+        "Eugene",
+        "Medford",
+        "Bend"
+      ]
+    },
+    "551": {
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "Northeastern New Jersey overlay",
+      "major_cities": [
+        "Jersey City"
+      ]
+    },
+    "559": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Central Valley",
+      "major_cities": [
+        "Fresno",
+        "Visalia",
+        "Clovis"
+      ]
+    },
+    "561": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Southeast Florida",
+      "major_cities": [
+        "West Palm Beach",
+        "Boca Raton",
+        "Boynton Beach"
+      ]
+    },
+    "562": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Southeast Los Angeles County",
+      "major_cities": [
+        "Long Beach",
+        "Downey",
+        "Lakewood"
+      ]
+    },
+    "563": {
+      "state": "IA",
+      "state_name": "Iowa",
+      "region": "Eastern Iowa",
+      "major_cities": [
+        "Davenport",
+        "Dubuque",
+        "Clinton"
+      ]
+    },
+    "564": {
+      "state": "WA",
+      "state_name": "Washington",
+      "region": "Western Washington overlay",
+      "major_cities": [
+        "Olympia"
+      ]
+    },
+    "567": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Northwestern Ohio overlay",
+      "major_cities": [
+        "Toledo"
+      ]
+    },
+    "570": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Northeastern Pennsylvania",
+      "major_cities": [
+        "Scranton",
+        "Wilkes-Barre"
+      ]
+    },
+    "571": {
+      "state": "VA",
+      "state_name": "Virginia",
+      "region": "Northern Virginia overlay",
+      "major_cities": [
+        "Arlington",
+        "Alexandria",
+        "Fairfax"
+      ]
+    },
+    "572": {
+      "state": "OK",
+      "state_name": "Oklahoma",
+      "region": "Oklahoma overlay",
+      "major_cities": [
+        "Oklahoma City"
+      ]
+    },
+    "573": {
+      "state": "MO",
+      "state_name": "Missouri",
+      "region": "Central and Southeastern Missouri",
+      "major_cities": [
+        "Columbia",
+        "Jefferson City"
+      ]
+    },
+    "574": {
+      "state": "IN",
+      "state_name": "Indiana",
+      "region": "Northern Indiana",
+      "major_cities": [
+        "South Bend",
+        "Elkhart",
+        "Mishawaka"
+      ]
+    },
+    "575": {
+      "state": "NM",
+      "state_name": "New Mexico",
+      "region": "Southern New Mexico",
+      "major_cities": [
+        "Las Cruces",
+        "Roswell",
+        "Carlsbad"
+      ]
+    },
+    "580": {
+      "state": "OK",
+      "state_name": "Oklahoma",
+      "region": "Western and Southern Oklahoma",
+      "major_cities": [
+        "Lawton",
+        "Enid"
+      ]
+    },
+    "585": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Northwestern New York",
+      "major_cities": [
+        "Rochester"
+      ]
+    },
+    "586": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Macomb County",
+      "major_cities": [
+        "Warren",
+        "Sterling Heights",
+        "Clinton Township"
+      ]
+    },
+    "601": {
+      "state": "MS",
+      "state_name": "Mississippi",
+      "region": "Central Mississippi",
+      "major_cities": [
+        "Jackson",
+        "Meridian",
+        "Hattiesburg"
+      ]
+    },
+    "602": {
+      "state": "AZ",
+      "state_name": "Arizona",
+      "region": "Central Phoenix",
+      "major_cities": [
+        "Phoenix"
+      ]
+    },
+    "603": {
+      "state": "NH",
+      "state_name": "New Hampshire",
+      "region": "All of New Hampshire",
+      "major_cities": [
+        "Manchester",
+        "Concord",
+        "Nashua"
+      ]
+    },
+    "605": {
+      "state": "SD",
+      "state_name": "South Dakota",
+      "region": "All of South Dakota",
+      "major_cities": [
+        "Sioux Falls",
+        "Rapid City",
+        "Aberdeen"
+      ]
+    },
+    "606": {
+      "state": "KY",
+      "state_name": "Kentucky",
+      "region": "Eastern Kentucky",
+      "major_cities": [
+        "Ashland",
+        "Pikeville",
+        "Somerset"
+      ]
+    },
+    "607": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "South Central New York",
+      "major_cities": [
+        "Ithaca",
+        "Binghamton",
+        "Elmira"
+      ]
+    },
+    "608": {
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "region": "Southwestern Wisconsin",
+      "major_cities": [
+        "Madison",
+        "La Crosse"
+      ]
+    },
+    "609": {
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "Southern New Jersey",
+      "major_cities": [
+        "Trenton",
+        "Atlantic City",
+        "Princeton"
+      ]
+    },
+    "610": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Southeastern Pennsylvania",
+      "major_cities": [
+        "Allentown",
+        "Bethlehem",
+        "Reading"
+      ]
+    },
+    "612": {
+      "state": "MN",
+      "state_name": "Minnesota",
+      "region": "Minneapolis",
+      "major_cities": [
+        "Minneapolis"
+      ]
+    },
+    "614": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Central Ohio",
+      "major_cities": [
+        "Columbus"
+      ]
+    },
+    "615": {
+      "state": "TN",
+      "state_name": "Tennessee",
+      "region": "Northern Middle Tennessee",
+      "major_cities": [
+        "Nashville",
+        "Murfreesboro"
+      ]
+    },
+    "616": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Western Michigan",
+      "major_cities": [
+        "Grand Rapids",
+        "Holland"
+      ]
+    },
+    "617": {
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "Greater Boston",
+      "major_cities": [
+        "Boston",
+        "Cambridge",
+        "Brookline"
+      ]
+    },
+    "618": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Southern Illinois",
+      "major_cities": [
+        "Belleville",
+        "Carbondale",
+        "East St. Louis"
+      ]
+    },
+    "619": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "San Diego Central",
+      "major_cities": [
+        "San Diego",
+        "Chula Vista",
+        "El Cajon"
+      ]
+    },
+    "620": {
+      "state": "KS",
+      "state_name": "Kansas",
+      "region": "Southern Kansas",
+      "major_cities": [
+        "Hutchinson",
+        "Dodge City"
+      ]
+    },
+    "623": {
+      "state": "AZ",
+      "state_name": "Arizona",
+      "region": "West Phoenix Metro",
+      "major_cities": [
+        "Glendale",
+        "Peoria",
+        "Surprise"
+      ]
+    },
+    "626": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "San Gabriel Valley",
+      "major_cities": [
+        "Pasadena",
+        "Arcadia",
+        "Alhambra"
+      ]
+    },
+    "628": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "San Francisco overlay",
+      "major_cities": [
+        "San Francisco"
+      ]
+    },
+    "629": {
+      "state": "TN",
+      "state_name": "Tennessee",
+      "region": "Nashville area overlay",
+      "major_cities": [
+        "Nashville"
+      ]
+    },
+    "630": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Western Chicago Suburbs",
+      "major_cities": [
+        "Aurora",
+        "Naperville",
+        "Wheaton"
+      ]
+    },
+    "631": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Suffolk County",
+      "major_cities": [
+        "Huntington",
+        "Islip",
+        "Brookhaven"
+      ]
+    },
+    "636": {
+      "state": "MO",
+      "state_name": "Missouri",
+      "region": "West St. Louis Metro",
+      "major_cities": [
+        "Chesterfield",
+        "St. Charles"
+      ]
+    },
+    "641": {
+      "state": "IA",
+      "state_name": "Iowa",
+      "region": "Central Iowa",
+      "major_cities": [
+        "Mason City",
+        "Marshalltown"
+      ]
+    },
+    "646": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "NYC area overlay",
+      "major_cities": [
+        "New York City"
+      ]
+    },
+    "650": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Peninsula",
+      "major_cities": [
+        "San Mateo",
+        "Palo Alto",
+        "Redwood City"
+      ]
+    },
+    "651": {
+      "state": "MN",
+      "state_name": "Minnesota",
+      "region": "St. Paul",
+      "major_cities": [
+        "St. Paul"
+      ]
+    },
+    "657": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Northern Orange County",
+      "major_cities": [
+        "Anaheim",
+        "Fullerton"
+      ]
+    },
+    "660": {
+      "state": "MO",
+      "state_name": "Missouri",
+      "region": "Northern Missouri",
+      "major_cities": [
+        "Sedalia",
+        "Kirksville"
+      ]
+    },
+    "661": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "North Los Angeles / Kern County",
+      "major_cities": [
+        "Bakersfield",
+        "Lancaster",
+        "Palmdale"
+      ]
+    },
+    "662": {
+      "state": "MS",
+      "state_name": "Mississippi",
+      "region": "Northern Mississippi",
+      "major_cities": [
+        "Tupelo",
+        "Oxford",
+        "Southaven"
+      ]
+    },
+    "667": {
+      "state": "MD",
+      "state_name": "Maryland",
+      "region": "Eastern Maryland overlay",
+      "major_cities": [
+        "Baltimore"
+      ]
+    },
+    "669": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Central Coastal California overlay",
+      "major_cities": [
+        "San Jose"
+      ]
+    },
+    "670": {
+      "state": "MP",
+      "state_name": "Northern Mariana Islands",
+      "region": "Northern Mariana Islands",
+      "major_cities": [
+        "Saipan"
+      ]
+    },
+    "671": {
+      "state": "GU",
+      "state_name": "Guam",
+      "region": "Guam",
+      "major_cities": [
+        "Hagatna",
+        "Dededo"
+      ]
+    },
+    "678": {
+      "state": "GA",
+      "state_name": "Georgia",
+      "region": "Atlanta Metro overlay",
+      "major_cities": [
+        "Atlanta",
+        "Marietta"
+      ]
+    },
+    "679": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Southeast Michigan overlay",
+      "major_cities": [
+        "Dearborn"
+      ]
+    },
+    "680": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Upstate New York overlay",
+      "major_cities": [
+        "Syracuse"
+      ]
+    },
+    "681": {
+      "state": "WV",
+      "state_name": "West Virginia",
+      "region": "West Virginia overlay",
+      "major_cities": [
+        "Charleston"
+      ]
+    },
+    "682": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Fort Worth area overlay",
+      "major_cities": [
+        "Fort Worth"
+      ]
+    },
+    "684": {
+      "state": "AS",
+      "state_name": "American Samoa",
+      "region": "American Samoa",
+      "major_cities": [
+        "Pago Pago"
+      ]
+    },
+    "689": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Central Florida overlay",
+      "major_cities": [
+        "Orlando"
+      ]
+    },
+    "701": {
+      "state": "ND",
+      "state_name": "North Dakota",
+      "region": "All of North Dakota",
+      "major_cities": [
+        "Fargo",
+        "Bismarck",
+        "Grand Forks"
+      ]
+    },
+    "702": {
+      "state": "NV",
+      "state_name": "Nevada",
+      "region": "Southern Nevada",
+      "major_cities": [
+        "Las Vegas",
+        "Henderson"
+      ]
+    },
+    "703": {
+      "state": "VA",
+      "state_name": "Virginia",
+      "region": "Northern Virginia",
+      "major_cities": [
+        "Arlington",
+        "Alexandria",
+        "Fairfax"
+      ]
+    },
+    "704": {
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "Western North Carolina",
+      "major_cities": [
+        "Charlotte",
+        "Gastonia"
+      ]
+    },
+    "706": {
+      "state": "GA",
+      "state_name": "Georgia",
+      "region": "Northern Georgia",
+      "major_cities": [
+        "Augusta",
+        "Columbus",
+        "Athens"
+      ]
+    },
+    "707": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Northwestern California",
+      "major_cities": [
+        "Santa Rosa",
+        "Napa",
+        "Eureka"
+      ]
+    },
+    "708": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Chicago Suburbs",
+      "major_cities": [
+        "Cicero",
+        "Oak Lawn",
+        "Oak Park"
+      ]
+    },
+    "712": {
+      "state": "IA",
+      "state_name": "Iowa",
+      "region": "Western Iowa",
+      "major_cities": [
+        "Council Bluffs",
+        "Sioux City"
+      ]
+    },
+    "713": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Houston Central",
+      "major_cities": [
+        "Houston"
+      ]
+    },
+    "714": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Northern Orange County",
+      "major_cities": [
+        "Anaheim",
+        "Santa Ana",
+        "Huntington Beach"
+      ]
+    },
+    "715": {
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "region": "Northern Wisconsin",
+      "major_cities": [
+        "Eau Claire",
+        "Wausau"
+      ]
+    },
+    "716": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Western New York",
+      "major_cities": [
+        "Buffalo",
+        "Niagara Falls"
+      ]
+    },
+    "717": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "South Central Pennsylvania",
+      "major_cities": [
+        "Harrisburg",
+        "Lancaster",
+        "York"
+      ]
+    },
+    "718": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "NYC Outer Boroughs",
+      "major_cities": [
+        "Brooklyn",
+        "Queens",
+        "Bronx",
+        "Staten Island"
+      ]
+    },
+    "719": {
+      "state": "CO",
+      "state_name": "Colorado",
+      "region": "Southeastern Colorado",
+      "major_cities": [
+        "Colorado Springs",
+        "Pueblo"
+      ]
+    },
+    "720": {
+      "state": "CO",
+      "state_name": "Colorado",
+      "region": "Central Colorado overlay",
+      "major_cities": [
+        "Denver",
+        "Aurora"
+      ]
+    },
+    "724": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Southwestern Pennsylvania",
+      "major_cities": [
+        "Washington",
+        "New Castle"
+      ]
+    },
+    "725": {
+      "state": "NV",
+      "state_name": "Nevada",
+      "region": "Southern Nevada overlay",
+      "major_cities": [
+        "Las Vegas"
+      ]
+    },
+    "726": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "San Antonio overlay",
+      "major_cities": [
+        "San Antonio"
+      ]
+    },
+    "727": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Tampa Bay West",
+      "major_cities": [
+        "St. Petersburg",
+        "Clearwater"
+      ]
+    },
+    "731": {
+      "state": "TN",
+      "state_name": "Tennessee",
+      "region": "Western Tennessee",
+      "major_cities": [
+        "Jackson",
+        "Dyersburg"
+      ]
+    },
+    "732": {
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "Central New Jersey",
+      "major_cities": [
+        "New Brunswick",
+        "Toms River",
+        "Edison"
+      ]
+    },
+    "734": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Southeast Michigan",
+      "major_cities": [
+        "Ann Arbor",
+        "Livonia",
+        "Westland"
+      ]
+    },
+    "737": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Austin area overlay",
+      "major_cities": [
+        "Austin"
+      ]
+    },
+    "740": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Southeast and Central Ohio",
+      "major_cities": [
+        "Athens",
+        "Chillicothe",
+        "Lancaster"
+      ]
+    },
+    "743": {
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "Central North Carolina overlay",
+      "major_cities": [
+        "Greensboro"
+      ]
+    },
+    "747": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "San Fernando Valley overlay",
+      "major_cities": [
+        "Burbank",
+        "Glendale"
+      ]
+    },
+    "748": {
+      "state": "CO",
+      "state_name": "Colorado",
+      "region": "Northern and Western Colorado",
+      "major_cities": [
+        "Fort Collins",
+        "Grand Junction"
+      ]
+    },
+    "754": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Broward County overlay",
+      "major_cities": [
+        "Fort Lauderdale"
+      ]
+    },
+    "757": {
+      "state": "VA",
+      "state_name": "Virginia",
+      "region": "Eastern Virginia",
+      "major_cities": [
+        "Norfolk",
+        "Virginia Beach",
+        "Hampton"
+      ]
+    },
+    "760": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Inland Empire / North San Diego",
+      "major_cities": [
+        "Palm Springs",
+        "Oceanside",
+        "Victorville"
+      ]
+    },
+    "762": {
+      "state": "GA",
+      "state_name": "Georgia",
+      "region": "Northern Georgia overlay",
+      "major_cities": [
+        "Columbus",
+        "Augusta"
+      ]
+    },
+    "763": {
+      "state": "MN",
+      "state_name": "Minnesota",
+      "region": "Northwest Minneapolis suburbs",
+      "major_cities": [
+        "Brooklyn Park",
+        "Maple Grove"
+      ]
+    },
+    "765": {
+      "state": "IN",
+      "state_name": "Indiana",
+      "region": "East Central Indiana",
+      "major_cities": [
+        "Muncie",
+        "Lafayette",
+        "Anderson"
+      ]
+    },
+    "769": {
+      "state": "MS",
+      "state_name": "Mississippi",
+      "region": "Central Mississippi overlay",
+      "major_cities": [
+        "Jackson"
+      ]
+    },
+    "770": {
+      "state": "GA",
+      "state_name": "Georgia",
+      "region": "Atlanta Suburbs",
+      "major_cities": [
+        "Roswell",
+        "Alpharetta",
+        "Lawrenceville"
+      ]
+    },
+    "771": {
+      "state": "DC",
+      "state_name": "District of Columbia",
+      "region": "Washington, D.C. overlay",
+      "major_cities": [
+        "Washington"
+      ]
+    },
+    "772": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Treasure Coast",
+      "major_cities": [
+        "Port St. Lucie",
+        "Vero Beach"
+      ]
+    },
+    "773": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Chicago (outside Loop)",
+      "major_cities": [
+        "Chicago"
+      ]
+    },
+    "774": {
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "Central Massachusetts overlay",
+      "major_cities": [
+        "Worcester",
+        "Framingham"
+      ]
+    },
+    "775": {
+      "state": "NV",
+      "state_name": "Nevada",
+      "region": "Northern Nevada",
+      "major_cities": [
+        "Reno",
+        "Carson City",
+        "Sparks"
+      ]
+    },
+    "779": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Northwestern Illinois overlay",
+      "major_cities": [
+        "Rockford"
+      ]
+    },
+    "781": {
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "Boston Suburbs",
+      "major_cities": [
+        "Quincy",
+        "Weymouth",
+        "Lynn"
+      ]
+    },
+    "785": {
+      "state": "KS",
+      "state_name": "Kansas",
+      "region": "Northern and Western Kansas",
+      "major_cities": [
+        "Topeka",
+        "Lawrence",
+        "Manhattan"
+      ]
+    },
+    "786": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Southeast Florida overlay",
+      "major_cities": [
+        "Miami"
+      ]
+    },
+    "787": {
+      "state": "PR",
+      "state_name": "Puerto Rico",
+      "region": "Puerto Rico",
+      "major_cities": [
+        "San Juan",
+        "Bayamon",
+        "Ponce"
+      ]
+    },
+    "801": {
+      "state": "UT",
+      "state_name": "Utah",
+      "region": "Salt Lake City Metro",
+      "major_cities": [
+        "Salt Lake City",
+        "Provo",
+        "Ogden"
+      ]
+    },
+    "802": {
+      "state": "VT",
+      "state_name": "Vermont",
+      "region": "All of Vermont",
+      "major_cities": [
+        "Burlington",
+        "Montpelier",
+        "Rutland"
+      ]
+    },
+    "803": {
+      "state": "SC",
+      "state_name": "South Carolina",
+      "region": "Central South Carolina",
+      "major_cities": [
+        "Columbia",
+        "Rock Hill"
+      ]
+    },
+    "804": {
+      "state": "VA",
+      "state_name": "Virginia",
+      "region": "Central Eastern Virginia",
+      "major_cities": [
+        "Richmond",
+        "Petersburg"
+      ]
+    },
+    "805": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "South Central Coast",
+      "major_cities": [
+        "Ventura",
+        "Santa Barbara",
+        "San Luis Obispo"
+      ]
+    },
+    "806": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Texas Panhandle",
+      "major_cities": [
+        "Amarillo",
+        "Lubbock"
+      ]
+    },
+    "808": {
+      "state": "HI",
+      "state_name": "Hawaii",
+      "region": "All of Hawaii",
+      "major_cities": [
+        "Honolulu",
+        "Hilo",
+        "Kailua"
+      ]
+    },
+    "810": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Eastern Michigan",
+      "major_cities": [
+        "Flint",
+        "Port Huron"
+      ]
+    },
+    "812": {
+      "state": "IN",
+      "state_name": "Indiana",
+      "region": "Southern Indiana",
+      "major_cities": [
+        "Evansville",
+        "Bloomington",
+        "Terre Haute"
+      ]
+    },
+    "813": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Tampa Metro",
+      "major_cities": [
+        "Tampa",
+        "Brandon"
+      ]
+    },
+    "814": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Central Pennsylvania",
+      "major_cities": [
+        "Erie",
+        "State College",
+        "Altoona"
+      ]
+    },
+    "815": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Northwestern Illinois",
+      "major_cities": [
+        "Rockford",
+        "Joliet",
+        "DeKalb"
+      ]
+    },
+    "816": {
+      "state": "MO",
+      "state_name": "Missouri",
+      "region": "Kansas City",
+      "major_cities": [
+        "Kansas City",
+        "Independence"
+      ]
+    },
+    "817": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "North Central Texas",
+      "major_cities": [
+        "Fort Worth",
+        "Arlington"
+      ]
+    },
+    "818": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "San Fernando Valley",
+      "major_cities": [
+        "Burbank",
+        "Glendale",
+        "Van Nuys"
+      ]
+    },
+    "828": {
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "Western North Carolina",
+      "major_cities": [
+        "Asheville",
+        "Hickory"
+      ]
+    },
+    "830": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "South Central Texas",
+      "major_cities": [
+        "New Braunfels",
+        "Del Rio"
+      ]
+    },
+    "831": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Central Coast",
+      "major_cities": [
+        "Salinas",
+        "Monterey",
+        "Santa Cruz"
+      ]
+    },
+    "832": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Houston area overlay",
+      "major_cities": [
+        "Houston"
+      ]
+    },
+    "835": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Southeastern Pennsylvania overlay",
+      "major_cities": [
+        "Allentown"
+      ]
+    },
+    "838": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Upstate New York overlay",
+      "major_cities": [
+        "Albany"
+      ]
+    },
+    "839": {
+      "state": "SC",
+      "state_name": "South Carolina",
+      "region": "Central South Carolina overlay",
+      "major_cities": [
+        "Columbia"
+      ]
+    },
+    "843": {
+      "state": "SC",
+      "state_name": "South Carolina",
+      "region": "Eastern South Carolina",
+      "major_cities": [
+        "Charleston",
+        "Myrtle Beach"
+      ]
+    },
+    "845": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Hudson Valley",
+      "major_cities": [
+        "Poughkeepsie",
+        "New Rochelle",
+        "Middletown"
+      ]
+    },
+    "847": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Northern Chicago Suburbs",
+      "major_cities": [
+        "Schaumburg",
+        "Evanston",
+        "Arlington Heights"
+      ]
+    },
+    "848": {
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "Central New Jersey overlay",
+      "major_cities": [
+        "Toms River"
+      ]
+    },
+    "850": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Florida Panhandle",
+      "major_cities": [
+        "Tallahassee",
+        "Pensacola",
+        "Panama City"
+      ]
+    },
+    "854": {
+      "state": "SC",
+      "state_name": "South Carolina",
+      "region": "Eastern South Carolina overlay",
+      "major_cities": [
+        "Charleston"
+      ]
+    },
+    "856": {
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "Southwestern New Jersey",
+      "major_cities": [
+        "Camden",
+        "Cherry Hill",
+        "Vineland"
+      ]
+    },
+    "857": {
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "Greater Boston overlay",
+      "major_cities": [
+        "Boston"
+      ]
+    },
+    "858": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "North San Diego",
+      "major_cities": [
+        "San Diego",
+        "La Jolla",
+        "Poway"
+      ]
+    },
+    "859": {
+      "state": "KY",
+      "state_name": "Kentucky",
+      "region": "Northern and Central Kentucky",
+      "major_cities": [
+        "Lexington",
+        "Covington",
+        "Richmond"
+      ]
+    },
+    "860": {
+      "state": "CT",
+      "state_name": "Connecticut",
+      "region": "Eastern Connecticut",
+      "major_cities": [
+        "Hartford",
+        "New London",
+        "Norwich"
+      ]
+    },
+    "862": {
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "Northern New Jersey overlay",
+      "major_cities": [
+        "Newark",
+        "Paterson"
+      ]
+    },
+    "863": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Central Florida",
+      "major_cities": [
+        "Lakeland",
+        "Winter Haven",
+        "Sebring"
+      ]
+    },
+    "864": {
+      "state": "SC",
+      "state_name": "South Carolina",
+      "region": "Western South Carolina",
+      "major_cities": [
+        "Greenville",
+        "Spartanburg"
+      ]
+    },
+    "865": {
+      "state": "TN",
+      "state_name": "Tennessee",
+      "region": "Eastern Tennessee",
+      "major_cities": [
+        "Knoxville",
+        "Oak Ridge"
+      ]
+    },
+    "870": {
+      "state": "AR",
+      "state_name": "Arkansas",
+      "region": "Eastern and Southern Arkansas",
+      "major_cities": [
+        "Jonesboro",
+        "Pine Bluff",
+        "Texarkana"
+      ]
+    },
+    "872": {
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Chicago overlay",
+      "major_cities": [
+        "Chicago"
+      ]
+    },
+    "878": {
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Western Pennsylvania overlay",
+      "major_cities": [
+        "Pittsburgh"
+      ]
+    },
+    "901": {
+      "state": "TN",
+      "state_name": "Tennessee",
+      "region": "Western Tennessee",
+      "major_cities": [
+        "Memphis"
+      ]
+    },
+    "903": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Northeast Texas",
+      "major_cities": [
+        "Tyler",
+        "Texarkana"
+      ]
+    },
+    "904": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Northeast Florida",
+      "major_cities": [
+        "Jacksonville",
+        "St. Augustine"
+      ]
+    },
+    "906": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Upper Peninsula",
+      "major_cities": [
+        "Marquette",
+        "Sault Ste. Marie"
+      ]
+    },
+    "907": {
+      "state": "AK",
+      "state_name": "Alaska",
+      "region": "All of Alaska",
+      "major_cities": [
+        "Anchorage",
+        "Fairbanks",
+        "Juneau"
+      ]
+    },
+    "908": {
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "Central New Jersey",
+      "major_cities": [
+        "Elizabeth",
+        "Plainfield",
+        "Somerville"
+      ]
+    },
+    "909": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Inland Empire West",
+      "major_cities": [
+        "San Bernardino",
+        "Ontario",
+        "Rancho Cucamonga"
+      ]
+    },
+    "910": {
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "South Central North Carolina",
+      "major_cities": [
+        "Fayetteville",
+        "Wilmington"
+      ]
+    },
+    "912": {
+      "state": "GA",
+      "state_name": "Georgia",
+      "region": "Southeastern Georgia",
+      "major_cities": [
+        "Savannah",
+        "Brunswick"
+      ]
+    },
+    "913": {
+      "state": "KS",
+      "state_name": "Kansas",
+      "region": "Northeastern Kansas",
+      "major_cities": [
+        "Kansas City",
+        "Overland Park",
+        "Olathe"
+      ]
+    },
+    "914": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Westchester County",
+      "major_cities": [
+        "Yonkers",
+        "White Plains",
+        "New Rochelle"
+      ]
+    },
+    "915": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Far West Texas",
+      "major_cities": [
+        "El Paso"
+      ]
+    },
+    "916": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Sacramento",
+      "major_cities": [
+        "Sacramento",
+        "Elk Grove",
+        "Roseville"
+      ]
+    },
+    "917": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "NYC cellular",
+      "major_cities": [
+        "New York City"
+      ]
+    },
+    "918": {
+      "state": "OK",
+      "state_name": "Oklahoma",
+      "region": "Eastern Oklahoma",
+      "major_cities": [
+        "Tulsa",
+        "Broken Arrow",
+        "Muskogee"
+      ]
+    },
+    "919": {
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "Eastern North Carolina",
+      "major_cities": [
+        "Raleigh",
+        "Durham",
+        "Chapel Hill"
+      ]
+    },
+    "920": {
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "region": "Northeastern Wisconsin",
+      "major_cities": [
+        "Green Bay",
+        "Appleton",
+        "Oshkosh"
+      ]
+    },
+    "925": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Contra Costa County",
+      "major_cities": [
+        "Concord",
+        "Walnut Creek",
+        "Antioch"
+      ]
+    },
+    "928": {
+      "state": "AZ",
+      "state_name": "Arizona",
+      "region": "Central and Northern Arizona",
+      "major_cities": [
+        "Flagstaff",
+        "Prescott",
+        "Yuma"
+      ]
+    },
+    "929": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "NYC Outer Boroughs overlay",
+      "major_cities": [
+        "Brooklyn",
+        "Queens",
+        "Bronx",
+        "Staten Island"
+      ]
+    },
+    "930": {
+      "state": "IN",
+      "state_name": "Indiana",
+      "region": "Southern Indiana overlay",
+      "major_cities": [
+        "Evansville"
+      ]
+    },
+    "931": {
+      "state": "TN",
+      "state_name": "Tennessee",
+      "region": "Middle Tennessee",
+      "major_cities": [
+        "Clarksville",
+        "Cookeville"
+      ]
+    },
+    "934": {
+      "state": "NY",
+      "state_name": "New York",
+      "region": "Long Island overlay",
+      "major_cities": [
+        "Huntington"
+      ]
+    },
+    "936": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Southeast Texas",
+      "major_cities": [
+        "Conroe",
+        "Lufkin"
+      ]
+    },
+    "937": {
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Southwestern Ohio",
+      "major_cities": [
+        "Dayton",
+        "Springfield"
+      ]
+    },
+    "938": {
+      "state": "AL",
+      "state_name": "Alabama",
+      "region": "Northern Alabama",
+      "major_cities": [
+        "Huntsville"
+      ]
+    },
+    "939": {
+      "state": "PR",
+      "state_name": "Puerto Rico",
+      "region": "Puerto Rico overlay",
+      "major_cities": [
+        "San Juan"
+      ]
+    },
+    "940": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "North Central Texas",
+      "major_cities": [
+        "Denton",
+        "Wichita Falls"
+      ]
+    },
+    "941": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Southwest Florida",
+      "major_cities": [
+        "Sarasota",
+        "Bradenton",
+        "Port Charlotte"
+      ]
+    },
+    "947": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Oakland County overlay",
+      "major_cities": [
+        "Pontiac",
+        "Troy"
+      ]
+    },
+    "949": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Southern Orange County",
+      "major_cities": [
+        "Irvine",
+        "Newport Beach",
+        "Mission Viejo"
+      ]
+    },
+    "951": {
+      "state": "CA",
+      "state_name": "California",
+      "region": "Western Riverside County",
+      "major_cities": [
+        "Riverside",
+        "Corona",
+        "Temecula"
+      ]
+    },
+    "952": {
+      "state": "MN",
+      "state_name": "Minnesota",
+      "region": "Southwest Minneapolis suburbs",
+      "major_cities": [
+        "Bloomington",
+        "Eden Prairie",
+        "Minnetonka"
+      ]
+    },
+    "954": {
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Broward County",
+      "major_cities": [
+        "Fort Lauderdale",
+        "Hollywood",
+        "Pembroke Pines"
+      ]
+    },
+    "956": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "South Texas Valley",
+      "major_cities": [
+        "Laredo",
+        "McAllen",
+        "Brownsville"
+      ]
+    },
+    "957": {
+      "state": "NM",
+      "state_name": "New Mexico",
+      "region": "New Mexico overlay",
+      "major_cities": [
+        "Albuquerque"
+      ]
+    },
+    "959": {
+      "state": "CT",
+      "state_name": "Connecticut",
+      "region": "Eastern Connecticut overlay",
+      "major_cities": [
+        "Hartford",
+        "New London"
+      ]
+    },
+    "970": {
+      "state": "CO",
+      "state_name": "Colorado",
+      "region": "Northern and Western Colorado",
+      "major_cities": [
+        "Fort Collins",
+        "Grand Junction",
+        "Steamboat Springs"
+      ]
+    },
+    "971": {
+      "state": "OR",
+      "state_name": "Oregon",
+      "region": "Northwestern Oregon overlay",
+      "major_cities": [
+        "Portland",
+        "Salem"
+      ]
+    },
+    "972": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Dallas Metro overlay",
+      "major_cities": [
+        "Dallas",
+        "Plano",
+        "Richardson"
+      ]
+    },
+    "973": {
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "Northern New Jersey",
+      "major_cities": [
+        "Newark",
+        "Paterson",
+        "Morristown"
+      ]
+    },
+    "975": {
+      "state": "MO",
+      "state_name": "Missouri",
+      "region": "Kansas City overlay",
+      "major_cities": [
+        "Kansas City"
+      ]
+    },
+    "978": {
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "North of Boston",
+      "major_cities": [
+        "Lowell",
+        "Haverhill",
+        "Gloucester"
+      ]
+    },
+    "979": {
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Southeast Texas",
+      "major_cities": [
+        "Bryan",
+        "College Station"
+      ]
+    },
+    "980": {
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "Charlotte area overlay",
+      "major_cities": [
+        "Charlotte"
+      ]
+    },
+    "983": {
+      "state": "CO",
+      "state_name": "Colorado",
+      "region": "Central Colorado overlay",
+      "major_cities": [
+        "Denver"
+      ]
+    },
+    "984": {
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "Eastern North Carolina overlay",
+      "major_cities": [
+        "Raleigh"
+      ]
+    },
+    "985": {
+      "state": "LA",
+      "state_name": "Louisiana",
+      "region": "Southeastern Louisiana",
+      "major_cities": [
+        "Houma",
+        "Slidell",
+        "Hammond"
+      ]
+    },
+    "986": {
+      "state": "ID",
+      "state_name": "Idaho",
+      "region": "Idaho overlay",
+      "major_cities": [
+        "Boise"
+      ]
+    },
+    "989": {
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Upper Central Michigan",
+      "major_cities": [
+        "Saginaw",
+        "Midland",
+        "Bay City"
+      ]
+    }
+  }
+}
