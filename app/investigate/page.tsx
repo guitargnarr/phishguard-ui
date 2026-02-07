@@ -120,30 +120,33 @@ export default function InvestigatePage() {
         </aside>
 
         {/* Center - Graph */}
-        <main className="flex-1 relative">
-          {error && (
-            <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-xs">
-              <AlertTriangle className="w-3.5 h-3.5" />
-              {error}
-            </div>
-          )}
+        <main className="flex-1 flex flex-col min-w-0">
+          {/* Graph area */}
+          <div className="flex-1 relative min-h-0">
+            {error && (
+              <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-xs">
+                <AlertTriangle className="w-3.5 h-3.5" />
+                {error}
+              </div>
+            )}
 
-          {graphData ? (
-            <ForceGraph
-              data={graphData}
-              onNodeClick={handleNodeClick}
-              selectedNodeId={selectedNodeId}
-            />
-          ) : (
-            <EmptyState loading={loading} />
-          )}
+            {graphData ? (
+              <ForceGraph
+                data={graphData}
+                onNodeClick={handleNodeClick}
+                selectedNodeId={selectedNodeId}
+              />
+            ) : (
+              <EmptyState loading={loading} />
+            )}
+          </div>
 
           {/* Geographic Intelligence */}
           {graphData && stateStats.size > 0 && (
-            <div className="absolute bottom-[52px] left-0 right-0 z-10">
+            <div className="shrink-0">
               <button
                 onClick={() => setGeoExpanded((v) => !v)}
-                className="w-full flex items-center gap-2 px-3 py-1.5 bg-[#0a0a0a]/90 backdrop-blur-sm border-t border-[#1a1a1a] text-[10px] uppercase tracking-[0.15em] text-[#4a4540] hover:text-[#8a8580] transition-colors"
+                className="w-full flex items-center gap-2 px-3 py-1.5 bg-[#0a0a0a] border-t border-[#1a1a1a] text-[10px] uppercase tracking-[0.15em] text-[#4a4540] hover:text-[#8a8580] transition-colors"
               >
                 <MapPin className="w-3 h-3 text-[#e67e22]" />
                 <span>Geographic Intelligence</span>
@@ -168,7 +171,7 @@ export default function InvestigatePage() {
 
           {/* Bottom controls */}
           {graphData && (
-            <div className="absolute bottom-0 left-0 right-0">
+            <div className="shrink-0">
               <GraphControls
                 stats={graphData.stats}
                 pivotPoints={graphData.pivot_points}
