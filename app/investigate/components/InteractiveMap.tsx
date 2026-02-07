@@ -67,13 +67,17 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
     const [stateTopoData, setStateTopoData] = useState<USTopology | null>(null);
     const [countyTopoData, setCountyTopoData] = useState<CountyTopology | null>(null);
     const [countiesLoading, setCountiesLoading] = useState(false);
-    const [hoveredFeature, setHoveredFeature] = useState<string | null>(null);
-    const [hoveredCount, setHoveredCount] = useState<number>(0);
-    const [hoveredStateAbbr, setHoveredStateAbbr] = useState<string | null>(null);
+    const [hoverInfo, setHoverInfo] = useState<{
+      feature: string | null;
+      count: number;
+      stateAbbr: string | null;
+    }>({ feature: null, count: 0, stateAbbr: null });
+    const tooltipPosRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
     const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number }>({
       x: 0,
       y: 0,
     });
+    const tooltipRafRef = useRef<number>(0);
     const [currentZoom, setCurrentZoom] = useState(1);
 
     const maxCount = Math.max(1, ...Array.from(stateStats.values()));
@@ -184,7 +188,15 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
     const handleMouseMove = useCallback((e: React.MouseEvent) => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
-      setTooltipPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      tooltipPosRef.current = { x, y };
+      if (!tooltipRafRef.current) {
+        tooltipRafRef.current = requestAnimationFrame(() => {
+          setTooltipPos(tooltipPosRef.current);
+          tooltipRafRef.current = 0;
+        });
+      }
     }, []);
 
     // ── Main D3 render ────────────────────────────────────────────────
@@ -259,14 +271,11 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
           const name = stateAbbr
             ? STATE_NAMES[stateAbbr] || stateAbbr
             : "Unknown";
-          setHoveredFeature(name);
-          setHoveredCount(count);
-          setHoveredStateAbbr(stateAbbr || null);
+          setHoverInfo({ feature: name, count, stateAbbr: stateAbbr || null });
           d3.select(this).attr("stroke", "#14b8a6").attr("stroke-width", 1.5);
         })
         .on("mouseleave", function () {
-          setHoveredFeature(null);
-          setHoveredStateAbbr(null);
+          setHoverInfo({ feature: null, count: 0, stateAbbr: null });
           d3.select(this).attr("stroke", "none");
         })
         .on("click", (event, d) => {
@@ -601,7 +610,7 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
         )}
 
         {/* Tooltip */}
-        {hoveredFeature && (
+        {hoverInfo.feature && (
           <div
             className="absolute pointer-events-none z-10 px-2.5 py-1.5 rounded-lg bg-[#0a0a0a]/95 border border-[#2a2a2a] backdrop-blur-sm text-[10px] whitespace-nowrap"
             style={{
@@ -609,32 +618,32 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
               top: tooltipPos.y - 10,
             }}
           >
-            <span className="text-[#f5f0eb] font-medium">{hoveredFeature}</span>
-            {hoveredCount > 0 && (
+            <span className="text-[#f5f0eb] font-medium">{hoverInfo.feature}</span>
+            {hoverInfo.count > 0 && (
               <span className="text-[#14b8a6] ml-2">
-                {hoveredCount} threat{hoveredCount !== 1 ? "s" : ""}
+                {hoverInfo.count} threat{hoverInfo.count !== 1 ? "s" : ""}
               </span>
             )}
-            {hoveredStateAbbr && STATE_METRICS[hoveredStateAbbr] && activeOverlays.size > 0 && (
+            {hoverInfo.stateAbbr && STATE_METRICS[hoverInfo.stateAbbr] && activeOverlays.size > 0 && (
               <div className="mt-1 pt-1 border-t border-[#2a2a2a] space-y-0.5">
                 {activeOverlays.has("population") && (
                   <div className="text-[#3b82f6]">
-                    {formatPopulation(STATE_METRICS[hoveredStateAbbr].population)} residents
+                    {formatPopulation(STATE_METRICS[hoverInfo.stateAbbr].population)} residents
                   </div>
                 )}
                 {activeOverlays.has("socioeconomic") && (
                   <div className="text-[#eab308]">
-                    {STATE_METRICS[hoveredStateAbbr].povertyRate}% poverty, {formatIncome(STATE_METRICS[hoveredStateAbbr].medianIncome)} median
+                    {STATE_METRICS[hoverInfo.stateAbbr].povertyRate}% poverty, {formatIncome(STATE_METRICS[hoverInfo.stateAbbr].medianIncome)} median
                   </div>
                 )}
                 {activeOverlays.has("employment") && (
                   <div className="text-[#22c55e]">
-                    {STATE_METRICS[hoveredStateAbbr].unemploymentRate}% unemployed, {STATE_METRICS[hoveredStateAbbr].gig_pct}% gig
+                    {STATE_METRICS[hoverInfo.stateAbbr].unemploymentRate}% unemployed, {STATE_METRICS[hoverInfo.stateAbbr].gig_pct}% gig
                   </div>
                 )}
-                {activeOverlays.has("legislation") && STATE_METRICS[hoveredStateAbbr].hasActiveLegislation && (
+                {activeOverlays.has("legislation") && STATE_METRICS[hoverInfo.stateAbbr].hasActiveLegislation && (
                   <div className="text-[#ef4444]">
-                    {STATE_METRICS[hoveredStateAbbr].legislationTopics.join(", ")}
+                    {STATE_METRICS[hoverInfo.stateAbbr].legislationTopics.join(", ")}
                   </div>
                 )}
               </div>
