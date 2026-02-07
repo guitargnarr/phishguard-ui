@@ -41,7 +41,7 @@
     "@types/react-dom": "^19",
     "@types/topojson-client": "^3.1.5",
     "@vitejs/plugin-react": "^5.1.1",
-    "eslint": "^9",
+    "eslint": "^10",
     "eslint-config-next": "16.0.3",
     "jsdom": "^27.2.0",
     "msw": "^2.12.3",
