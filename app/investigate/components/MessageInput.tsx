@@ -125,6 +125,7 @@ export default function MessageInput({ onSubmit, loading }: MessageInputProps) {
   const sampleMessage = `URGENT: Your AT&T account has been suspended.
 Verify your identity at https://att-secure-verify.xyz/login
 or call 1-888-555-0142 immediately.
+For local assistance call 469-555-0198.
 Reply to support@att-verify-secure.com`;
 
   return (
