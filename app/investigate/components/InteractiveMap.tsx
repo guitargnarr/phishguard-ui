@@ -76,6 +76,14 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
     });
     const tooltipRafRef = useRef<number>(0);
     const [currentZoom, setCurrentZoom] = useState(1);
+    const [lensPos, setLensPos] = useState<{ x: number; y: number } | null>(null);
+    const lensTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+    function triggerLens(x: number, y: number) {
+      if (lensTimerRef.current) clearTimeout(lensTimerRef.current);
+      setLensPos({ x, y });
+      lensTimerRef.current = setTimeout(() => setLensPos(null), 1050);
+    }
 
     // Neutral default fill: subtle slate gradient based on population
     const maxPopulation = Math.max(
@@ -314,6 +322,12 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
             height / 2 - scale * cy,
           ];
 
+          // Glass lens at click point (screen-space)
+          const transform = d3.zoomTransform(svgEl);
+          const screenX = transform.applyX(cx);
+          const screenY = transform.applyY(cy);
+          triggerLens(screenX, screenY);
+
           if (zoomRef.current) {
             svg
               .transition()
@@ -389,6 +403,7 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
       svg.on("dblclick", () => {
         svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
         onStateClick?.(/* clear */ "");
+        setLensPos(null);
       });
       } // end renderMap
 
@@ -563,6 +578,13 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
         height / 2 - scale * cy,
       ];
 
+      // Glass lens at centroid (screen-space)
+      const centroid = path.centroid(target);
+      const transform = d3.zoomTransform(svgRef.current!);
+      const screenX = transform.applyX(centroid[0]);
+      const screenY = transform.applyY(centroid[1]);
+      triggerLens(screenX, screenY);
+
       const svg = d3.select(svgRef.current);
       svg
         .transition()
@@ -687,6 +709,15 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
         onMouseMove={handleMouseMove}
       >
         <svg ref={svgRef} className="w-full h-full" />
+
+        {/* Glass lens zoom effect */}
+        {lensPos && (
+          <div
+            key={`lens-${lensPos.x}-${lensPos.y}`}
+            className="glass-lens"
+            style={{ left: lensPos.x, top: lensPos.y }}
+          />
+        )}
 
         {/* County loading indicator */}
         {countiesLoading && (

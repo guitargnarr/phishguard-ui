@@ -183,6 +183,79 @@
   animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
 }
 
+/* ===== ENTRANCE CHOREOGRAPHY (P10) ===== */
+@keyframes slideDownIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mapReveal {
+  from { opacity: 0; transform: scale(0.97); filter: blur(4px); }
+  to { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@keyframes slideUpReveal {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.entrance-header {
+  animation: slideDownIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 50ms both;
+}
+
+.entrance-map {
+  animation: mapReveal 1.0s cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+
+.entrance-controls {
+  animation: slideUpReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) 500ms both;
+}
+
+.entrance-legend {
+  animation: fade-in-scale 0.5s cubic-bezier(0.16, 1, 0.3, 1) 800ms both;
+}
+
+.entrance-hint {
+  animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1000ms both;
+}
+
+/* ===== PARTICLE BURST (P11) ===== */
+@keyframes particleBurst {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--burst-x)), calc(-50% + var(--burst-y))) scale(0); opacity: 0; }
+}
+
+.particle-burst-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleBurst 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ===== GLASS LENS ZOOM (P12) ===== */
+@keyframes glassLensIn {
+  0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+  30% { opacity: 1; }
+  70% { opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+.glass-lens {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 5;
+  border: 1px solid rgba(20, 184, 166, 0.25);
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.06) 0%, transparent 70%);
+  box-shadow: 0 0 40px rgba(20, 184, 166, 0.08), inset 0 0 30px rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(1px) brightness(1.05);
+  animation: glassLensIn 1.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 /* Stagger delays */
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
@@ -342,7 +415,14 @@ html {
   .animate-fade-in-scale,
   .animate-float,
   .animate-pulse-glow,
-  .text-shimmer {
+  .text-shimmer,
+  .entrance-header,
+  .entrance-map,
+  .entrance-controls,
+  .entrance-legend,
+  .entrance-hint,
+  .particle-burst-dot,
+  .glass-lens {
     animation: none !important;
     opacity: 1;
   }

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import {
   MapPin,
   X,
@@ -7,6 +8,7 @@ import {
 } from "lucide-react";
 import type { OverlayId } from "@/lib/overlay-data";
 import { OVERLAY_CONFIGS } from "@/lib/overlay-data";
+import ParticleBurst from "./ParticleBurst";
 
 interface MapControlsProps {
   selectedState: string | null;
@@ -21,6 +23,25 @@ export default function MapControls({
   activeOverlays,
   onToggleOverlay,
 }: MapControlsProps) {
+  const [burstKey, setBurstKey] = useState(0);
+  const [burstId, setBurstId] = useState<OverlayId | null>(null);
+  const burstTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+  // Clean up timer on unmount
+  useEffect(() => {
+    return () => {
+      if (burstTimerRef.current) clearTimeout(burstTimerRef.current);
+    };
+  }, []);
+
+  function handleToggle(id: OverlayId) {
+    onToggleOverlay(id);
+    setBurstId(id);
+    setBurstKey((k) => k + 1);
+    if (burstTimerRef.current) clearTimeout(burstTimerRef.current);
+    burstTimerRef.current = setTimeout(() => setBurstId(null), 600);
+  }
+
   return (
     <div className="relative flex items-center justify-center px-5 py-3 border-t border-[#1a1a1a] bg-[#050505]/80 backdrop-blur-sm">
       <div className="accent-line absolute top-0 left-0 right-0" />
@@ -42,8 +63,8 @@ export default function MapControls({
           return (
             <button
               key={config.id}
-              onClick={() => onToggleOverlay(config.id)}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded text-sm font-medium border transition-colors ${
+              onClick={() => handleToggle(config.id)}
+              className={`relative overflow-hidden flex items-center gap-2 px-3 py-1.5 rounded text-sm font-medium border transition-colors ${
                 active
                   ? "border-current/30 bg-current/10"
                   : "text-[#4a4540] border-transparent hover:text-[#8a8580] hover:bg-[#1a1a1a]"
@@ -56,6 +77,9 @@ export default function MapControls({
                 style={{ backgroundColor: active ? config.color : "#4a4540" }}
               />
               {config.label}
+              {burstId === config.id && (
+                <ParticleBurst key={burstKey} color={config.color} />
+              )}
             </button>
           );
         })}

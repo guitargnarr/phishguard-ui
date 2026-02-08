@@ -8,6 +8,7 @@ interface ZoomControlsProps {
   onReset: () => void;
   onToggleTilt: () => void;
   isTilted: boolean;
+  isPanelOpen?: boolean;
 }
 
 export default function ZoomControls({
@@ -16,9 +17,16 @@ export default function ZoomControls({
   onReset,
   onToggleTilt,
   isTilted,
+  isPanelOpen = false,
 }: ZoomControlsProps) {
   return (
-    <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10 animate-stagger-3">
+    <div
+      className="absolute top-1/2 -translate-y-1/2 z-10 animate-stagger-3"
+      style={{
+        right: isPanelOpen ? 340 : 16,
+        transition: "right 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+      }}
+    >
       <div className="card-glass rounded-xl flex flex-col items-center gap-1 p-1.5">
         <button
           onClick={onZoomIn}
