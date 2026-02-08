@@ -79,6 +79,13 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
     const [lensPos, setLensPos] = useState<{ x: number; y: number } | null>(null);
     const lensTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
+    // Clean up lens timer on unmount
+    useEffect(() => {
+      return () => {
+        if (lensTimerRef.current) clearTimeout(lensTimerRef.current);
+      };
+    }, []);
+
     function triggerLens(x: number, y: number) {
       if (lensTimerRef.current) clearTimeout(lensTimerRef.current);
       setLensPos({ x, y });
