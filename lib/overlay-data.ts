@@ -141,6 +141,15 @@ export const STATE_METRICS: Record<string, StateMetrics> = {
   DC: { population: 678972, medianIncome: 101722, povertyRate: 13.2, unemploymentRate: 4.5, gig_pct: 12.4, hasActiveLegislation: true, legislationTopics: ["DC Stop Discrimination by Algorithms Act"] },
 };
 
+// Scale max values for metric normalization (shared across map dots + detail panel)
+export const METRIC_MAXES = {
+  population: 39_000_000,   // CA
+  medianIncome: 102_000,    // DC
+  unemploymentRate: 5.2,    // NV
+  gig_pct: 13.2,            // CA
+  povertyRate: 20,
+} as const;
+
 // Helper: format population for display
 export function formatPopulation(pop: number): string {
   if (pop >= 1_000_000) return `${(pop / 1_000_000).toFixed(1)}M`;

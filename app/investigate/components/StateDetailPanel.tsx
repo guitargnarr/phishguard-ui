@@ -2,19 +2,14 @@
 
 import { X, Users, DollarSign, Briefcase, TrendingUp, ShieldAlert } from "lucide-react";
 import { STATE_NAMES } from "@/lib/fips-utils";
-import { STATE_METRICS, formatPopulation, formatIncome } from "@/lib/overlay-data";
+import { STATE_METRICS, METRIC_MAXES, formatPopulation, formatIncome } from "@/lib/overlay-data";
 
 interface StateDetailPanelProps {
   stateAbbr: string | null;
   onClose: () => void;
 }
 
-// Scale max values for metric bars
-const MAX_POP = 39_000_000;   // CA
-const MAX_INCOME = 102_000;   // DC
-const MAX_UNEMP = 5.2;        // NV
-const MAX_GIG = 13.2;         // CA
-const MAX_POVERTY = 20;
+const { population: MAX_POP, medianIncome: MAX_INCOME, unemploymentRate: MAX_UNEMP, gig_pct: MAX_GIG, povertyRate: MAX_POVERTY } = METRIC_MAXES;
 
 function MetricBar({ pct, color }: { pct: number; color: string }) {
   return (
