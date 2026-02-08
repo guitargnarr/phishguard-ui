@@ -155,7 +155,7 @@ export default function StateDetailPanel({ stateAbbr, onClose }: StateDetailPane
                     {metrics.legislationTopics.map((topic) => (
                       <span
                         key={topic}
-                        className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-[#ef4444]/10 text-[#ef4444] border border-[#ef4444]/20"
+                        className="px-2 py-1 rounded text-[10px] leading-tight font-medium bg-[#ef4444]/10 text-[#ef4444] border border-[#ef4444]/20"
                       >
                         {topic}
                       </span>
