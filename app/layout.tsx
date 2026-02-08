@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -96,7 +97,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased bg-[#050505] text-[#f5f0eb]">
-        {children}
+        <ErrorBoundary>
+          {children}
+        </ErrorBoundary>
         <div className="noise-overlay" aria-hidden="true" />
         <Analytics />
         <SpeedInsights />
