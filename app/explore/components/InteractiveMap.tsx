@@ -12,8 +12,8 @@ import * as d3 from "d3";
 import * as topojson from "topojson-client";
 import type { Topology, GeometryCollection } from "topojson-specification";
 import { FIPS_TO_STATE, STATE_NAMES } from "@/lib/fips-utils";
-import type { OverlayId } from "@/lib/overlay-data";
-import { STATE_METRICS, METRIC_MAXES, formatPopulation, formatIncome } from "@/lib/overlay-data";
+import type { OverlayId, StateMetrics } from "@/lib/overlay-data";
+import { FALLBACK_STATE_METRICS, METRIC_MAXES, formatPopulation, formatIncome } from "@/lib/overlay-data";
 import { US_INTERSTATES } from "@/lib/data/us-interstates";
 
 // ── Types ────────────────────────────────────────────────────────────────
@@ -39,6 +39,7 @@ interface InteractiveMapProps {
   onStateClick?: (stateAbbr: string) => void;
   selectedState?: string | null;
   activeOverlays?: Set<OverlayId>;
+  stateMetrics?: Record<string, StateMetrics>;
 }
 
 export interface InteractiveMapHandle {
@@ -51,9 +52,11 @@ export interface InteractiveMapHandle {
 
 const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
   function InteractiveMap(
-    { onStateClick, selectedState, activeOverlays = new Set() },
+    { onStateClick, selectedState, activeOverlays = new Set(), stateMetrics },
     ref
   ) {
+    const STATE_METRICS = stateMetrics ?? FALLBACK_STATE_METRICS;
+
     const containerRef = useRef<HTMLDivElement>(null);
     const svgRef = useRef<SVGSVGElement>(null);
     const zoomRef = useRef<d3.ZoomBehavior<SVGSVGElement, unknown> | null>(null);
@@ -102,7 +105,8 @@ const InteractiveMap = forwardRef<InteractiveMapHandle, InteractiveMapProps>(
 
     // Neutral default fill: subtle slate gradient based on population
     const maxPopulation = Math.max(
-      ...Object.values(STATE_METRICS).map((m) => m.population)
+      ...Object.values(STATE_METRICS).map((m) => m.population),
+      1 // guard against empty
     );
 
     const defaultFill = useCallback(

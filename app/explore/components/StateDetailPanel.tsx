@@ -2,11 +2,13 @@
 
 import { X, Users, DollarSign, Briefcase, TrendingUp, ShieldAlert } from "lucide-react";
 import { STATE_NAMES } from "@/lib/fips-utils";
-import { STATE_METRICS, METRIC_MAXES, formatPopulation, formatIncome } from "@/lib/overlay-data";
+import type { StateMetrics } from "@/lib/overlay-data";
+import { FALLBACK_STATE_METRICS, METRIC_MAXES, formatPopulation, formatIncome } from "@/lib/overlay-data";
 
 interface StateDetailPanelProps {
   stateAbbr: string | null;
   onClose: () => void;
+  stateMetrics?: Record<string, StateMetrics>;
 }
 
 const { population: MAX_POP, medianIncome: MAX_INCOME, unemploymentRate: MAX_UNEMP, gig_pct: MAX_GIG, povertyRate: MAX_POVERTY } = METRIC_MAXES;
@@ -22,9 +24,10 @@ function MetricBar({ pct, color }: { pct: number; color: string }) {
   );
 }
 
-export default function StateDetailPanel({ stateAbbr, onClose }: StateDetailPanelProps) {
+export default function StateDetailPanel({ stateAbbr, onClose, stateMetrics }: StateDetailPanelProps) {
   const isOpen = !!stateAbbr;
-  const metrics = stateAbbr ? STATE_METRICS[stateAbbr] : null;
+  const metricsMap = stateMetrics ?? FALLBACK_STATE_METRICS;
+  const metrics = stateAbbr ? metricsMap[stateAbbr] : null;
   const fullName = stateAbbr ? STATE_NAMES[stateAbbr] || stateAbbr : "";
 
   return (

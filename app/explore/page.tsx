@@ -2,8 +2,9 @@
 
 import { useState, useRef, useEffect } from "react";
 import { BarChart3, MapPin } from "lucide-react";
-import type { OverlayId } from "@/lib/overlay-data";
-import { OVERLAY_CONFIGS } from "@/lib/overlay-data";
+import type { OverlayId, StateMetrics } from "@/lib/overlay-data";
+import { OVERLAY_CONFIGS, FALLBACK_STATE_METRICS } from "@/lib/overlay-data";
+import { fetchLiveMetrics } from "@/lib/data-fetcher";
 import InteractiveMap from "./components/InteractiveMap";
 import MapControls from "./components/MapControls";
 import ZoomControls from "./components/ZoomControls";
@@ -15,8 +16,18 @@ export default function ExplorePage() {
   const [isTilted, setIsTilted] = useState(false);
   const [activeOverlays, setActiveOverlays] = useState<Set<OverlayId>>(new Set());
   const [hintDismissed, setHintDismissed] = useState(false);
+  const [liveMetrics, setLiveMetrics] = useState<Record<string, StateMetrics>>(FALLBACK_STATE_METRICS);
+  const [isLiveData, setIsLiveData] = useState(false);
 
   const mapRef = useRef<InteractiveMapHandle>(null);
+
+  // Fetch live BLS + Census data on mount
+  useEffect(() => {
+    fetchLiveMetrics().then((result) => {
+      setLiveMetrics(result.metrics);
+      setIsLiveData(result.isLive);
+    });
+  }, []);
 
   // Auto-dismiss hint after 8 seconds
   useEffect(() => {
@@ -103,6 +114,7 @@ export default function ExplorePage() {
             onStateClick={handleStateClick}
             selectedState={selectedState}
             activeOverlays={activeOverlays}
+            stateMetrics={liveMetrics}
           />
 
           {/* Floating zoom controls */}
@@ -125,6 +137,7 @@ export default function ExplorePage() {
               setSelectedState(null);
               mapRef.current?.resetZoom();
             }}
+            stateMetrics={liveMetrics}
           />
 
           {/* Color legend bar */}
@@ -149,6 +162,18 @@ export default function ExplorePage() {
               </div>
             </div>
           )}
+
+          {/* Data source indicator */}
+          <div className="absolute top-3 right-3 z-10">
+            <div className="card-glass rounded px-2 py-1 flex items-center gap-1.5">
+              <span
+                className={`w-1.5 h-1.5 rounded-full ${isLiveData ? "bg-[#22c55e]" : "bg-[#4a4540]"}`}
+              />
+              <span className="text-[10px] text-[#4a4540] uppercase tracking-wider">
+                {isLiveData ? "Live Data" : "Static Data"}
+              </span>
+            </div>
+          </div>
 
           {/* "Click any state" hint */}
           {!selectedState && !hintDismissed && (
