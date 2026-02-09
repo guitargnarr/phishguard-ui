@@ -1,20 +1,27 @@
 import { NextResponse } from 'next/server'
-import { checkRateLimit, getClientIP } from '@/lib/rate-limit'
 
 const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL
 
-export async function POST(request: Request) {
-  // Rate limit: 5 lead submissions per minute per IP
-  const clientIP = getClientIP(request)
-  const rateLimit = checkRateLimit(`lead:${clientIP}`, { windowMs: 60000, maxRequests: 5 })
+// Simple in-memory rate limit
+const recentRequests = new Map<string, number[]>()
 
-  if (!rateLimit.allowed) {
+function isRateLimited(ip: string): boolean {
+  const now = Date.now()
+  const requests = recentRequests.get(ip) ?? []
+  const recent = requests.filter(t => now - t < 60000)
+  if (recent.length >= 5) return true
+  recent.push(now)
+  recentRequests.set(ip, recent)
+  return false
+}
+
+export async function POST(request: Request) {
+  const clientIP = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
+
+  if (isRateLimited(clientIP)) {
     return NextResponse.json(
       { error: 'Too many requests. Please try again later.' },
-      {
-        status: 429,
-        headers: { 'Retry-After': String(Math.ceil(rateLimit.resetIn / 1000)) }
-      }
+      { status: 429 }
     )
   }
 
@@ -28,7 +35,6 @@ export async function POST(request: Request) {
       )
     }
 
-    // Send to Slack
     if (SLACK_WEBHOOK_URL) {
       const slackMessage = {
         blocks: [
@@ -36,7 +42,7 @@ export async function POST(request: Request) {
             type: 'header',
             text: {
               type: 'plain_text',
-              text: 'New PhishGuard Demo Request',
+              text: 'New Meridian Demo Request',
               emoji: true
             }
           },

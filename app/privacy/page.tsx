@@ -6,9 +6,9 @@ export default function PrivacyPolicy() {
       <div className="max-w-3xl mx-auto py-16 px-4">
         <Link
           href="/"
-          className="text-red-400 hover:text-red-300 mb-8 inline-block"
+          className="text-[#14b8a6] hover:text-[#2dd4bf] mb-8 inline-block"
         >
-          &larr; Back to PhishGuard
+          &larr; Back to Meridian
         </Link>
 
         <h1 className="text-4xl font-bold text-white mb-8">Privacy Policy</h1>
@@ -21,18 +21,18 @@ export default function PrivacyPolicy() {
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-white">Overview</h2>
             <p className="text-slate-300">
-              PhishGuard is committed to protecting your privacy. This policy explains how we handle
-              data when you use our email security analysis service.
+              Meridian is committed to protecting your privacy. This policy explains how we handle
+              data when you use our economic data exploration service.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-white">Data We Process</h2>
             <p className="text-slate-300">
-              When you submit email text for analysis, we process:
+              When you use the data explorer, we process:
             </p>
             <ul className="list-disc list-inside text-slate-300 space-y-2">
-              <li>The email content you paste into the analysis form</li>
+              <li>Your interactions with the map (states viewed, overlays selected)</li>
               <li>Basic request metadata (timestamp, request origin)</li>
             </ul>
           </section>
@@ -40,10 +40,9 @@ export default function PrivacyPolicy() {
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-white">Data Retention</h2>
             <p className="text-slate-300">
-              <strong className="text-white">We do not store your email content.</strong> Email text
-              submitted for analysis is processed in real-time and immediately discarded after
-              generating the classification result. We maintain aggregate statistics (total
-              classifications, accuracy metrics) but these contain no personally identifiable information.
+              <strong className="text-white">We do not store personal data from map usage.</strong> Interactions
+              with the data explorer are processed in real-time. We maintain aggregate usage statistics
+              but these contain no personally identifiable information.
             </p>
           </section>
 
@@ -82,8 +81,8 @@ export default function PrivacyPolicy() {
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-white">Security</h2>
             <p className="text-slate-300">
-              All data transmission occurs over HTTPS. Our ML model runs locally on our servers
-              and does not send your data to external AI services.
+              All data transmission occurs over HTTPS. Economic data is sourced from public
+              government APIs (BLS, Census Bureau) and cached locally on our servers.
             </p>
           </section>
 
@@ -93,7 +92,7 @@ export default function PrivacyPolicy() {
               For privacy questions, contact:{' '}
               <a
                 href="mailto:matthewdscott7@gmail.com"
-                className="text-red-400 hover:text-red-300"
+                className="text-[#14b8a6] hover:text-[#2dd4bf]"
               >
                 matthewdscott7@gmail.com
               </a>

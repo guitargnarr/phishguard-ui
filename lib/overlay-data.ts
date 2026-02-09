@@ -92,7 +92,7 @@ export const OVERLAY_CONFIGS: OverlayConfig[] = [
 //   MA (breach notification + student data), WA (My Health My Data health-only)
 // hasActiveLegislation=true means COMPREHENSIVE consumer data privacy law enacted
 // legislationTopics lists ALL relevant privacy laws including sectoral
-export const STATE_METRICS: Record<string, StateMetrics> = {
+export const FALLBACK_STATE_METRICS: Record<string, StateMetrics> = {
   AL: { population: 5108468, medianIncome: 56929, povertyRate: 14.8, unemploymentRate: 2.8, gig_pct: 6.2, hasActiveLegislation: false, legislationTopics: [] },
   AK: { population: 733406, medianIncome: 77790, povertyRate: 10.2, unemploymentRate: 4.4, gig_pct: 8.1, hasActiveLegislation: false, legislationTopics: [] },
   AZ: { population: 7431344, medianIncome: 65913, povertyRate: 13.5, unemploymentRate: 3.5, gig_pct: 9.8, hasActiveLegislation: false, legislationTopics: [] },

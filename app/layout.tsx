@@ -12,10 +12,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "MarketScope - US Market Intelligence Map",
+  title: "Meridian | US Economic Data Explorer",
   description:
-    "Interactive market intelligence platform with economic, demographic, and legislative data overlays across all 50 US states.",
-  metadataBase: new URL("https://phishguard.projectlavos.com"),
+    "Explore state-level economic data across the US. Live unemployment, income, population, and poverty metrics visualized on an interactive map.",
+  metadataBase: new URL("https://meridian.projectlavos.com"),
   alternates: {
     canonical: "/",
   },
@@ -24,17 +24,17 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "MarketScope - US Market Intelligence Map",
+    title: "Meridian | US Economic Data Explorer",
     description:
-      "Interactive market intelligence platform with economic, demographic, and legislative data overlays across all 50 US states.",
-    url: "https://phishguard.projectlavos.com",
-    siteName: "MarketScope",
+      "Explore state-level economic data across the US. Live unemployment, income, population, and poverty metrics visualized on an interactive map.",
+    url: "https://meridian.projectlavos.com",
+    siteName: "Meridian",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "MarketScope - US Market Intelligence Map",
+        alt: "Meridian - US Economic Data Explorer",
       },
     ],
     type: "website",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MarketScope - US Market Intelligence Map",
+    title: "Meridian | US Economic Data Explorer",
     description:
-      "Interactive market intelligence with economic, demographic, and legislative data overlays across all 50 US states.",
+      "Explore state-level economic data across the US. Live unemployment, income, population, and poverty metrics visualized on an interactive map.",
     images: ["/og-image.png"],
   },
 };
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "MarketScope",
+  name: "Meridian",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   offers: {
@@ -61,9 +61,9 @@ const jsonLd = {
     priceCurrency: "USD",
   },
   description:
-    "Interactive market intelligence platform with economic, demographic, and legislative data overlays across all 50 US states. Zoomable choropleth map with county-level detail.",
-  url: "https://phishguard.projectlavos.com",
-  image: "https://phishguard.projectlavos.com/og-image.png",
+    "US economic data explorer with live BLS and Census data. Interactive map with unemployment, income, population, and poverty metrics across all 50 states.",
+  url: "https://meridian.projectlavos.com",
+  image: "https://meridian.projectlavos.com/og-image.png",
   author: {
     "@type": "Person",
     name: "Matthew Scott",

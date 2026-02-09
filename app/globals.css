@@ -371,6 +371,15 @@
     radial-gradient(ellipse 60% 40% at 80% 60%, rgba(249, 115, 22, 0.06), transparent);
 }
 
+/* ===== SCROLLBAR HIDE (for horizontal scroll controls) ===== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* ===== MOBILE OPTIMIZATIONS ===== */
 html, body {
   overflow-x: hidden;

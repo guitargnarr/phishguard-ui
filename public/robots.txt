@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://phishguard.projectlavos.com/sitemap.xml
+Sitemap: https://meridian.projectlavos.com/sitemap.xml

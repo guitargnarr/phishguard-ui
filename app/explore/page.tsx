@@ -2,21 +2,32 @@
 
 import { useState, useRef, useEffect } from "react";
 import { BarChart3, MapPin } from "lucide-react";
-import type { OverlayId } from "@/lib/overlay-data";
-import { OVERLAY_CONFIGS } from "@/lib/overlay-data";
+import type { OverlayId, StateMetrics } from "@/lib/overlay-data";
+import { OVERLAY_CONFIGS, FALLBACK_STATE_METRICS } from "@/lib/overlay-data";
+import { fetchLiveMetrics } from "@/lib/data-fetcher";
 import InteractiveMap from "./components/InteractiveMap";
 import MapControls from "./components/MapControls";
 import ZoomControls from "./components/ZoomControls";
 import StateDetailPanel from "./components/StateDetailPanel";
 import type { InteractiveMapHandle } from "./components/InteractiveMap";
 
-export default function InvestigatePage() {
+export default function ExplorePage() {
   const [selectedState, setSelectedState] = useState<string | null>(null);
   const [isTilted, setIsTilted] = useState(false);
-  const [activeOverlays, setActiveOverlays] = useState<Set<OverlayId>>(new Set(["population"]));
+  const [activeOverlays, setActiveOverlays] = useState<Set<OverlayId>>(new Set());
   const [hintDismissed, setHintDismissed] = useState(false);
+  const [liveMetrics, setLiveMetrics] = useState<Record<string, StateMetrics>>(FALLBACK_STATE_METRICS);
+  const [isLiveData, setIsLiveData] = useState(false);
 
   const mapRef = useRef<InteractiveMapHandle>(null);
+
+  // Fetch live BLS + Census data on mount
+  useEffect(() => {
+    fetchLiveMetrics().then((result) => {
+      setLiveMetrics(result.metrics);
+      setIsLiveData(result.isLive);
+    });
+  }, []);
 
   // Auto-dismiss hint after 8 seconds
   useEffect(() => {
@@ -61,12 +72,12 @@ export default function InvestigatePage() {
           >
             <BarChart3 className="w-6 h-6 text-[#14b8a6]" />
             <span className="text-lg font-semibold tracking-tight">
-              MarketScope
+              Meridian
             </span>
           </a>
           <div className="h-4 w-px bg-[#1a1a1a]" />
           <span className="text-sm text-[#4a4540] uppercase tracking-[0.15em] font-medium">
-            Market Intelligence
+            US Economic Data
           </span>
         </div>
         <nav className="flex items-center gap-4">
@@ -77,7 +88,7 @@ export default function InvestigatePage() {
             Home
           </a>
           <a
-            href="/investigate"
+            href="/explore"
             className="text-sm text-[#14b8a6]"
           >
             Explore
@@ -103,6 +114,7 @@ export default function InvestigatePage() {
             onStateClick={handleStateClick}
             selectedState={selectedState}
             activeOverlays={activeOverlays}
+            stateMetrics={liveMetrics}
           />
 
           {/* Floating zoom controls */}
@@ -125,6 +137,7 @@ export default function InvestigatePage() {
               setSelectedState(null);
               mapRef.current?.resetZoom();
             }}
+            stateMetrics={liveMetrics}
           />
 
           {/* Color legend bar */}
@@ -149,6 +162,18 @@ export default function InvestigatePage() {
               </div>
             </div>
           )}
+
+          {/* Data source indicator */}
+          <div className="absolute top-3 right-3 z-10">
+            <div className="card-glass rounded px-2 py-1 flex items-center gap-1.5">
+              <span
+                className={`w-1.5 h-1.5 rounded-full ${isLiveData ? "bg-[#22c55e]" : "bg-[#4a4540]"}`}
+              />
+              <span className="text-[10px] text-[#4a4540] uppercase tracking-wider">
+                {isLiveData ? "Live Data" : "Static Data"}
+              </span>
+            </div>
+          </div>
 
           {/* "Click any state" hint */}
           {!selectedState && !hintDismissed && (

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const PRODUCTION_URL = 'https://phishguard-ui.vercel.app';
+const PRODUCTION_URL = 'https://meridian.projectlavos.com';
 
 test.describe('ContactForm Lead Capture', () => {
   test('should display contact form with all required fields', async ({ page }) => {
@@ -25,7 +25,7 @@ test.describe('ContactForm Lead Capture', () => {
     await expect(page.locator('label[for="name"]')).toContainText('Name');
     await expect(page.locator('label[for="email"]')).toContainText('Email');
     await expect(page.locator('label[for="company"]')).toContainText('Company');
-    await expect(page.locator('label[for="message"]')).toContainText('security challenges');
+    await expect(page.locator('label[for="message"]')).toContainText('data insights');
   });
 
   test('should fill out contact form successfully', async ({ page }) => {
@@ -45,18 +45,17 @@ test.describe('ContactForm Lead Capture', () => {
     await expect(page.locator('textarea#message')).toHaveValue('Interested in enterprise email security');
   });
 
-  test('should show enterprise demo section heading', async ({ page }) => {
+  test('should show demo request section heading', async ({ page }) => {
     await page.goto(PRODUCTION_URL);
 
-    await expect(page.locator('h2:has-text("Request Enterprise Demo")')).toBeVisible();
+    await expect(page.locator('h2:has-text("Request a")')).toBeVisible();
   });
 
-  test('should have value proposition stats visible', async ({ page }) => {
+  test('should have stats banner visible', async ({ page }) => {
     await page.goto(PRODUCTION_URL);
 
-    // Check enterprise value stats
-    await expect(page.locator('text=$4.9M')).toBeVisible();
-    await expect(page.locator('text=91%')).toBeVisible();
-    await expect(page.locator('text=3.4B')).toBeVisible();
+    await expect(page.locator('text=50 States')).toBeVisible();
+    await expect(page.locator('text=5 Overlays')).toBeVisible();
+    await expect(page.locator('text=330M+')).toBeVisible();
   });
 });

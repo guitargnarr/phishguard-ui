@@ -20,17 +20,15 @@ function ContactFormInner() {
     message: ''
   })
 
-  // Pre-fill message if coming from threat alert
+  // Pre-fill message if coming from a referral
   useEffect(() => {
-    const source = searchParams.get('source')
     const demo = searchParams.get('demo')
 
-    if (demo === 'true' && source === 'threat-alert') {
+    if (demo === 'true') {
       setFormData(prev => ({
         ...prev,
-        message: 'I detected a high-risk phishing email using PhishGuard and would like to learn more about enterprise protection for my organization.'
+        message: 'I\'d like to learn more about Meridian\'s economic data insights for my organization.'
       }))
-      // Scroll to contact form
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
     }
   }, [searchParams])
@@ -53,7 +51,7 @@ function ContactFormInner() {
       setSubmitted(true)
     } catch {
       // Fallback to mailto if API fails
-      const subject = encodeURIComponent(`PhishGuard Demo Request - ${formData.company}`)
+      const subject = encodeURIComponent(`Meridian Demo Request - ${formData.company}`)
       const body = encodeURIComponent(
         `Name: ${formData.name}\n` +
         `Email: ${formData.email}\n` +
@@ -127,11 +125,11 @@ function ContactFormInner() {
 
           <div className="space-y-2 text-left">
             <Label htmlFor="message" className="text-slate-300">
-              What security challenges are you facing?
+              What data insights are you looking for?
             </Label>
             <Textarea
               id="message"
-              placeholder="Tell us about your email security needs..."
+              placeholder="Tell us about your market research needs..."
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               rows={4}
