@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://phishguard.projectlavos.com'
+  const baseUrl = 'https://meridian.projectlavos.com'
 
   return [
     {

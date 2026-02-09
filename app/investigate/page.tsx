@@ -61,12 +61,12 @@ export default function InvestigatePage() {
           >
             <BarChart3 className="w-6 h-6 text-[#14b8a6]" />
             <span className="text-lg font-semibold tracking-tight">
-              MarketScope
+              Meridian
             </span>
           </a>
           <div className="h-4 w-px bg-[#1a1a1a]" />
           <span className="text-sm text-[#4a4540] uppercase tracking-[0.15em] font-medium">
-            Market Intelligence
+            US Economic Data
           </span>
         </div>
         <nav className="flex items-center gap-4">
@@ -77,7 +77,7 @@ export default function InvestigatePage() {
             Home
           </a>
           <a
-            href="/investigate"
+            href="/explore"
             className="text-sm text-[#14b8a6]"
           >
             Explore

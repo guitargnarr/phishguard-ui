@@ -20,12 +20,12 @@ export default function Home() {
           <a href="/" className="flex items-center gap-2">
             <BarChart3 className="w-5 h-5 text-[#14b8a6]" />
             <span className="text-sm font-semibold text-[#f5f0eb] tracking-tight">
-              MarketScope
+              Meridian
             </span>
           </a>
           <div className="flex items-center gap-6">
             <a
-              href="/investigate"
+              href="/explore"
               className="text-xs uppercase tracking-[0.08em] text-[#8a8580] hover:text-[#f5f0eb] transition-colors"
             >
               Explore
@@ -64,7 +64,7 @@ export default function Home() {
             {/* CTA */}
             <div className="animate-stagger-2 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="/investigate"
+                href="/explore"
                 className="btn-elite flex items-center gap-2 px-6 py-3 bg-[#14b8a6] text-white rounded-lg text-sm font-medium"
               >
                 <MapIcon className="w-4 h-4" />
@@ -201,7 +201,7 @@ export default function Home() {
                 <em className="font-display italic text-[#14b8a6]">demo</em>
               </h2>
               <p className="mt-3 text-sm text-[#8a8580]">
-                See how MarketScope can help you identify and evaluate
+                See how Meridian can help you identify and evaluate
                 market opportunities across the United States.
               </p>
             </div>

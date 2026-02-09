@@ -1,15 +1,14 @@
 {
-  "crons": [
-    {
-      "path": "/api/cron/daily-report",
-      "schedule": "0 14 * * *"
-    }
-  ],
   "redirects": [
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "phishguard-ui.vercel.app" }],
-      "destination": "https://phishguard.projectlavos.com/:path*",
+      "destination": "https://meridian.projectlavos.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/investigate/:path*",
+      "destination": "/explore/:path*",
       "permanent": true
     }
   ]
