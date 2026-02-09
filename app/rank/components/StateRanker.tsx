@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import {
@@ -69,13 +69,17 @@ export default function StateRanker() {
     });
   }, []);
 
-  // Update URL when weights change
+  // Debounced URL update -- immediate state update, URL batched at 150ms
+  const urlTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const updateUrl = useCallback(
     (w: RankingWeights, preset: string | null) => {
-      const params = new URLSearchParams();
-      params.set("w", weightsToParams(w));
-      if (preset) params.set("preset", preset);
-      router.replace(`/rank?${params.toString()}`, { scroll: false });
+      if (urlTimerRef.current) clearTimeout(urlTimerRef.current);
+      urlTimerRef.current = setTimeout(() => {
+        const params = new URLSearchParams();
+        params.set("w", weightsToParams(w));
+        if (preset) params.set("preset", preset);
+        router.replace(`/rank?${params.toString()}`, { scroll: false });
+      }, 150);
     },
     [router]
   );
