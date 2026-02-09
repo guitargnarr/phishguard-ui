@@ -1,5 +1,5 @@
 import type { StateMetrics } from "./overlay-data";
-import { METRIC_MAXES } from "./overlay-data";
+import { METRIC_MAXES, FALLBACK_STATE_METRICS } from "./overlay-data";
 
 export interface RankingWeights {
   lowUnemployment: number;
@@ -51,12 +51,15 @@ function normalize(value: number, max: number, inverted: boolean): number {
 // Cost index: poverty-to-income ratio. High poverty + low income = expensive to
 // live in relative to earnings. This is independent of the raw income metric so
 // the "High Income" and "Low Cost" sliders measure different things.
-const COST_INDEX_MAX = 0.35; // ~20% poverty / ~57k income ≈ 0.35
-
 function costIndex(m: StateMetrics): number {
-  if (m.medianIncome === 0) return COST_INDEX_MAX;
+  if (m.medianIncome === 0) return 1;
   return (m.povertyRate / 100) / (m.medianIncome / METRIC_MAXES.medianIncome);
 }
+
+// Derive max from real data so no state gets clamped at the ceiling.
+const COST_INDEX_MAX = Math.max(
+  ...Object.values(FALLBACK_STATE_METRICS).map(costIndex)
+);
 
 export function computeRankings(
   metrics: Record<string, StateMetrics>,
