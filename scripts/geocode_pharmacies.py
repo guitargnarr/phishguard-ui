@@ -30,6 +30,7 @@ STATUS_MAP = {
     "Likely Closed": 3,
 }
 
+
 # ── Load ZIP centroids ──────────────────────────────────────────────────
 
 def load_zip_centroids():
