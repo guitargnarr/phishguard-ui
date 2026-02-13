@@ -6,7 +6,6 @@ Outputs county-density.json to ../public/data/
 """
 
 import json
-import sys
 from pathlib import Path
 
 import requests
@@ -165,7 +164,7 @@ def main():
         else:
             unassigned += 1
 
-    print(f"\nAssignment complete:")
+    print("\nAssignment complete:")
     print(f"  Assigned: {assigned}")
     print(f"  Unassigned: {unassigned}")
     print(f"  Counties with pharmacies: {len(density)}")
@@ -173,7 +172,7 @@ def main():
     # Stats
     totals = [v[0] for v in density.values()]
     print(f"  Max per county: {max(totals)}")
-    print(f"  Median per county: {sorted(totals)[len(totals)//2]}")
+    print(f"  Median per county: {sorted(totals)[len(totals) // 2]}")
 
     # Write output
     output_path = OUTPUT_DIR / "county-density.json"

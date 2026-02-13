@@ -8,13 +8,12 @@ Outputs pharmacy-points.json and pharmacy-details.json to ../public/data/
 import csv
 import io
 import json
-import os
-import sys
 import time
 import zipfile
 from pathlib import Path
 
 import requests
+
 
 # ── Config ──────────────────────────────────────────────────────────────
 
