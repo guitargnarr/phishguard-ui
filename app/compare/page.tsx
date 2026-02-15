@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import StateComparison from "./components/StateComparison";
 
 export const metadata: Metadata = {
-  title: "Compare States | Meridian",
+  title: "Compare State Markets | Meridian",
   description:
-    "Compare economic data side-by-side for 2-3 US states. Population, income, unemployment, poverty, gig economy, and privacy legislation at a glance.",
+    "Compare pharmacy market data side-by-side for 2-3 US states. Pharmacy counts, active rates, density, and revenue potential at a glance.",
 };
 
 export default function ComparePage() {

@@ -1,12 +1,12 @@
 import type { StateMetrics } from "./overlay-data";
-import { METRIC_MAXES, FALLBACK_STATE_METRICS } from "./overlay-data";
+import { FALLBACK_STATE_METRICS, AVG_ANNUAL_GLP1_LOSS } from "./overlay-data";
 
 export interface RankingWeights {
-  lowUnemployment: number;
-  highIncome: number;
-  lowPoverty: number;
-  lowCost: number;
-  gigEconomy: number;
+  pharmacyCount: number;
+  activeRate: number;
+  density: number;
+  revenuePotential: number;
+  dataQuality: number;
 }
 
 export interface RankedState {
@@ -17,48 +17,82 @@ export interface RankedState {
 }
 
 export const DEFAULT_WEIGHTS: RankingWeights = {
-  lowUnemployment: 50,
-  highIncome: 50,
-  lowPoverty: 50,
-  lowCost: 50,
-  gigEconomy: 50,
+  pharmacyCount: 50,
+  activeRate: 50,
+  density: 50,
+  revenuePotential: 50,
+  dataQuality: 50,
 };
 
-export const PRESETS: Record<string, { label: string; weights: RankingWeights }> = {
-  remote: {
-    label: "Remote Worker",
-    weights: { lowUnemployment: 30, highIncome: 90, lowPoverty: 40, lowCost: 80, gigEconomy: 70 },
+export const PRESETS: Record<string, { label: string; description: string; weights: RankingWeights }> = {
+  volume: {
+    label: "Largest Markets",
+    description: "Most independent pharmacies to contact",
+    weights: { pharmacyCount: 100, activeRate: 40, density: 20, revenuePotential: 60, dataQuality: 30 },
   },
-  startup: {
-    label: "Startup Founder",
-    weights: { lowUnemployment: 20, highIncome: 60, lowPoverty: 50, lowCost: 40, gigEconomy: 90 },
+  viability: {
+    label: "Highest Active Rate",
+    description: "Most verified-active pharmacies",
+    weights: { pharmacyCount: 30, activeRate: 100, density: 40, revenuePotential: 50, dataQuality: 80 },
   },
-  privacy: {
-    label: "Privacy Advocate",
-    weights: { lowUnemployment: 40, highIncome: 50, lowPoverty: 50, lowCost: 50, gigEconomy: 30 },
+  glp1: {
+    label: "GLP-1 Opportunity",
+    description: "High volume + high active rate = routing potential",
+    weights: { pharmacyCount: 60, activeRate: 50, density: 30, revenuePotential: 100, dataQuality: 40 },
   },
-  affordable: {
-    label: "Affordable Living",
-    weights: { lowUnemployment: 60, highIncome: 30, lowPoverty: 70, lowCost: 100, gigEconomy: 20 },
+  clean: {
+    label: "Cleanest Data",
+    description: "Fewest uncertain records, most actionable leads",
+    weights: { pharmacyCount: 40, activeRate: 70, density: 50, revenuePotential: 40, dataQuality: 100 },
   },
 };
 
-function normalize(value: number, max: number, inverted: boolean): number {
-  const clamped = Math.min(value, max) / max;
-  return inverted ? 1 - clamped : clamped;
+function normalize(value: number, max: number): number {
+  if (max === 0) return 0;
+  return Math.min(value, max) / max;
 }
 
-// Cost index: poverty-to-income ratio. High poverty + low income = expensive to
-// live in relative to earnings. This is independent of the raw income metric so
-// the "High Income" and "Low Cost" sliders measure different things.
-function costIndex(m: StateMetrics): number {
-  if (m.medianIncome === 0) return 1;
-  return (m.povertyRate / 100) / (m.medianIncome / METRIC_MAXES.medianIncome);
+// Pharmacy-specific metric extractors
+function getPharmacyCount(m: StateMetrics): number {
+  return m.pharmacy?.independentCount ?? 0;
 }
 
-// Derive max from real data so no state gets clamped at the ceiling.
-const COST_INDEX_MAX = Math.max(
-  ...Object.values(FALLBACK_STATE_METRICS).map(costIndex)
+function getActiveRate(m: StateMetrics): number {
+  const p = m.pharmacy;
+  if (!p || p.independentCount === 0) return 0;
+  return (p.active + p.likelyActive) / p.independentCount;
+}
+
+function getDensityPer100K(m: StateMetrics): number {
+  const p = m.pharmacy;
+  if (!p || m.population === 0) return 0;
+  return (p.independentCount / m.population) * 100_000;
+}
+
+function getRevenuePotential(m: StateMetrics): number {
+  const p = m.pharmacy;
+  if (!p) return 0;
+  return (p.active + p.likelyActive) * AVG_ANNUAL_GLP1_LOSS;
+}
+
+function getDataQuality(m: StateMetrics): number {
+  const p = m.pharmacy;
+  if (!p || p.independentCount === 0) return 0;
+  return 1 - (p.uncertain + p.likelyClosed) / p.independentCount;
+}
+
+// Derive max values from real data so no state gets clamped at ceiling
+const MAX_PHARMACY_COUNT = Math.max(
+  ...Object.values(FALLBACK_STATE_METRICS).map(getPharmacyCount)
+);
+const MAX_ACTIVE_RATE = Math.max(
+  ...Object.values(FALLBACK_STATE_METRICS).map(getActiveRate)
+);
+const MAX_DENSITY = Math.max(
+  ...Object.values(FALLBACK_STATE_METRICS).map(getDensityPer100K)
+);
+const MAX_REVENUE = Math.max(
+  ...Object.values(FALLBACK_STATE_METRICS).map(getRevenuePotential)
 );
 
 export function computeRankings(
@@ -66,11 +100,11 @@ export function computeRankings(
   weights: RankingWeights
 ): RankedState[] {
   const totalWeight =
-    weights.lowUnemployment +
-    weights.highIncome +
-    weights.lowPoverty +
-    weights.lowCost +
-    weights.gigEconomy;
+    weights.pharmacyCount +
+    weights.activeRate +
+    weights.density +
+    weights.revenuePotential +
+    weights.dataQuality;
 
   if (totalWeight === 0) {
     return Object.entries(metrics).map(([abbr, m], i) => ({
@@ -83,16 +117,16 @@ export function computeRankings(
 
   const scored = Object.entries(metrics).map(([abbr, m]) => {
     const score =
-      (weights.lowUnemployment / totalWeight) *
-        normalize(m.unemploymentRate, METRIC_MAXES.unemploymentRate, true) +
-      (weights.highIncome / totalWeight) *
-        normalize(m.medianIncome, METRIC_MAXES.medianIncome, false) +
-      (weights.lowPoverty / totalWeight) *
-        normalize(m.povertyRate, METRIC_MAXES.povertyRate, true) +
-      (weights.lowCost / totalWeight) *
-        normalize(costIndex(m), COST_INDEX_MAX, true) +
-      (weights.gigEconomy / totalWeight) *
-        normalize(m.gig_pct, METRIC_MAXES.gig_pct, false);
+      (weights.pharmacyCount / totalWeight) *
+        normalize(getPharmacyCount(m), MAX_PHARMACY_COUNT) +
+      (weights.activeRate / totalWeight) *
+        normalize(getActiveRate(m), MAX_ACTIVE_RATE) +
+      (weights.density / totalWeight) *
+        normalize(getDensityPer100K(m), MAX_DENSITY) +
+      (weights.revenuePotential / totalWeight) *
+        normalize(getRevenuePotential(m), MAX_REVENUE) +
+      (weights.dataQuality / totalWeight) *
+        normalize(getDataQuality(m), 1);
 
     return { abbr, score, rank: 0, metrics: m };
   });
@@ -106,17 +140,17 @@ export function computeRankings(
 }
 
 export function weightsToParams(weights: RankingWeights): string {
-  return `${weights.lowUnemployment},${weights.highIncome},${weights.lowPoverty},${weights.lowCost},${weights.gigEconomy}`;
+  return `${weights.pharmacyCount},${weights.activeRate},${weights.density},${weights.revenuePotential},${weights.dataQuality}`;
 }
 
 export function paramsToWeights(param: string): RankingWeights | null {
   const parts = param.split(",").map(Number);
   if (parts.length !== 5 || parts.some(isNaN)) return null;
   return {
-    lowUnemployment: Math.max(0, Math.min(100, parts[0])),
-    highIncome: Math.max(0, Math.min(100, parts[1])),
-    lowPoverty: Math.max(0, Math.min(100, parts[2])),
-    lowCost: Math.max(0, Math.min(100, parts[3])),
-    gigEconomy: Math.max(0, Math.min(100, parts[4])),
+    pharmacyCount: Math.max(0, Math.min(100, parts[0])),
+    activeRate: Math.max(0, Math.min(100, parts[1])),
+    density: Math.max(0, Math.min(100, parts[2])),
+    revenuePotential: Math.max(0, Math.min(100, parts[3])),
+    dataQuality: Math.max(0, Math.min(100, parts[4])),
   };
 }

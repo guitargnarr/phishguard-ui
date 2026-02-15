@@ -5,7 +5,14 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Plus, X, ArrowUpDown, Download } from "lucide-react";
 import type { StateMetrics } from "@/lib/overlay-data";
-import { FALLBACK_STATE_METRICS, formatPopulation, formatIncome } from "@/lib/overlay-data";
+import {
+  FALLBACK_STATE_METRICS,
+  formatPopulation,
+  formatIncome,
+  formatPharmacyCount,
+  formatRevenue,
+  AVG_ANNUAL_GLP1_LOSS,
+} from "@/lib/overlay-data";
 import { fetchLiveMetrics } from "@/lib/data-fetcher";
 import { STATE_NAMES } from "@/lib/fips-utils";
 import { metricsToRows, generateCSV, downloadFile } from "@/lib/export";
@@ -16,17 +23,101 @@ interface MetricRow {
   label: string;
   key: string;
   format: (m: StateMetrics) => string;
-  bestFn: (values: number[]) => number; // returns index of best value
+  bestFn: (values: number[]) => number;
   getValue: (m: StateMetrics) => number;
+  section?: string;
 }
 
 const METRIC_ROWS: MetricRow[] = [
+  // Pharmacy metrics
+  {
+    label: "Independent Pharmacies",
+    key: "indCount",
+    format: (m) => formatPharmacyCount(m.pharmacy?.independentCount ?? 0),
+    getValue: (m) => m.pharmacy?.independentCount ?? 0,
+    bestFn: (v) => v.indexOf(Math.max(...v)),
+  },
+  {
+    label: "Active",
+    key: "active",
+    format: (m) => String(m.pharmacy?.active ?? 0),
+    getValue: (m) => m.pharmacy?.active ?? 0,
+    bestFn: (v) => v.indexOf(Math.max(...v)),
+  },
+  {
+    label: "Likely Active",
+    key: "likelyActive",
+    format: (m) => String(m.pharmacy?.likelyActive ?? 0),
+    getValue: (m) => m.pharmacy?.likelyActive ?? 0,
+    bestFn: (v) => v.indexOf(Math.max(...v)),
+  },
+  {
+    label: "Uncertain",
+    key: "uncertain",
+    format: (m) => String(m.pharmacy?.uncertain ?? 0),
+    getValue: (m) => m.pharmacy?.uncertain ?? 0,
+    bestFn: (v) => v.indexOf(Math.min(...v)),
+  },
+  {
+    label: "Likely Closed",
+    key: "likelyClosed",
+    format: (m) => String(m.pharmacy?.likelyClosed ?? 0),
+    getValue: (m) => m.pharmacy?.likelyClosed ?? 0,
+    bestFn: (v) => v.indexOf(Math.min(...v)),
+  },
+  {
+    label: "Active Rate",
+    key: "activeRate",
+    format: (m) => {
+      const p = m.pharmacy;
+      if (!p || p.independentCount === 0) return "N/A";
+      return `${Math.round(((p.active + p.likelyActive) / p.independentCount) * 100)}%`;
+    },
+    getValue: (m) => {
+      const p = m.pharmacy;
+      if (!p || p.independentCount === 0) return 0;
+      return (p.active + p.likelyActive) / p.independentCount;
+    },
+    bestFn: (v) => v.indexOf(Math.max(...v)),
+  },
+  {
+    label: "Density per 100K",
+    key: "density",
+    format: (m) => {
+      const p = m.pharmacy;
+      if (!p || m.population === 0) return "N/A";
+      return ((p.independentCount / m.population) * 100_000).toFixed(1);
+    },
+    getValue: (m) => {
+      const p = m.pharmacy;
+      if (!p || m.population === 0) return 0;
+      return (p.independentCount / m.population) * 100_000;
+    },
+    bestFn: (v) => v.indexOf(Math.max(...v)),
+  },
+  {
+    label: "GLP-1 Loss Exposure",
+    key: "glp1Exposure",
+    format: (m) => {
+      const p = m.pharmacy;
+      if (!p) return "N/A";
+      return formatRevenue((p.active + p.likelyActive) * AVG_ANNUAL_GLP1_LOSS);
+    },
+    getValue: (m) => {
+      const p = m.pharmacy;
+      if (!p) return 0;
+      return (p.active + p.likelyActive) * AVG_ANNUAL_GLP1_LOSS;
+    },
+    bestFn: (v) => v.indexOf(Math.max(...v)),
+  },
+  // Economic context
   {
     label: "Population",
     key: "population",
     format: (m) => formatPopulation(m.population),
     getValue: (m) => m.population,
     bestFn: (v) => v.indexOf(Math.max(...v)),
+    section: "Economic Context",
   },
   {
     label: "Median Income",
@@ -34,34 +125,6 @@ const METRIC_ROWS: MetricRow[] = [
     format: (m) => formatIncome(m.medianIncome),
     getValue: (m) => m.medianIncome,
     bestFn: (v) => v.indexOf(Math.max(...v)),
-  },
-  {
-    label: "Unemployment Rate",
-    key: "unemploymentRate",
-    format: (m) => `${m.unemploymentRate}%`,
-    getValue: (m) => m.unemploymentRate,
-    bestFn: (v) => v.indexOf(Math.min(...v)),
-  },
-  {
-    label: "Poverty Rate",
-    key: "povertyRate",
-    format: (m) => `${m.povertyRate}%`,
-    getValue: (m) => m.povertyRate,
-    bestFn: (v) => v.indexOf(Math.min(...v)),
-  },
-  {
-    label: "Gig Economy",
-    key: "gig_pct",
-    format: (m) => `${m.gig_pct}%`,
-    getValue: (m) => m.gig_pct,
-    bestFn: (v) => v.indexOf(Math.max(...v)),
-  },
-  {
-    label: "Privacy Law",
-    key: "hasActiveLegislation",
-    format: (m) => (m.hasActiveLegislation ? "Yes" : "No"),
-    getValue: (m) => (m.hasActiveLegislation ? 1 : 0),
-    bestFn: () => -1, // no "best" for boolean
   },
 ];
 
@@ -74,7 +137,6 @@ export default function StateComparison() {
   const [selectorOpen, setSelectorOpen] = useState(false);
   const [search, setSearch] = useState("");
 
-  // Initialize selected states from URL
   const [selected, setSelected] = useState<string[]>(() => {
     const param = searchParams.get("states");
     if (param) {
@@ -91,7 +153,6 @@ export default function StateComparison() {
     });
   }, []);
 
-  // Update URL when selection changes
   useEffect(() => {
     if (selected.length > 0) {
       router.replace(`/compare?states=${selected.join(",")}`, { scroll: false });
@@ -133,14 +194,14 @@ export default function StateComparison() {
         {/* Header */}
         <div className="text-center mb-10">
           <p className="text-[11px] uppercase tracking-[0.2em] text-[#4a4540] mb-4">
-            Decision Tool
+            Market Comparison
           </p>
           <h1 className="font-display text-4xl md:text-5xl text-[#f5f0eb] tracking-[-0.03em]">
             Compare{" "}
-            <em className="font-display italic text-[#14b8a6]">states</em>
+            <em className="font-display italic text-[#14b8a6]">markets</em>
           </h1>
           <p className="mt-3 text-sm text-[#8a8580] max-w-lg mx-auto">
-            Select 2-3 states to compare economic metrics side by side.
+            Select 2-3 states to compare independent pharmacy market data.
             Best value in each row highlighted.
           </p>
           <div className="mt-2 flex items-center justify-center gap-1.5">
@@ -247,42 +308,37 @@ export default function StateComparison() {
                     const bestIdx = row.bestFn(values);
 
                     return (
-                      <tr key={row.key} className="border-b border-[#1a1a1a]/50">
-                        <td className="px-4 py-3 text-sm text-[#8a8580]">
-                          {row.label}
-                        </td>
-                        {selected.map((abbr, i) => (
-                          <td
-                            key={abbr}
-                            className={`px-4 py-3 text-center text-sm font-medium ${
-                              i === bestIdx
-                                ? "text-[#14b8a6]"
-                                : "text-[#f5f0eb]"
-                            }`}
-                          >
-                            {row.format(metrics[abbr])}
+                      <>
+                        {row.section && (
+                          <tr key={`section-${row.key}`}>
+                            <td
+                              colSpan={selected.length + 1}
+                              className="px-4 py-2 text-[10px] text-[#4a4540] uppercase tracking-[0.15em] border-t border-[#1a1a1a] bg-[#0a0a0a]/30"
+                            >
+                              {row.section}
+                            </td>
+                          </tr>
+                        )}
+                        <tr key={row.key} className="border-b border-[#1a1a1a]/50">
+                          <td className="px-4 py-3 text-sm text-[#8a8580]">
+                            {row.label}
                           </td>
-                        ))}
-                      </tr>
+                          {selected.map((abbr, i) => (
+                            <td
+                              key={abbr}
+                              className={`px-4 py-3 text-center text-sm font-medium ${
+                                i === bestIdx
+                                  ? "text-[#14b8a6]"
+                                  : "text-[#f5f0eb]"
+                              }`}
+                            >
+                              {row.format(metrics[abbr])}
+                            </td>
+                          ))}
+                        </tr>
+                      </>
                     );
                   })}
-
-                  {/* Legislation topics row */}
-                  <tr>
-                    <td className="px-4 py-3 text-sm text-[#8a8580]">
-                      Legislation Topics
-                    </td>
-                    {selected.map((abbr) => (
-                      <td
-                        key={abbr}
-                        className="px-4 py-3 text-center text-xs text-[#8a8580]"
-                      >
-                        {metrics[abbr].legislationTopics.length > 0
-                          ? metrics[abbr].legislationTopics.join(", ")
-                          : "None"}
-                      </td>
-                    ))}
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -310,10 +366,10 @@ export default function StateComparison() {
               <p className="mt-2 text-xs text-[#4a4540]">
                 Try:{" "}
                 <Link
-                  href="/compare?states=CA,TX,NY"
+                  href="/compare?states=NY,TX,CA"
                   className="text-[#14b8a6] hover:underline"
                 >
-                  CA vs TX vs NY
+                  NY vs TX vs CA
                 </Link>
               </p>
             </div>

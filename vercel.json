@@ -1,9 +1,2 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "https://projectlavos.com",
-      "permanent": false
-    }
-  ]
 }

@@ -166,3 +166,17 @@ export function formatPharmacyCount(count: number): string {
   if (count >= 1_000) return `${(count / 1_000).toFixed(1)}K`;
   return String(count);
 }
+
+// RetailMyMeds monthly subscription price
+export const MONTHLY_PRICE = 275;
+
+// Average annual GLP-1 loss per independent pharmacy (from strategic research)
+// $37-42 loss/fill × 394 avg fills/month × 12 months ≈ $174K/year
+export const AVG_ANNUAL_GLP1_LOSS = 174_000;
+
+// Helper: format revenue opportunity
+export function formatRevenue(amount: number): string {
+  if (amount >= 1_000_000) return `$${(amount / 1_000_000).toFixed(1)}M`;
+  if (amount >= 1_000) return `$${(amount / 1_000).toFixed(0)}K`;
+  return `$${amount}`;
+}

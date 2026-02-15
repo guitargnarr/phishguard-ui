@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import StateRanker from "./components/StateRanker";
 
 export const metadata: Metadata = {
-  title: "Rank States | Meridian",
+  title: "Rank States for Outreach | Meridian",
   description:
-    "Rank all 50 US states by your priorities. Adjust weighted sliders for unemployment, income, poverty, cost of living, and gig economy to find the best state for you.",
+    "Prioritize states for pharmacy sales outreach. Weighted ranking by pharmacy count, viability rate, market density, revenue potential, and data quality.",
 };
 
 export default function RankPage() {

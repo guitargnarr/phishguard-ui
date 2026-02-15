@@ -33,9 +33,9 @@ export default function Home() {
                 </em>
               </h1>
               <p className="mt-4 text-lg text-[#8a8580] max-w-xl mx-auto leading-relaxed">
-                Interactive market intelligence across all 50 US states.
-                Economic, demographic, and legislative data overlays
-                that reveal where opportunity lives.
+                41,752 independent pharmacies mapped and scored.
+                Identify high-opportunity markets for GLP-1 and MFP
+                prescription routing.
               </p>
             </div>
 
@@ -70,22 +70,22 @@ export default function Home() {
               <div className="flex items-center gap-2.5">
                 <TrendingUp className="w-4 h-4 text-[#f97316]" />
                 <div>
-                  <div className="text-sm font-medium text-[#f5f0eb]">5 Overlays</div>
-                  <div className="text-[10px] text-[#4a4540]">Data layers</div>
+                  <div className="text-sm font-medium text-[#f5f0eb]">41,752</div>
+                  <div className="text-[10px] text-[#4a4540]">Pharmacies mapped</div>
                 </div>
               </div>
               <div className="flex items-center gap-2.5">
                 <Users className="w-4 h-4 text-[#14b8a6]" />
                 <div>
-                  <div className="text-sm font-medium text-[#f5f0eb]">330M+</div>
-                  <div className="text-[10px] text-[#4a4540]">Population data</div>
+                  <div className="text-sm font-medium text-[#f5f0eb]">4 Tiers</div>
+                  <div className="text-[10px] text-[#4a4540]">Status classification</div>
                 </div>
               </div>
               <div className="flex items-center gap-2.5">
                 <Landmark className="w-4 h-4 text-[#ef4444]" />
                 <div>
-                  <div className="text-sm font-medium text-[#f5f0eb]">Real-Time</div>
-                  <div className="text-[10px] text-[#4a4540]">Legislative tracking</div>
+                  <div className="text-sm font-medium text-[#f5f0eb]">3,000+</div>
+                  <div className="text-[10px] text-[#4a4540]">Counties with data</div>
                 </div>
               </div>
             </div>
@@ -121,9 +121,9 @@ export default function Home() {
                   <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#14b8a6]" />
                 </h3>
                 <p className="text-xs text-[#8a8580] leading-relaxed">
-                  Drag weighted sliders for unemployment, income, poverty,
-                  cost of living, and gig economy. All 50 states ranked
-                  in real time by your priorities.
+                  Prioritize states for pharmacy outreach. Weight market size,
+                  active rate, density, and routing potential. All 50 states
+                  ranked by market opportunity.
                 </p>
               </a>
 
@@ -136,9 +136,9 @@ export default function Home() {
                   <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#14b8a6]" />
                 </h3>
                 <p className="text-xs text-[#8a8580] leading-relaxed">
-                  Pick 2-3 states and see metrics side by side.
-                  Best values highlighted. Export the comparison as CSV
-                  for further analysis.
+                  Pick 2-3 states and compare pharmacy market metrics
+                  side by side. Active rates, density, revenue opportunity.
+                  Export as CSV.
                 </p>
               </a>
 
@@ -151,9 +151,9 @@ export default function Home() {
                   <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#14b8a6]" />
                 </h3>
                 <p className="text-xs text-[#8a8580] leading-relaxed">
-                  Choropleth overlays for population, income, unemployment,
-                  gig economy, and legislation. Click any state for full
-                  economic profile and comparison tools.
+                  41,000+ independent pharmacies plotted with clustering.
+                  County density heat map. Click any pharmacy for status,
+                  owner info, and contact details.
                 </p>
               </a>
             </div>

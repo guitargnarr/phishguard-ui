@@ -12,7 +12,13 @@ import {
   Trophy,
   Check,
 } from "lucide-react";
-import { FALLBACK_STATE_METRICS, formatPopulation, formatIncome } from "@/lib/overlay-data";
+import {
+  FALLBACK_STATE_METRICS,
+  formatPopulation,
+  formatPharmacyCount,
+  formatRevenue,
+  AVG_ANNUAL_GLP1_LOSS,
+} from "@/lib/overlay-data";
 import { fetchLiveMetrics } from "@/lib/data-fetcher";
 import {
   computeRankings,
@@ -26,11 +32,11 @@ import { STATE_NAMES } from "@/lib/fips-utils";
 import { metricsToRows, generateCSV, generateJSON, downloadFile } from "@/lib/export";
 
 const SLIDER_FIELDS: { key: keyof RankingWeights; label: string; description: string }[] = [
-  { key: "lowUnemployment", label: "Low Unemployment", description: "Prefer states with low jobless rates" },
-  { key: "highIncome", label: "High Income", description: "Prefer states with high median household income" },
-  { key: "lowPoverty", label: "Low Poverty", description: "Prefer states with low poverty rates" },
-  { key: "lowCost", label: "Low Cost of Living", description: "Prefer states where cost of living is lower" },
-  { key: "gigEconomy", label: "Gig Economy", description: "Prefer states with thriving freelance/gig work" },
+  { key: "pharmacyCount", label: "Pharmacy Count", description: "Prefer states with more independent pharmacies" },
+  { key: "activeRate", label: "Active Rate", description: "Prefer states where more pharmacies are active or likely active" },
+  { key: "density", label: "Market Density", description: "Prefer states with more pharmacies per capita" },
+  { key: "revenuePotential", label: "Routing Potential", description: "Prefer states with the most pharmacies eligible for prescription routing" },
+  { key: "dataQuality", label: "Data Quality", description: "Prefer states with fewer uncertain/closed records" },
 ];
 
 export default function StateRanker() {
@@ -69,7 +75,7 @@ export default function StateRanker() {
     });
   }, []);
 
-  // Debounced URL update -- immediate state update, URL batched at 150ms
+  // Debounced URL update
   const urlTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const updateUrl = useCallback(
     (w: RankingWeights, preset: string | null) => {
@@ -84,14 +90,12 @@ export default function StateRanker() {
     [router]
   );
 
-  // Cleanup debounce timer on unmount
   useEffect(() => {
     return () => {
       if (urlTimerRef.current) clearTimeout(urlTimerRef.current);
     };
   }, []);
 
-  // Compute rankings
   const rankings = useMemo(() => computeRankings(metrics, weights), [metrics, weights]);
 
   function handleSliderChange(key: keyof RankingWeights, value: number) {
@@ -120,9 +124,9 @@ export default function StateRanker() {
   function handleExport(format: "csv" | "json") {
     const rows = metricsToRows(metrics);
     if (format === "csv") {
-      downloadFile(generateCSV(rows), "meridian-state-data.csv", "text/csv");
+      downloadFile(generateCSV(rows), "meridian-pharmacy-data.csv", "text/csv");
     } else {
-      downloadFile(generateJSON(rows), "meridian-state-data.json", "application/json");
+      downloadFile(generateJSON(rows), "meridian-pharmacy-data.json", "application/json");
     }
     setShowExportMenu(false);
   }
@@ -133,15 +137,15 @@ export default function StateRanker() {
         {/* Header */}
         <div className="text-center mb-10">
           <p className="text-[11px] uppercase tracking-[0.2em] text-[#4a4540] mb-4">
-            Decision Tool
+            Pharmacy Market Intelligence
           </p>
           <h1 className="font-display text-4xl md:text-5xl text-[#f5f0eb] tracking-[-0.03em]">
-            Best states{" "}
-            <em className="font-display italic text-[#14b8a6]">for you</em>
+            Prioritize your{" "}
+            <em className="font-display italic text-[#14b8a6]">markets</em>
           </h1>
           <p className="mt-3 text-sm text-[#8a8580] max-w-lg mx-auto">
-            Drag the sliders to weight what matters most. All 50 states + DC
-            ranked in real time.
+            Identify the highest-opportunity states for independent pharmacy outreach.
+            Weighted by market size, data quality, and routing potential.
           </p>
           <div className="mt-2 flex items-center justify-center gap-1.5">
             <span
@@ -167,13 +171,14 @@ export default function StateRanker() {
                   <button
                     key={key}
                     onClick={() => handlePreset(key)}
-                    className={`px-3 py-2 rounded-lg text-xs font-medium transition-all ${
+                    className={`px-3 py-2 rounded-lg text-xs font-medium transition-all text-left ${
                       activePreset === key
                         ? "bg-[#14b8a6]/20 text-[#14b8a6] border border-[#14b8a6]/30"
                         : "bg-[#0a0a0a] text-[#8a8580] border border-[#1a1a1a] hover:border-[#2a2a2a] hover:text-[#f5f0eb]"
                     }`}
                   >
-                    {preset.label}
+                    <div>{preset.label}</div>
+                    <div className="text-[10px] text-[#4a4540] mt-0.5">{preset.description}</div>
                   </button>
                 ))}
               </div>
@@ -265,6 +270,14 @@ export default function StateRanker() {
               const isExpanded = expandedState === state.abbr;
               const name = STATE_NAMES[state.abbr] || state.abbr;
               const scorePercent = Math.round(state.score * 100);
+              const p = state.metrics.pharmacy;
+              const count = p?.independentCount ?? 0;
+              const contactable = (p?.active ?? 0) + (p?.likelyActive ?? 0);
+              const activeRate = count > 0 ? Math.round((contactable / count) * 100) : 0;
+              const densityPer100K = state.metrics.population > 0
+                ? ((count / state.metrics.population) * 100_000).toFixed(1)
+                : "0.0";
+              const glp1Exposure = contactable * AVG_ANNUAL_GLP1_LOSS;
 
               return (
                 <div
@@ -335,54 +348,69 @@ export default function StateRanker() {
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-3">
                         <div>
                           <div className="text-[10px] text-[#4a4540] uppercase tracking-wider">
+                            Independent Pharmacies
+                          </div>
+                          <div className="text-sm text-[#f5f0eb]">
+                            {formatPharmacyCount(count)}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-[10px] text-[#4a4540] uppercase tracking-wider">
+                            Contactable (Active + Likely Active)
+                          </div>
+                          <div className="text-sm text-[#f5f0eb]">
+                            {contactable.toLocaleString()}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-[10px] text-[#4a4540] uppercase tracking-wider">
+                            Active Rate
+                          </div>
+                          <div className={`text-sm font-medium ${
+                            activeRate >= 50 ? "text-[#22c55e]" : activeRate >= 35 ? "text-[#eab308]" : "text-[#ef4444]"
+                          }`}>
+                            {activeRate}%
+                          </div>
+                          <div className="text-[10px] text-[#4a4540] mt-0.5">
+                            Based on NPPES record activity (updated within 1yr = Active)
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-[10px] text-[#4a4540] uppercase tracking-wider">
+                            Density per 100K
+                          </div>
+                          <div className="text-sm text-[#f5f0eb]">
+                            {densityPer100K}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-[10px] text-[#4a4540] uppercase tracking-wider">
+                            GLP-1 Loss Exposure
+                          </div>
+                          <div className="text-sm text-[#f5f0eb]">
+                            {formatRevenue(glp1Exposure)}
+                          </div>
+                          <div className="text-[10px] text-[#4a4540] mt-0.5">
+                            Based on $174K avg annual GLP-1 loss per pharmacy
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-[10px] text-[#4a4540] uppercase tracking-wider">
                             Population
                           </div>
-                          <div className="text-sm text-[#f5f0eb]">
+                          <div className="text-sm text-[#8a8580]">
                             {formatPopulation(state.metrics.population)}
-                          </div>
-                        </div>
-                        <div>
-                          <div className="text-[10px] text-[#4a4540] uppercase tracking-wider">
-                            Median Income
-                          </div>
-                          <div className="text-sm text-[#f5f0eb]">
-                            {formatIncome(state.metrics.medianIncome)}
-                          </div>
-                        </div>
-                        <div>
-                          <div className="text-[10px] text-[#4a4540] uppercase tracking-wider">
-                            Unemployment
-                          </div>
-                          <div className="text-sm text-[#f5f0eb]">
-                            {state.metrics.unemploymentRate}%
-                          </div>
-                        </div>
-                        <div>
-                          <div className="text-[10px] text-[#4a4540] uppercase tracking-wider">
-                            Poverty Rate
-                          </div>
-                          <div className="text-sm text-[#f5f0eb]">
-                            {state.metrics.povertyRate}%
-                          </div>
-                        </div>
-                        <div>
-                          <div className="text-[10px] text-[#4a4540] uppercase tracking-wider">
-                            Gig Economy
-                          </div>
-                          <div className="text-sm text-[#f5f0eb]">
-                            {state.metrics.gig_pct}%
-                          </div>
-                        </div>
-                        <div>
-                          <div className="text-[10px] text-[#4a4540] uppercase tracking-wider">
-                            Privacy Law
-                          </div>
-                          <div className="text-sm text-[#f5f0eb]">
-                            {state.metrics.hasActiveLegislation ? "Yes" : "No"}
                           </div>
                         </div>
                       </div>
                       <div className="mt-3 flex gap-2">
+                        <Link
+                          href={`/state/${state.abbr.toLowerCase()}`}
+                          className="text-[10px] text-[#14b8a6] hover:underline uppercase tracking-wider"
+                        >
+                          State Detail
+                        </Link>
+                        <span className="text-[#1a1a1a]">|</span>
                         <Link
                           href={`/compare?states=${state.abbr}`}
                           className="text-[10px] text-[#14b8a6] hover:underline uppercase tracking-wider"
@@ -391,7 +419,7 @@ export default function StateRanker() {
                         </Link>
                         <span className="text-[#1a1a1a]">|</span>
                         <Link
-                          href={`/explore`}
+                          href="/explore"
                           className="text-[10px] text-[#14b8a6] hover:underline uppercase tracking-wider"
                         >
                           View on Map
